@@ -1,4 +1,4 @@
-package com.cloud.microserver.common;
+package com.cloud.common;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
