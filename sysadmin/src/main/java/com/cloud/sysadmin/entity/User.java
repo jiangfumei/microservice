@@ -1,11 +1,10 @@
 package com.cloud.sysadmin.entity;
 
+import com.cloud.common.base.admin.AdminConstant;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.util.Date;
-import java.util.Objects;
 
 @Data
 @Entity
@@ -37,7 +36,7 @@ public class User {
 
     @Basic
     @Column(name = "status", nullable = true)
-    private Integer status;
+    private Integer status = AdminConstant.STATUS_NORMAL;
 
     @Basic
     @Column(name = "create_by", nullable = true)

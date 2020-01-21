@@ -1,5 +1,6 @@
 package com.cloud.sysadmin.entity;
 
+import com.cloud.common.base.admin.AdminConstant;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -53,6 +54,9 @@ public class Permission {
 
     @Column(name = "url")
     private String url;
+
+    @Column(name = "status")
+    private Integer status = AdminConstant.STATUS_NORMAL;
 
 
 }
