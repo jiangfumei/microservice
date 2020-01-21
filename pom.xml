@@ -71,11 +71,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!--公用模块-->
-        <dependency>
-            <groupId>com.cloud.microserver</groupId>
-            <artifactId>common</artifactId>
-        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -107,7 +102,7 @@
     </build>
 
     <modules>
-        <module>common</module>
+        <!--<module>common</module>-->
         <module>sysadmin</module>
     </modules>
 
