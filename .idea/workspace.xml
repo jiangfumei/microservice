@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/authorization-resource/src/main/java/Service/UserDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization-resource/src/main/java/config/OAuth2ServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization-resource/src/main/java/config/propertie/IgnoredUrlsProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization-resource/src/main/java/config/propertie/SysAdminProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cloud/common/exception/LoginFailLimitException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cloud/common/util/JSONUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cloud/common/util/ReponseUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/UserSerice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-resource/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-resource/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-resource/src/main/java/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-resource/src/main/java/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -165,7 +152,7 @@
       <workItem from="1582796579305" duration="1219000" />
       <workItem from="1582858077331" duration="713000" />
       <workItem from="1582877241445" duration="12128000" />
-      <workItem from="1583117642073" duration="16750000" />
+      <workItem from="1583117642073" duration="18079000" />
     </task>
     <servers />
   </component>
