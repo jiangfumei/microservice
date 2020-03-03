@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/authorization/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/AuthorizationApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/OAuth2AuthorizationServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/OAuth2ResourceServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/RestResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/UserProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization/src/test/java/com/cloud/authorization/AuthorizationApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-resource/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-resource/src/main/java/Service/UserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/Service/UserDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-resource/src/main/java/config/OAuth2ServerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-resource/src/main/java/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-resource/src/main/java/config/propertie/IgnoredUrlsProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/config/propertie/IgnoredUrlsProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-resource/src/main/java/config/propertie/SysAdminProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/config/propertie/SysAdminProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/RestResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/RestResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +173,7 @@
       <workItem from="1582877241445" duration="12128000" />
       <workItem from="1583117642073" duration="18649000" />
       <workItem from="1583150092075" duration="483000" />
-      <workItem from="1583203389241" duration="15472000" />
+      <workItem from="1583203389241" duration="17255000" />
     </task>
     <servers />
   </component>
@@ -247,46 +228,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="260" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579165203110" />
-    <state width="1876" height="384" key="GridCell.Tab.0.bottom" timestamp="1583223478488">
+    <state width="1876" height="188" key="GridCell.Tab.0.bottom" timestamp="1583233213798">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="384" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478488" />
-    <state width="1876" height="384" key="GridCell.Tab.0.center" timestamp="1583223478488">
+    <state width="1876" height="188" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583233213798" />
+    <state width="1876" height="188" key="GridCell.Tab.0.center" timestamp="1583233213797">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="384" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478488" />
-    <state width="1876" height="384" key="GridCell.Tab.0.left" timestamp="1583223478488">
+    <state width="1876" height="188" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583233213797" />
+    <state width="1876" height="188" key="GridCell.Tab.0.left" timestamp="1583233213797">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456761" />
-    <state width="1876" height="384" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478488" />
-    <state width="1876" height="384" key="GridCell.Tab.0.right" timestamp="1583223478488">
+    <state width="1876" height="188" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583233213797" />
+    <state width="1876" height="188" key="GridCell.Tab.0.right" timestamp="1583233213798">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="384" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478488" />
-    <state width="1876" height="384" key="GridCell.Tab.1.bottom" timestamp="1583223478489">
+    <state width="1876" height="188" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583233213798" />
+    <state width="1876" height="188" key="GridCell.Tab.1.bottom" timestamp="1583233213800">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="384" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478489" />
-    <state width="1876" height="384" key="GridCell.Tab.1.center" timestamp="1583223478489">
+    <state width="1876" height="188" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583233213800" />
+    <state width="1876" height="188" key="GridCell.Tab.1.center" timestamp="1583233213798">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="384" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478489" />
-    <state width="1876" height="384" key="GridCell.Tab.1.left" timestamp="1583223478489">
+    <state width="1876" height="188" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583233213798" />
+    <state width="1876" height="188" key="GridCell.Tab.1.left" timestamp="1583233213798">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="384" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478489" />
-    <state width="1876" height="384" key="GridCell.Tab.1.right" timestamp="1583223478489">
+    <state width="1876" height="188" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583233213798" />
+    <state width="1876" height="188" key="GridCell.Tab.1.right" timestamp="1583233213799">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="384" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478489" />
+    <state width="1876" height="188" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583233213799" />
     <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1583138863191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

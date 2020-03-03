@@ -13,7 +13,6 @@ public class RestResource {
     @RequestMapping("/api/users/me")
     public ResponseEntity<UserProfile> profile()
     {
-        //Build some dummy data to return for testing
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String email = user.getUsername() + "@howtodoinjava.com";
 
