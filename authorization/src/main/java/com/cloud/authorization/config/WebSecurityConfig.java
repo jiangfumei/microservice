@@ -1,7 +1,7 @@
-package config;
+package com.cloud.authorization.config;
 
-import Service.UserDetailService;
-import config.propertie.IgnoredUrlsProperties;
+import com.cloud.authorization.Service.UserDetailService;
+import com.cloud.authorization.config.propertie.IgnoredUrlsProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -40,8 +41,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         registry.and()
                 //表单登录方式
                 .formLogin()
+                //登录页面名称
                 .loginPage("sysadmin/common/needLogin")
-                //登陆请求url
+                //登陆请求url登录表单提交的路径
                 .loginProcessingUrl("sysadmin/login")
                 .permitAll()
                 //成功处理类
@@ -56,7 +58,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/v2/**", "/swagger-resources/**", "/swagger-ui.html", "/configuration/**")//
                 .and()//
                 .authorizeRequests().antMatchers("/resources/**").authenticated().anyRequest().permitAll()//
-         .and().csrf().disable().httpBasic();
+                .and()
+                // 关闭 csrf 防护，因为对于我们的所有请求来说，都是需要携带身份信息的
+                .csrf().disable().httpBasic();
     }
 
     @Bean
@@ -79,7 +83,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailService).passwordEncoder(new BCryptPasswordEncoder());
+        auth.userDetailsService(userDetailService).passwordEncoder(passwordEncoder());
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     /**

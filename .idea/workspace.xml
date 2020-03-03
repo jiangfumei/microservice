@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="" />
+    <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/authorization/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/AuthorizationApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/OAuth2AuthorizationServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/OAuth2ResourceServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/RestResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/UserProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/test/java/com/cloud/authorization/AuthorizationApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-resource/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-resource/src/main/java/Service/UserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/Service/UserDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-resource/src/main/java/config/OAuth2ServerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-resource/src/main/java/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-resource/src/main/java/config/propertie/IgnoredUrlsProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/config/propertie/IgnoredUrlsProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-resource/src/main/java/config/propertie/SysAdminProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/config/propertie/SysAdminProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +90,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sysadmin/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -78,29 +99,45 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.zeroturnaround.javarebel.idea.plugin.settings.JRebelSettingsComponent" />
   </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="config" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git\microservice\authorization\src\main\java\com\cloud\authorization" />
+      <recent name="E:\git\microservice\sysadmin\src\main\resources" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="com.cloud.sysadmin.entity" />
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\git\microservice\sysadmin\src\main\resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="config" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SysadminApplication">
+  <component name="RunManager" selected="Spring Boot.AuthorizationApplication ">
+    <configuration name="AuthorizationApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="authorization" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.authorization.AuthorizationApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="common" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.common.CommonApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -118,6 +155,7 @@
     <list>
       <item itemvalue="Spring Boot.SysadminApplication" />
       <item itemvalue="Spring Boot.CommonApplication" />
+      <item itemvalue="Spring Boot.AuthorizationApplication " />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -153,6 +191,8 @@
       <workItem from="1582858077331" duration="713000" />
       <workItem from="1582877241445" duration="12128000" />
       <workItem from="1583117642073" duration="18649000" />
+      <workItem from="1583150092075" duration="483000" />
+      <workItem from="1583203389241" duration="15472000" />
     </task>
     <servers />
   </component>
@@ -163,10 +203,14 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="174" width="1174" height="692" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579587870569">
+    <state x="552" y="177" key="#Inspections" timestamp="1583217117398">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="174" width="1174" height="692" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579587870569" />
+    <state x="552" y="177" key="#Inspections/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583217117398" />
+    <state x="414" y="174" width="1174" height="692" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583222866922">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" width="1174" height="692" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583222866922" />
     <state x="757" y="395" width="687" height="312" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog" timestamp="1579593899805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -183,10 +227,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="473" y="70" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579594382717" />
-    <state x="587" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1583139426302">
+    <state x="587" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1583218157426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="587" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583139426302" />
+    <state x="587" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583218157426" />
     <state x="705" y="398" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1583139427974">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -203,46 +247,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="260" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579165203110" />
-    <state width="1876" height="178" key="GridCell.Tab.0.bottom" timestamp="1582891325297">
+    <state width="1876" height="384" key="GridCell.Tab.0.bottom" timestamp="1583223478488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="178" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1582891325297" />
-    <state width="1876" height="178" key="GridCell.Tab.0.center" timestamp="1582891325296">
+    <state width="1876" height="384" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478488" />
+    <state width="1876" height="384" key="GridCell.Tab.0.center" timestamp="1583223478488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="178" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1582891325296" />
-    <state width="1876" height="178" key="GridCell.Tab.0.left" timestamp="1582891325296">
+    <state width="1876" height="384" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478488" />
+    <state width="1876" height="384" key="GridCell.Tab.0.left" timestamp="1583223478488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456761" />
-    <state width="1876" height="178" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1582891325296" />
-    <state width="1876" height="178" key="GridCell.Tab.0.right" timestamp="1582891325297">
+    <state width="1876" height="384" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478488" />
+    <state width="1876" height="384" key="GridCell.Tab.0.right" timestamp="1583223478488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="178" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1582891325297" />
-    <state width="1876" height="178" key="GridCell.Tab.1.bottom" timestamp="1582891325298">
+    <state width="1876" height="384" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478488" />
+    <state width="1876" height="384" key="GridCell.Tab.1.bottom" timestamp="1583223478489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="178" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1582891325298" />
-    <state width="1876" height="178" key="GridCell.Tab.1.center" timestamp="1582891325298">
+    <state width="1876" height="384" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478489" />
+    <state width="1876" height="384" key="GridCell.Tab.1.center" timestamp="1583223478489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="178" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1582891325298" />
-    <state width="1876" height="178" key="GridCell.Tab.1.left" timestamp="1582891325297">
+    <state width="1876" height="384" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478489" />
+    <state width="1876" height="384" key="GridCell.Tab.1.left" timestamp="1583223478489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="178" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1582891325297" />
-    <state width="1876" height="178" key="GridCell.Tab.1.right" timestamp="1582891325298">
+    <state width="1876" height="384" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478489" />
+    <state width="1876" height="384" key="GridCell.Tab.1.right" timestamp="1583223478489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="178" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1582891325298" />
+    <state width="1876" height="384" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583223478489" />
     <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1583138863191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -251,14 +295,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="93" key="SettingsEditor/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579594320174" />
-    <state x="640" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1583150095804">
+    <state x="640" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1583203544212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583150095804" />
-    <state x="296" y="147" key="new project wizard" timestamp="1583132570012">
+    <state x="640" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583203544212" />
+    <state x="447" y="388" key="new project wizard" timestamp="1583220750586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="296" y="147" key="new project wizard/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583132570012" />
+    <state x="447" y="388" key="new project wizard/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583220750586" />
     <state x="576" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1583146681175">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -109,7 +109,7 @@
     <modules>
         <module>common</module>
         <module>sysadmin</module>
-        <module>authorization-resource</module>
+        <module>authorization</module>
     </modules>
 
 </project>

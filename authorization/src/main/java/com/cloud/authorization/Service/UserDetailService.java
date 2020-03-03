@@ -1,6 +1,5 @@
-package Service;
+package com.cloud.authorization.Service;
 
-import com.cloud.common.util.ResultUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
