@@ -1,7 +1,7 @@
 package com.cloud.authorization.config;
 
-import com.cloud.authorization.Service.UserDetailService;
 import com.cloud.authorization.config.propertie.IgnoredUrlsProperties;
+import com.cloud.authorization.service.UserDetailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -63,6 +63,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable().httpBasic();
     }
 
+    /**
+     * @Description 主要解决客户端跨域问题
+     * @return
+     */
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();

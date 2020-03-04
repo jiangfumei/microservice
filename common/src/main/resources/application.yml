@@ -3,6 +3,8 @@ server:
   port: 6667
 
 spring:
+  profiles:
+    active: dev
   application:
     name: common
   cloud:

@@ -1,12 +1,10 @@
 
 server:
-  port: 8888
+  port: 6667
 
 spring:
-  profiles:
-    active: dev
   application:
-    name: authorization
+    name: common
   cloud:
     nacos:
       discovery:
