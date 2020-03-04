@@ -7,6 +7,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -55,5 +56,15 @@ public class User {
     @Column(name = "update_by", nullable = true)
     @ApiModelProperty(value = "更新者")
     private Long updateBy;
+
+    @Transient
+    @ApiModelProperty(value = "用户拥有角色")
+    @OneToMany(targetEntity = Role.class,mappedBy = "user",cascade = CascadeType.REFRESH)
+    private List<Role> roles;
+
+    @Transient
+    @ApiModelProperty(value = "用户拥有的权限")
+    @OneToMany(targetEntity = Permission.class,mappedBy = "user",cascade = CascadeType.REFRESH)
+    private List<Permission> permissions;
 
 }
