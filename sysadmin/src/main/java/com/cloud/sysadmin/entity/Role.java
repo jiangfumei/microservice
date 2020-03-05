@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "role")
@@ -56,6 +57,14 @@ public class Role implements Serializable {
     @JoinTable(name = "role_permission", joinColumns = { @JoinColumn(name = "role_id") }, inverseJoinColumns = {
             @JoinColumn(name = "permission_id") })
     private java.util.Set<Permission> permissions;
+
+    // 用户 - 角色关系定义;
+    // 一个角色对应多个用户
+    @ManyToMany
+    @JoinTable(name = "user_role", joinColumns = {@JoinColumn(name = "role_id")}, inverseJoinColumns = {@JoinColumn(name = "user_id")})
+   // @JsonIgnore
+    private Set<User> users;
+
 
 
 }

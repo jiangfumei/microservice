@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
+import java.util.Set;
 
 @Data
 @Entity
@@ -79,9 +80,10 @@ public class Permission implements Serializable {
     @ApiModelProperty(value = "是否启用 1启用 0禁用")
     private Integer status = AdminConstant.STATUS_NORMAL;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "user_id",columnDefinition = "Long",nullable = false)
-    private User user;
+    @ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY)
+    @JoinTable(name = "role_permission", joinColumns = { @JoinColumn(name = "permission_id") }, inverseJoinColumns = {
+            @JoinColumn(name = "role_id") })
+    private Set<Role> roles;
 
 
 }
