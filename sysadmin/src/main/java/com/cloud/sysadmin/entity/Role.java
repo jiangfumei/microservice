@@ -1,6 +1,7 @@
 package com.cloud.sysadmin.entity;
 
 import com.cloud.common.base.admin.AdminConstant;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -9,6 +10,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -31,6 +33,16 @@ public class Role implements Serializable {
 
     @ApiModelProperty(value = "角色名称")
     private String name;
+
+    @ApiModelProperty(value = "是否为注册默认角色")
+    private Boolean defaultRole;
+
+    @ApiModelProperty(value = "数据权限类型 0全部默认 1自定义")
+    private Integer dataType = AdminConstant.DATA_TYPE_ALL;
+
+
+    @ApiModelProperty(value = "角色说明")
+    private String description;
 
     @Basic
     @Column(name = "status", nullable = true)
@@ -64,6 +76,16 @@ public class Role implements Serializable {
     @JoinTable(name = "user_role", joinColumns = {@JoinColumn(name = "role_id")}, inverseJoinColumns = {@JoinColumn(name = "user_id")})
    // @JsonIgnore
     private Set<User> users;
+
+    @Transient
+    @JsonIgnore
+    @ApiModelProperty(value = "拥有权限")
+    private List<RolePermission> rolePermissions;
+
+    @Transient
+    @JsonIgnore
+    @ApiModelProperty(value = "拥有数据权限")
+    private List<RoleDepartment> departments;
 
 
 

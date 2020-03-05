@@ -1,6 +1,7 @@
 package com.cloud.sysadmin.entity;
 
 import com.cloud.common.base.admin.AdminConstant;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -9,6 +10,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -29,11 +31,9 @@ public class Department implements Serializable {
     private String title;
 
     @ApiModelProperty(value = "父id")
-    @Column(name = "parent_id")
-    private String parentId;
+    private long parentId;
 
     @ApiModelProperty(value = "是否为父节点(含子节点) 默认false")
-    @Column(name = "is_parent")
     private Boolean isParent = false;
 
     @ApiModelProperty(value = "排序值")
@@ -43,19 +43,19 @@ public class Department implements Serializable {
     @ApiModelProperty(value = "是否启用 1启用 0禁用")
     private Integer status = AdminConstant.STATUS_NORMAL;
 
-    /*@Transient
-    @TableField(exist=false)
+    @Transient
+    @JsonIgnore
     @ApiModelProperty(value = "父节点名称")
     private String parentTitle;
 
     @Transient
-    @TableField(exist=false)
+    @JsonIgnore
     @ApiModelProperty(value = "主负责人")
     private List<String> mainHeader;
 
     @Transient
-    @TableField(exist=false)
+    @JsonIgnore
     @ApiModelProperty(value = "副负责人")
-    private List<String> viceHeader;*/
+    private List<String> viceHeader;
 
 }

@@ -1,6 +1,6 @@
 package com.cloud.sysadmin.entity;
 
-import com.cloud.common.base.admin.AdminConstant;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.Objects;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -76,9 +76,31 @@ public class Permission implements Serializable {
     @ApiModelProperty(value = "网页链接")
     private String url;
 
-    @Column(name = "status")
-    @ApiModelProperty(value = "是否启用 1启用 0禁用")
-    private Integer status = AdminConstant.STATUS_NORMAL;
+
+    @Transient
+    @JsonIgnore
+    @ApiModelProperty(value = "子菜单/权限")
+    private List<Permission> children;
+
+    @Transient
+    @JsonIgnore
+    @ApiModelProperty(value = "页面拥有的权限类型")
+    private List<String> permTypes;
+
+    @Transient
+    @JsonIgnore
+    @ApiModelProperty(value = "节点展开 前端所需")
+    private Boolean expand = true;
+
+    @Transient
+    @JsonIgnore
+    @ApiModelProperty(value = "是否勾选 前端所需")
+    private Boolean checked = false;
+
+    @Transient
+    @JsonIgnore
+    @ApiModelProperty(value = "是否选中 前端所需")
+    private Boolean selected = false;
 
     @ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY)
     @JoinTable(name = "role_permission", joinColumns = { @JoinColumn(name = "permission_id") }, inverseJoinColumns = {
