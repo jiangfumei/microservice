@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
 @Entity
 @Table(name = "user")
 @ApiModel(value = "用户表")
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -57,14 +58,12 @@ public class User {
     @ApiModelProperty(value = "更新者")
     private Long updateBy;
 
-    @Transient
-    @ApiModelProperty(value = "用户拥有角色")
-    @OneToMany(targetEntity = Role.class,mappedBy = "user",cascade = CascadeType.REFRESH)
-    private List<Role> roles;
-
-    @Transient
-    @ApiModelProperty(value = "用户拥有的权限")
-    @OneToMany(targetEntity = Permission.class,mappedBy = "user",cascade = CascadeType.REFRESH)
-    private List<Permission> permissions;
+    /**
+     * 用户<->角色 多对多关系，设置级联删除，懒加载，中间表user_role，[user_id<->role_id]
+     */
+    @ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY)
+    @JoinTable(name = "user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
+            @JoinColumn(name = "role_id") })
+    private java.util.Set<Role> roles;
 
 }

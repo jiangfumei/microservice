@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
@@ -14,7 +15,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "Permission")
 @ApiModel(value = "菜单权限表")
-public class Permission {
+public class Permission implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -77,6 +78,10 @@ public class Permission {
     @Column(name = "status")
     @ApiModelProperty(value = "是否启用 1启用 0禁用")
     private Integer status = AdminConstant.STATUS_NORMAL;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "user_id",columnDefinition = "Long",nullable = false)
+    private User user;
 
 
 }
