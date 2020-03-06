@@ -10,4 +10,38 @@ public class AdminConstant {
     public static final Integer DATA_TYPE_CUSTOM = 1;
     public static final Integer DATA_TYPE_UNDER = 2;
     public static final Integer DATA_TYPE_SAME = 3;
+
+    /**
+     * 1级菜单父id
+     */
+    public static final long PARENT_ID = 0;
+    /**
+     * 0级菜单
+     */
+    public static final Integer LEVEL_ZERO = 0;
+
+    /**
+     * 1级菜单
+     */
+    public static final Integer LEVEL_ONE = 1;
+
+    /**
+     * 2级菜单
+     */
+    public static final Integer LEVEL_TWO = 2;
+
+    /**
+     * 3级菜单
+     */
+    public static final Integer LEVEL_THREE = 3;
+
+    /**
+     * 部门负责人类型 主负责人
+     */
+    public static final Integer HEADER_TYPE_MAIN = 0;
+
+    /**
+     * 部门负责人类型 副负责人
+     */
+    public static final Integer HEADER_TYPE_VICE = 1;
 }

@@ -21,4 +21,9 @@ public class UserRoleServiceImp implements UserRoleService {
     public List<Role> findRolesByUserId(long id){
         return userRoleRepository.findByUserId(id);
     }
+
+    @Override
+    public List<String> findDepIdsByUserId(long userId) {
+        return null;
+    }
 }

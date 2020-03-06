@@ -2,33 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/DepartMentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/RoleDepartment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/DepartMentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/PermissionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/UserRoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/DepartmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/PermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/UserRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/DepartmentServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/PermissionServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/RoleServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/UserRoleServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/UserServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/util/HibernateProxyTypeAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/util/SecurityUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/DepartmentHeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/DepartmentHeaderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/DepartmentHeaderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/DepartmentHeaderServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cloud/common/base/admin/AdminConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cloud/common/base/admin/AdminConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/DepartMentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/DepartMentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/Permission.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/UserSerice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/DepartMentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/DepartMentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/UserRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/UserRoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/DepartmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/UserRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/UserRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/DepartmentServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/DepartmentServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/UserRoleServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/UserRoleServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/util/SecurityUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/util/SecurityUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +49,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -210,7 +199,8 @@
       <workItem from="1583291364056" duration="4562000" />
       <workItem from="1583298288654" duration="7061000" />
       <workItem from="1583323039119" duration="107000" />
-      <workItem from="1583376652364" duration="19859000" />
+      <workItem from="1583376652364" duration="19922000" />
+      <workItem from="1583463030762" duration="13989000" />
     </task>
     <servers />
   </component>
@@ -233,10 +223,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="757" y="395" width="687" height="312" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579593899805" />
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1583400830743">
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1583491343700">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583400830743" />
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583491343700" />
     <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579509808569">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -317,17 +307,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="93" key="SettingsEditor/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579594320174" />
-    <state x="640" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1583377016089">
+    <state x="640" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1583463226167">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583377016089" />
+    <state x="640" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583463226167" />
     <state x="447" y="388" key="new project wizard" timestamp="1583220750586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="447" y="388" key="new project wizard/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583220750586" />
-    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1583408112364">
+    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1583473695716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583408112364" />
+    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583473695716" />
   </component>
 </project>

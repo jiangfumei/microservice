@@ -5,6 +5,7 @@ import com.cloud.sysadmin.entity.Department;
 import com.cloud.sysadmin.entity.Permission;
 import com.cloud.sysadmin.entity.Role;
 import com.cloud.sysadmin.entity.User;
+import com.cloud.sysadmin.repository.DepartMentRepository;
 import com.cloud.sysadmin.service.DepartmentService;
 import com.cloud.sysadmin.service.UserRoleService;
 import com.cloud.sysadmin.service.UserService;
@@ -20,6 +21,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -40,6 +42,9 @@ public class SecurityUtil {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
+    @Resource
+    private DepartMentRepository departMentRepository;
+
     /**
      * 获取当前登录用户
      * @return
@@ -49,10 +54,9 @@ public class SecurityUtil {
         UserDetails user = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return userService.findUserByUsername(user.getUsername());
     }
-/*
-    *//**
+    /**
      * 获取当前用户数据权限 null代表具有所有权限 包含值为-1的数据代表无任何权限
-     *//*
+     */
     public List<String> getDeparmentIds(){
 
         List<String> deparmentIds = new ArrayList<>();
@@ -123,16 +127,16 @@ public class SecurityUtil {
 
     private void getRecursion(String departmentId, List<String> ids){
 
-        Department department = departmentService.get(departmentId);
-        ids.add(department.getId());
+        Department department = departMentRepository.getOne(Long.valueOf(departmentId));
+        ids.add(String.valueOf(department.getId()));
         if(department.getIsParent()!=null&&department.getIsParent()){
             // 获取其下级
-            List<Department> departments = departmentService.findByParentIdAndStatusOrderBySortOrder(departmentId, AdminConstant.STATUS_NORMAL);
+            List<Department> departments = departmentService.findByParentIdAndStatusOrderBySortOrder(Long.valueOf(departmentId), AdminConstant.STATUS_NORMAL);
             departments.forEach(d->{
                 getRecursion(String.valueOf(d.getId()), ids);
             });
         }
-    }*/
+    }
 
     /**
      * 通过用户名获取用户拥有权限

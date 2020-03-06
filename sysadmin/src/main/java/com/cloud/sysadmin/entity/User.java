@@ -1,7 +1,6 @@
 package com.cloud.sysadmin.entity;
 
 import com.cloud.common.base.admin.AdminConstant;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -71,12 +70,10 @@ public class User implements Serializable {
     private long departmentId;
 
     @Transient
-    @JsonIgnore
     @ApiModelProperty(value = "所属部门名称")
     private String departmentTitle;
 
     @Transient
-    @JsonIgnore
     @ApiModelProperty(value = "用户拥有的权限")
     private List<Permission> permissions;
 

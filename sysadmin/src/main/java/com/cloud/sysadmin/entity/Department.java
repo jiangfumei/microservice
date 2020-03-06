@@ -44,18 +44,25 @@ public class Department implements Serializable {
     private Integer status = AdminConstant.STATUS_NORMAL;
 
     @Transient
-    @JsonIgnore
     @ApiModelProperty(value = "父节点名称")
     private String parentTitle;
 
     @Transient
-    @JsonIgnore
     @ApiModelProperty(value = "主负责人")
-    private List<String> mainHeader;
+    private List<Long> mainHeader;
 
     @Transient
-    @JsonIgnore
     @ApiModelProperty(value = "副负责人")
-    private List<String> viceHeader;
+    private List<Long> viceHeader;
+
+    /**
+     * 用户<->角色 多对多关系，设置级联删除，懒加载，中间表user_role，[user_id<->role_id]
+     */
+    @ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY)
+    @JoinTable(name = "role_department", joinColumns = { @JoinColumn(name = "department_id") }, inverseJoinColumns = {
+            @JoinColumn(name = "role_id") })
+    private java.util.Set<Role> roles;
+
+
 
 }
