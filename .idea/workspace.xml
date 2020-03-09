@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/security/MySecurityMetadataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/util/VoUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/vo/MenuVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cloud/common/base/admin/AdminConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cloud/common/base/admin/AdminConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/DictController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/Dict.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/DictRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/DictService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/DictServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/DepartMentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/DepartMentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/PermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/PermissionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/PermissionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/PermissionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/RolePermissionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/RolePermissionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/PermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/PermissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/RolePermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/RolePermissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/PermissionServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/PermissionServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/RolePermissionServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/RolePermissionServiceImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +191,7 @@
       <workItem from="1583298288654" duration="7061000" />
       <workItem from="1583323039119" duration="107000" />
       <workItem from="1583376652364" duration="19922000" />
-      <workItem from="1583463030762" duration="38444000" />
+      <workItem from="1583463030762" duration="39908000" />
     </task>
     <servers />
   </component>
@@ -219,10 +214,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="757" y="395" width="687" height="312" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579593899805" />
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1583752858433">
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1583754720285">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583752858433" />
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583754720285" />
     <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579509808569">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

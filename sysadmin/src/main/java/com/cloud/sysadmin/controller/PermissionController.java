@@ -35,7 +35,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @RestController
 @Api("菜单/权限管理接口")
-@RequestMapping("/xboot/permission")
+@RequestMapping("/permission")
 @CacheConfig(cacheNames = "permission")
 @Transactional
 public class PermissionController {

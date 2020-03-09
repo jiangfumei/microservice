@@ -23,6 +23,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,6 +38,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @Api("部门接口")
 @RequestMapping(value = "/department")
+@CacheConfig(cacheNames = "department")
 public class DepartMentController {
 
     @Resource
