@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/RolePermissionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/RolePermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/RolePermissionServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/security/MySecurityMetadataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/util/VoUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/vo/MenuVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cloud/common/base/admin/AdminConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cloud/common/base/admin/AdminConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/PermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/PermissionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/RoleDepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/RoleDepartmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/UserRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/UserRoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/RoleDepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/RoleDepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/RoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/UserRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/UserRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/RoleDepartmentServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/RoleDepartmentServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/RoleServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/RoleServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/UserRoleServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/UserRoleServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/PermissionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/PermissionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/RolePermissionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/RolePermissionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/PermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/PermissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/RolePermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/RolePermissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/PermissionServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/PermissionServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/RolePermissionServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/RolePermissionServiceImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +45,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -101,11 +99,12 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.cloud.authorization.Service" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="config" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git\microservice\authorization\src\main\resources\config" />
+      <recent name="E:\git\microservice\common\src\main\resources\config" />
+      <recent name="E:\git\microservice\sysadmin\src\main\resources\config" />
+      <recent name="E:\git\microservice\authorization\src\main\java\com\cloud\authorization" />
+      <recent name="E:\git\microservice\sysadmin\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -114,12 +113,11 @@
       <recent name="com.cloud.sysadmin.entity" />
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\git\microservice\authorization\src\main\resources\config" />
-      <recent name="E:\git\microservice\common\src\main\resources\config" />
-      <recent name="E:\git\microservice\sysadmin\src\main\resources\config" />
-      <recent name="E:\git\microservice\authorization\src\main\java\com\cloud\authorization" />
-      <recent name="E:\git\microservice\sysadmin\src\main\resources" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cloud.authorization.Service" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="config" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.CommonApplication">
@@ -198,7 +196,7 @@
       <workItem from="1583298288654" duration="7061000" />
       <workItem from="1583323039119" duration="107000" />
       <workItem from="1583376652364" duration="19922000" />
-      <workItem from="1583463030762" duration="34284000" />
+      <workItem from="1583463030762" duration="38444000" />
     </task>
     <servers />
   </component>
@@ -221,10 +219,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="757" y="395" width="687" height="312" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579593899805" />
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1583747640895">
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1583752858433">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583747640895" />
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583752858433" />
     <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579509808569">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -313,9 +311,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="447" y="388" key="new project wizard/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583220750586" />
-    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1583739252686">
+    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1583752325635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583739252686" />
+    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583752325635" />
   </component>
 </project>

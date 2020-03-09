@@ -13,6 +13,22 @@ public class AdminConstant {
     public static final Integer DATA_TYPE_CUSTOM = 1;
     public static final Integer DATA_TYPE_UNDER = 2;
     public static final Integer DATA_TYPE_SAME = 3;
+    /**
+     * 顶部菜单类型权限
+     */
+    public static final Integer PERMISSION_NAV = -1;
+
+    /**
+     * 页面类型权限
+     */
+    public static final Integer PERMISSION_PAGE = 0;
+
+    /**
+     * 操作类型权限
+     */
+    public static final Integer PERMISSION_OPERATION = 1;
+
+
 
     /**
      * 1级菜单父id

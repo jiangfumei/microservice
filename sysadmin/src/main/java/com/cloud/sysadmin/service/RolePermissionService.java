@@ -9,4 +9,6 @@ public interface RolePermissionService {
     void deleteByRoleId(long roleId);
 
     List<RolePermission> findByRoleId(long roleId);
+
+    List<RolePermission> findByPermissionId(long permissionId);
 }
