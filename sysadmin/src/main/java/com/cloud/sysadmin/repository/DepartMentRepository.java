@@ -16,13 +16,21 @@ public interface DepartMentRepository extends JpaRepository<Department,Long>, Jp
      * @param departmentIds
      * @return
      */
-    @Query("select d from Department d where d.id in (:departmentIds)")
+
     List<Department> findByParentIdAndIdInOrderBySortOrder(long parentId, List<Long> departmentIds);
 
     Department findByParentId(long id);
 
-
-    @Query("select dep from Department dep where dep.parentId=?1 and dep.status=?2 order by dep.sortOrder")
     List<Department> findByParentIdAndStatusOrderBySortOrder(long id, int status);
+
+    /**
+     * 部门名模糊搜索 升序 数据权限
+     * @param title
+     * @param departmentIds
+     * @return
+     */
+    List<Department> findByTitleLikeAndIdInOrderBySortOrder(String title, List<String> departmentIds);
+
+    List<Department> findByTitleLikeOrderBySortOrder(String title);
 
 }

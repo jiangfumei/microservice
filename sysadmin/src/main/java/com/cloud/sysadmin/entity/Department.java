@@ -31,13 +31,15 @@ public class Department implements Serializable {
     private String title;
 
     @ApiModelProperty(value = "父id")
+    @Column(name = "parent_id")
     private long parentId;
 
     @ApiModelProperty(value = "是否为父节点(含子节点) 默认false")
+    @Column(name = "is_parent")
     private Boolean isParent = false;
 
     @ApiModelProperty(value = "排序值")
-    @Column(precision = 10, scale = 2)
+    @Column(name = "sort_order",precision = 10, scale = 2)
     private BigDecimal sortOrder;
 
     @ApiModelProperty(value = "是否启用 1启用 0禁用")

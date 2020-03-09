@@ -19,8 +19,10 @@ public class RoleDepartment implements Serializable {
     private long id;
 
     @ApiModelProperty(value = "角色id")
-    private String roleId;
+    @Column(name = "role_id")
+    private long roleId;
 
     @ApiModelProperty(value = "部门id")
-    private String departmentId;
+    @Column(name = "department_id")
+    private long departmentId;
 }

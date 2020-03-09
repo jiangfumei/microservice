@@ -16,4 +16,6 @@ public interface DepartmentService {
 
     Department merge(Department department);
 
+    List<Department> findByTitleLikeOrderBySortOrder(String title,Boolean openDataFilter);
+
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 @Slf4j
@@ -21,5 +22,10 @@ public class UserServiceImp implements UserService {
     @Override
     public User findUserByUsername(String username) {
         return userRepository.findUserByUsername(username);
+    }
+
+    @Override
+    public List<User> findByDepartmentId(long departmentId) {
+        return userRepository.findByDepartmentId(departmentId);
     }
 }

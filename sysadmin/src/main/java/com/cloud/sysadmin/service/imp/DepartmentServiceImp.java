@@ -57,4 +57,13 @@ public class DepartmentServiceImp implements DepartmentService {
     public Department merge(Department department) {
         return manager.merge(department);
     }
+
+    @Override
+    public List<Department> findByTitleLikeOrderBySortOrder(String title, Boolean openDataFilter) {
+        List<String> depIds = securityUtil.getDeparmentIds();
+        if(depIds!=null&&depIds.size()>0&&openDataFilter){
+            return departMentRepository.findByTitleLikeAndIdInOrderBySortOrder(title, depIds);
+        }
+        return departMentRepository.findByTitleLikeOrderBySortOrder(title);
+    }
 }
