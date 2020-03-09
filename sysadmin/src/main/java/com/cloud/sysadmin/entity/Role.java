@@ -68,7 +68,7 @@ public class Role implements Serializable {
     @ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY)
     @JoinTable(name = "role_permission", joinColumns = { @JoinColumn(name = "role_id") }, inverseJoinColumns = {
             @JoinColumn(name = "permission_id") })
-    private java.util.Set<Permission> permissions;
+    private java.util.List<Permission> permissions;
 
     // 用户 - 角色关系定义;
     // 一个角色对应多个用户
@@ -81,10 +81,10 @@ public class Role implements Serializable {
     @ApiModelProperty(value = "拥有权限")
     private List<RolePermission> rolePermissions;
 
-   /* @Transient
+    @Transient
     @JsonIgnore
     @ApiModelProperty(value = "拥有数据权限")
-    private List<RoleDepartment> departments;*/
+    private List<RoleDepartment> departments;
 
     /**
      * 用户<->角色 多对多关系，设置级联删除，懒加载，中间表user_role，[user_id<->role_id]
@@ -92,7 +92,7 @@ public class Role implements Serializable {
     @ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY)
     @JoinTable(name = "role_department", joinColumns = { @JoinColumn(name = "role_id") }, inverseJoinColumns = {
             @JoinColumn(name = "department_id") })
-    private java.util.Set<Department> departmentSet;
+    private java.util.List<Department> departmentSet;
 
 
 

@@ -1,6 +1,7 @@
 package com.cloud.sysadmin.service.imp;
 
 import com.cloud.sysadmin.entity.Role;
+import com.cloud.sysadmin.entity.UserRole;
 import com.cloud.sysadmin.repository.UserRoleRepository;
 import com.cloud.sysadmin.service.UserRoleService;
 import lombok.extern.slf4j.Slf4j;
@@ -30,5 +31,10 @@ public class UserRoleServiceImp implements UserRoleService {
     @Override
     public void deleteByUserId(long userId) {
 
+    }
+
+    @Override
+    public List<UserRole> findByRoleId(long roleId) {
+        return userRoleRepository.findByRoleId(roleId);
     }
 }
