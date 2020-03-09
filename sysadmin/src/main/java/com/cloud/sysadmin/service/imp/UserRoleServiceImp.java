@@ -26,4 +26,9 @@ public class UserRoleServiceImp implements UserRoleService {
     public List<String> findDepIdsByUserId(long userId) {
         return null;
     }
+
+    @Override
+    public void deleteByUserId(long userId) {
+
+    }
 }

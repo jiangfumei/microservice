@@ -5,6 +5,9 @@ public class AdminConstant {
     public static final Integer STATUS_NORMAL = 1;
     public static final Integer STATUS_DEL = 0;
 
+    //用户是否锁定
+    public static final Integer USER_STATUS_LOCK = 0;//锁定
+
     //数据权限： 0全部数据权限 1自定义数据权限 2部门及以下 3本部门
     public static final Integer DATA_TYPE_ALL = 0;
     public static final Integer DATA_TYPE_CUSTOM = 1;

@@ -33,6 +33,9 @@ public class User implements Serializable {
     @ApiModelProperty(value = "用户名")
     private String username;
 
+    @ApiModelProperty(value = "邮箱")
+    private String email;
+
     @Basic
     @Column(name = "password", nullable = true, length = 150)
     @ApiModelProperty(value = "密码")
@@ -64,7 +67,7 @@ public class User implements Serializable {
     @ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY)
     @JoinTable(name = "user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
             @JoinColumn(name = "role_id") })
-    private java.util.Set<Role> roles;
+    private java.util.List<Role> roles;
 
     @ApiModelProperty(value = "所属部门id")
     private long departmentId;
@@ -76,5 +79,11 @@ public class User implements Serializable {
     @Transient
     @ApiModelProperty(value = "用户拥有的权限")
     private List<Permission> permissions;
+
+    @ApiModelProperty(value = "用户类型 0普通用户 1管理员")
+    private Integer type = AdminConstant.STATUS_NORMAL;
+
+    @ApiModelProperty(value = "性别")
+    private String sex;
 
 }

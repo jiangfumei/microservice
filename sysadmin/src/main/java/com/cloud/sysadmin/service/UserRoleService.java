@@ -10,4 +10,6 @@ public interface UserRoleService {
     List<Role> findRolesByUserId(long id);
 
     List<String> findDepIdsByUserId(long userId);
+
+    void deleteByUserId(long userId);
 }

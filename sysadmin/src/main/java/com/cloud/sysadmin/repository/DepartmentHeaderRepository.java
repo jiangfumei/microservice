@@ -10,4 +10,6 @@ public interface DepartmentHeaderRepository extends JpaRepository<DepartmentHead
     List<DepartmentHeader> findByDepartmentIdAndType(long depId,int type);
 
     void deleteByDepartmentId(long depId);
+
+    void deleteByUserId(long userId);
 }

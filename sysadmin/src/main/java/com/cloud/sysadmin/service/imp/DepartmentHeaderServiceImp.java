@@ -33,4 +33,9 @@ public class DepartmentHeaderServiceImp implements DepartmentHeaderService {
     public void deleteByDepartmentId(long depId) {
         headerRepository.deleteByDepartmentId(depId);
     }
+
+    @Override
+    public void deleteByUserId(long userId) {
+        headerRepository.deleteByUserId(userId);
+    }
 }

@@ -8,4 +8,6 @@ public interface DepartmentHeaderService {
 
     void deleteByDepartmentId(long depId);
 
+    void deleteByUserId(long userId);
+
 }
