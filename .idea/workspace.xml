@@ -2,18 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/DictDataController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/DictData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/DictDataRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/DictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/controller/DictController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/entity/Permission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/DictRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/DictRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/PermissionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/repository/PermissionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/DictDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/DictDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/DictService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/DictService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/DictDataServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/DictDataServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/DictServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/DictServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/UserServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/java/com/cloud/sysadmin/service/imp/UserServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/admin/jwt/AuthenticationFailHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/admin/jwt/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/admin/jwt/RestAccessDeniedHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/admin/security/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/admin/security/permission/MyAccessDecisionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/admin/security/permission/MyFilterSecurityInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/admin/security/propertie/CaptchaProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/admin/security/propertie/IgnoredUrlsProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/admin/security/propertie/SysAdminProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/admin/security/validate/ImageValidateFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cloud/common/base/admin/SecurityConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cloud/common/base/vo/TokenUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/config/WebSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/config/propertie/IgnoredUrlsProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/config/propertie/SysAdminProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization/src/main/resources/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/resources/config/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization/src/main/resources/config/application-online.yml" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/resources/config/application-online.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +51,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -99,12 +105,11 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\git\microservice\authorization\src\main\resources\config" />
-      <recent name="E:\git\microservice\common\src\main\resources\config" />
-      <recent name="E:\git\microservice\sysadmin\src\main\resources\config" />
-      <recent name="E:\git\microservice\authorization\src\main\java\com\cloud\authorization" />
-      <recent name="E:\git\microservice\sysadmin\src\main\resources" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cloud.authorization.Service" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="config" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -113,14 +118,15 @@
       <recent name="com.cloud.sysadmin.entity" />
       <recent name="" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.cloud.authorization.Service" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="config" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git\microservice\authorization\src\main\resources\config" />
+      <recent name="E:\git\microservice\common\src\main\resources\config" />
+      <recent name="E:\git\microservice\sysadmin\src\main\resources\config" />
+      <recent name="E:\git\microservice\authorization\src\main\java\com\cloud\authorization" />
+      <recent name="E:\git\microservice\sysadmin\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SysadminApplication">
+  <component name="RunManager" selected="Spring Boot.AuthorizationApplication ">
     <configuration name="AuthorizationApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="authorization" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.authorization.AuthorizationApplication" />
@@ -197,7 +203,7 @@
       <workItem from="1583323039119" duration="107000" />
       <workItem from="1583376652364" duration="19922000" />
       <workItem from="1583463030762" duration="40600000" />
-      <workItem from="1583808475253" duration="7909000" />
+      <workItem from="1583808475253" duration="17995000" />
     </task>
     <servers />
   </component>
@@ -220,10 +226,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="757" y="395" width="687" height="312" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579593899805" />
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1583820690742">
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1583833098122">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583820690742" />
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583833098122" />
     <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579509808569">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -236,10 +242,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="245" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583820808501" />
-    <state x="587" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1583218157426">
+    <state x="587" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1583828751829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="587" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583218157426" />
+    <state x="587" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583828751829" />
     <state x="705" y="398" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1583139427974">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -260,46 +266,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="260" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579165203110" />
-    <state width="1876" height="261" key="GridCell.Tab.0.bottom" timestamp="1583819653054">
+    <state width="1876" height="178" key="GridCell.Tab.0.bottom" timestamp="1583831257191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583819653054" />
-    <state width="1876" height="261" key="GridCell.Tab.0.center" timestamp="1583819653053">
+    <state width="1876" height="178" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583831257191" />
+    <state width="1876" height="178" key="GridCell.Tab.0.center" timestamp="1583831257191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583819653053" />
-    <state width="1876" height="261" key="GridCell.Tab.0.left" timestamp="1583819653053">
+    <state width="1876" height="178" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583831257191" />
+    <state width="1876" height="178" key="GridCell.Tab.0.left" timestamp="1583831257191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456761" />
-    <state width="1876" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583819653053" />
-    <state width="1876" height="261" key="GridCell.Tab.0.right" timestamp="1583819653054">
+    <state width="1876" height="178" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583831257191" />
+    <state width="1876" height="178" key="GridCell.Tab.0.right" timestamp="1583831257191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583819653054" />
-    <state width="1876" height="261" key="GridCell.Tab.1.bottom" timestamp="1583819653054">
+    <state width="1876" height="178" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583831257191" />
+    <state width="1876" height="178" key="GridCell.Tab.1.bottom" timestamp="1583831257192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="261" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583819653054" />
-    <state width="1876" height="261" key="GridCell.Tab.1.center" timestamp="1583819653054">
+    <state width="1876" height="178" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583831257192" />
+    <state width="1876" height="178" key="GridCell.Tab.1.center" timestamp="1583831257191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="261" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583819653054" />
-    <state width="1876" height="261" key="GridCell.Tab.1.left" timestamp="1583819653054">
+    <state width="1876" height="178" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583831257191" />
+    <state width="1876" height="178" key="GridCell.Tab.1.left" timestamp="1583831257191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="261" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583819653054" />
-    <state width="1876" height="261" key="GridCell.Tab.1.right" timestamp="1583819653054">
+    <state width="1876" height="178" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583831257191" />
+    <state width="1876" height="178" key="GridCell.Tab.1.right" timestamp="1583831257191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="261" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583819653054" />
+    <state width="1876" height="178" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583831257191" />
     <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1583404045676">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

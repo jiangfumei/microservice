@@ -26,16 +26,24 @@
             <artifactId>sysadmin</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-       <!-- &lt;!&ndash;web&ndash;&gt;
+        <!--web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>-->
+        </dependency>
         <!--security-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
+        <!--jjwt-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+
         <!--oauth2-->
         <dependency>
             <groupId>org.springframework.security.oauth</groupId>

@@ -1,4 +1,4 @@
-package com.cloud.authorization.config.propertie;
+package com.cloud.authorization.admin.security.propertie;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
