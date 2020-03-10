@@ -84,10 +84,10 @@ public class UserServiceImp implements UserService {
                     list.add(cb.like(emailField,'%'+user.getEmail()+'%'));
                 }
 
-               /* //部门
-                if(user.getDepartmentId() != null){
+                //部门
+                if(StringUtils.isNotBlank(String.valueOf(user.getDepartmentId()))) {
                     list.add(cb.equal(departmentIdField, user.getDepartmentId()));
-                }*/
+                }
 
                 //性别
                 if(StringUtils.isNotBlank(user.getSex())){

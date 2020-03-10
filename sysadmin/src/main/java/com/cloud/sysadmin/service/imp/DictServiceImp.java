@@ -34,6 +34,11 @@ public class DictServiceImp implements DictService {
 
     @Override
     public List<Dict> findByTitleOrTypeLike(String key) {
-        return null;
+        return dictRepository.findByTitleOrTypeLike(key);
+    }
+
+    @Override
+    public List<Dict> findAllBySortOrder() {
+        return dictRepository.findAllBySortOrder();
     }
 }

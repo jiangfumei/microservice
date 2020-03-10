@@ -11,4 +11,6 @@ public interface DictService {
     void update(Dict dict);
 
     List<Dict> findByTitleOrTypeLike(String key);
+
+    List<Dict> findAllBySortOrder();
 }

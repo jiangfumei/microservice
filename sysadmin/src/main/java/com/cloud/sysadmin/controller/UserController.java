@@ -129,7 +129,7 @@ public class UserController {
     @ApiOperation(value = "重置密码")
     public Result<Object> resetPass(@RequestParam long[] ids){
 
-        for(Long id:ids){
+        for(long id:ids){
             User u = userRepository.getOne(id);
             u.setPassword(new BCryptPasswordEncoder().encode("123456"));
             userService.update(u);
@@ -305,7 +305,7 @@ public class UserController {
     @ApiOperation(value = "批量通过ids删除")
     public Result<Object> delAllByIds(@PathVariable long[] ids){
 
-        for(Long id:ids){
+        for(long id:ids){
             User u = userRepository.getOne(id);
             //删除缓存
             redisTemplate.delete("user::" + u.getUsername());

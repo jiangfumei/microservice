@@ -142,9 +142,9 @@ public class DepartMentController {
 
     @RequestMapping(value = "/delByIds/{ids}",method = RequestMethod.DELETE)
     @ApiOperation(value = "批量通过id删除")
-    public Result<Object> delByIds(@PathVariable String[] ids){
+    public Result<Object> delByIds(@PathVariable long[] ids){
 
-        for(String id : ids){
+        for(long id : ids){
             //deleteRecursion(id, ids);
         }
         // 手动删除所有部门缓存

@@ -181,13 +181,13 @@ public class RoleController {
     @ApiOperation(value = "批量通过ids删除")
     public Result<Object> delByIds(@PathVariable long[] ids){
 
-        for(Long id:ids){
+        for(long id:ids){
             List<UserRole> list = userRoleService.findByRoleId(id);
             if(list!=null&&list.size()>0){
                 return ResultUtil.error("删除失败，包含正被用户使用关联的角色");
             }
         }
-        for(Long id:ids){
+        for(long id:ids){
             roleRepository.deleteById(id);
             //删除关联菜单权限
             rolePermissionService.deleteByRoleId(id);

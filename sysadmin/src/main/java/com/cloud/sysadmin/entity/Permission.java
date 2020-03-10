@@ -1,5 +1,6 @@
 package com.cloud.sysadmin.entity;
 
+import com.cloud.common.base.admin.AdminConstant;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -106,6 +107,9 @@ public class Permission implements Serializable {
     @JoinTable(name = "role_permission", joinColumns = { @JoinColumn(name = "permission_id") }, inverseJoinColumns = {
             @JoinColumn(name = "role_id") })
     private Set<Role> roles;
+
+    @ApiModelProperty(value = "是否启用 1启用 0禁用")
+    private Integer status = AdminConstant.STATUS_NORMAL;
 
 
 }

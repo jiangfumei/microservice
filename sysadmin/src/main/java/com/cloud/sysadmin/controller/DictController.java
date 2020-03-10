@@ -43,10 +43,9 @@ public class DictController {
     @ApiOperation(value = "获取全部数据")
     public Result<List<Dict>> getAll(){
 
-        /*List<Dict> list = dictService.findAllOrderBySortOrder();
+        List<Dict> list = dictService.findAllBySortOrder();
 
-        return new ResultUtil<List<Dict>>().setData(list);*/
-        return null;
+        return new ResultUtil<List<Dict>>().setData(list);
     }
 
     @RequestMapping(value = "/add",method = RequestMethod.POST)
@@ -80,7 +79,7 @@ public class DictController {
 
         Dict dict = dictRepository.getOne(id);
         dictRepository.deleteById(id);
-        //dictDataService.deleteByDictId(id);
+        dictDataService.deleteByDictId(id);
         // 删除缓存
         redisTemplate.delete("dictData::"+dict.getType());
         return ResultUtil.success("删除成功");
