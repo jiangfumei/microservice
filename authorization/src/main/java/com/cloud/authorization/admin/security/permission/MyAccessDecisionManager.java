@@ -12,6 +12,10 @@ import org.springframework.stereotype.Component;
 import java.util.Collection;
 import java.util.Iterator;
 
+/**
+ * MyAccessDecisionManager類，負責權限的控制，如果請求的url在權限集合中有這個url對應的值，則放行。注：如果數據庫中沒有對這個url定義訪問的權限，默認是會被放行的
+ */
+
 @Slf4j
 @Component
 public class MyAccessDecisionManager implements AccessDecisionManager {

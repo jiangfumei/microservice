@@ -21,7 +21,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -42,7 +41,7 @@ public class SecurityUtil {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
-    @Resource
+    @Autowired
     private DepartMentRepository departMentRepository;
 
     /**

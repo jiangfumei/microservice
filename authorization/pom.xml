@@ -21,16 +21,17 @@
     </properties>
 
     <dependencies>
+        <!--admin-->
         <dependency>
             <groupId>com.cloud</groupId>
             <artifactId>sysadmin</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--web-->
+       <!-- &lt;!&ndash;web&ndash;&gt;
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+        </dependency>-->
         <!--security-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -63,19 +64,13 @@
             <version>2.2.3.RELEASE</version>
             <scope>test</scope>
         </dependency>
-       <!-- &lt;!&ndash; mysql &ndash;&gt;
+
+        <!-- mysql -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.47</version>
         </dependency>
-        &lt;!&ndash;jpa&ndash;&gt;
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>2.2.2.RELEASE</version>
-        </dependency>-->
-
 
     </dependencies>
 

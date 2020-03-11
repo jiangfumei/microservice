@@ -6,7 +6,6 @@ import org.springframework.security.access.SecurityMetadataSource;
 import org.springframework.security.access.intercept.AbstractSecurityInterceptor;
 import org.springframework.security.access.intercept.InterceptorStatusToken;
 import org.springframework.security.web.FilterInvocation;
-import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -16,13 +15,18 @@ import java.io.IOException;
 /**
  * 权限管理过滤器
  * 监控用户行为
+ * MyFilterSecurityInterceptor類，負責過濾url請求
+ * MyAccessDecisionManager 权限管理决断器
+ * MySecurityMetadataSource 類权限配置资源管理器
  */
 
 @Component
 @Slf4j
 public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {
 
-    private FilterInvocationSecurityMetadataSource securityMetadataSource;//两种基于spring security实现动态权限的方法，一是自定义accessDecisionManager，二是自定义FilterInvocationSecurityMetadataSource。
+    //MySecurityMetadataSource類，負責讀取數據庫中的url對應的權限
+    @Resource
+    private CustomFilterInvocationSecurityMetadataSource customFilterInvocationSecurityMetadataSource;//两种基于spring security实现动态权限的方法，一是自定义accessDecisionManager，二是自定义FilterInvocationSecurityMetadataSource。
 
     @Autowired
     public void setMyAccessDecisionManager(MyAccessDecisionManager myAccessDecisionManager) {
@@ -52,7 +56,7 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
         }
     }
 
-    /*public FilterInvocationSecurityMetadataSource getSecurityMetadataSource() {
+ /*   public FilterInvocationSecurityMetadataSource getSecurityMetadataSource() {
         return this.securityMetadataSource;
     }
 
@@ -60,7 +64,6 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
         this.securityMetadataSource = newSource;
     }
 */
-
 
     @Override
     public void destroy() {
@@ -74,6 +77,6 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
 
     @Override
     public SecurityMetadataSource obtainSecurityMetadataSource() {
-        return this.securityMetadataSource;
+        return this.customFilterInvocationSecurityMetadataSource;
     }
 }

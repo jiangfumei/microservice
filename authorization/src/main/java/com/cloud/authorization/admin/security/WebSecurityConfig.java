@@ -37,7 +37,7 @@ import javax.annotation.Resource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
-    UserDetailService userDetailService;
+    UserDetailService userDetailService;  // 自定义UserDetailsService,将用户权限交给springsecurity进行管控
 
     @Resource
     IgnoredUrlsProperties ignoredUrlsPropertie;
@@ -61,7 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     SysAdminProperties properties;
 
     @Resource
-    MyFilterSecurityInterceptor myFilterSecurityInterceptor;
+    MyFilterSecurityInterceptor myFilterSecurityInterceptor; //权限管理过滤器
 
     @Resource
     ImageValidateFilter imageValidateFilter;
@@ -98,9 +98,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/admin/login")
                 .permitAll()
                 // 成功处理类
-                .successHandler(successHandler)
+                .successHandler(successHandler) //自定义的登录成功处理器
                 // 失败
-                .failureHandler(failHandler)
+                .failureHandler(failHandler) //自定义登录失败处理器
                 .and()
                 // 允许网页iframe
                 .headers().frameOptions().disable()
