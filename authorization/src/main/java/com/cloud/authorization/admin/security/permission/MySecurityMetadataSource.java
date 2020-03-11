@@ -1,5 +1,6 @@
-package com.cloud.sysadmin.security;
+package com.cloud.authorization.admin.security.permission;
 
+import com.cloud.authorization.admin.security.provider.AdminProvider;
 import com.cloud.common.base.admin.AdminConstant;
 import com.cloud.sysadmin.entity.Permission;
 import com.cloud.sysadmin.service.PermissionService;
@@ -13,7 +14,9 @@ import org.springframework.security.web.access.intercept.FilterInvocationSecurit
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.PathMatcher;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
 import java.util.*;
 
 @Slf4j
@@ -22,8 +25,8 @@ import java.util.*;
 public class MySecurityMetadataSource implements FilterInvocationSecurityMetadataSource {
 
 
-    @Autowired
-    private PermissionService permissionService;
+    @Resource
+    private AdminProvider permissionService;
 
     @Autowired
     private PathMatcher pathMatcher;

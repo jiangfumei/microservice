@@ -27,11 +27,11 @@
             <artifactId>sysadmin</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-       <!-- &lt;!&ndash;web&ndash;&gt;
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>-->
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>2.2.1.RELEASE</version>
+        </dependency>
         <!--security-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -57,13 +57,6 @@
              <artifactId>spring-security-oauth2-autoconfigure</artifactId>
              <version>2.2.3.RELEASE</version>
          </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.2.3.RELEASE</version>
-            <scope>test</scope>
-        </dependency>
 
         <!-- mysql -->
         <dependency>

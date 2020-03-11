@@ -35,7 +35,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @RestController
 @Api("菜单/权限管理接口")
-@RequestMapping("/permission")
+@RequestMapping(value = "/permission")
 @CacheConfig(cacheNames = "permission")
 @Transactional
 public class PermissionController {
@@ -240,5 +240,10 @@ public class PermissionController {
 
         List<Permission> list = permissionService.findByTitleLikeOrderBySortOrder("%"+title+"%");
         return new ResultUtil<List<Permission>>().setData(list);
+    }
+
+    @RequestMapping(value = "/security",method = RequestMethod.POST)
+    public List<Permission> findByTypeAndStatusOrderBySortOrder(@PathVariable int type,@PathVariable int status){
+        return permissionService.findByTypeAndStatusOrderBySortOrder(type,status);
     }
 }

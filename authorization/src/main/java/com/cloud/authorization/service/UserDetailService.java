@@ -1,6 +1,7 @@
 package com.cloud.authorization.service;
 
 import com.cloud.authorization.admin.security.SecurityUserDetails;
+import com.cloud.authorization.admin.security.provider.AdminProvider;
 import com.cloud.common.exception.LoginFailLimitException;
 import com.cloud.sysadmin.entity.User;
 import com.cloud.sysadmin.service.UserService;
@@ -25,9 +26,11 @@ public class UserDetailService implements UserDetailsService {
     @Resource
     RedisTemplate redisTemplate;
 
-    @Autowired
+    /*@Autowired
     UserService userService;
-
+*/
+    @Autowired
+    AdminProvider adminProvider;
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
@@ -38,7 +41,7 @@ public class UserDetailService implements UserDetailsService {
             //超过限制次数
             throw new LoginFailLimitException("登录错误次数超过限制，请"+timeRest+"分钟后再试");
         }
-        User user = userService.findByUsername(s);
+        User user = adminProvider.getByUsername(s);
         return new SecurityUserDetails(user);
     }
 

@@ -1,5 +1,6 @@
 package com.cloud.authorization.admin.security.permission;
 
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.SecurityMetadataSource;
@@ -26,7 +27,7 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
 
     //MySecurityMetadataSource類，負責讀取數據庫中的url對應的權限
     @Resource
-    private CustomFilterInvocationSecurityMetadataSource customFilterInvocationSecurityMetadataSource;//两种基于spring security实现动态权限的方法，一是自定义accessDecisionManager，二是自定义FilterInvocationSecurityMetadataSource。
+    private MySecurityMetadataSource mySecurityMetadataSource;//两种基于spring security实现动态权限的方法，一是自定义accessDecisionManager，二是自定义FilterInvocationSecurityMetadataSource。
 
     @Autowired
     public void setMyAccessDecisionManager(MyAccessDecisionManager myAccessDecisionManager) {
@@ -56,15 +57,6 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
         }
     }
 
- /*   public FilterInvocationSecurityMetadataSource getSecurityMetadataSource() {
-        return this.securityMetadataSource;
-    }
-
-    public void setSecurityMetadataSource(FilterInvocationSecurityMetadataSource newSource) {
-        this.securityMetadataSource = newSource;
-    }
-*/
-
     @Override
     public void destroy() {
 
@@ -77,6 +69,6 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
 
     @Override
     public SecurityMetadataSource obtainSecurityMetadataSource() {
-        return this.customFilterInvocationSecurityMetadataSource;
+        return this.mySecurityMetadataSource;
     }
 }

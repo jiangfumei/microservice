@@ -9,6 +9,7 @@ import com.cloud.authorization.admin.jwt.RestAccessDeniedHandler;
 import com.cloud.authorization.admin.security.validate.ImageValidateFilter;
 import com.cloud.authorization.service.UserDetailService;
 import com.cloud.sysadmin.util.SecurityUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
