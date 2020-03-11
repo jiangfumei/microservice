@@ -19,6 +19,6 @@ public interface DictRepository extends JpaRepository<Dict,Long>, JpaSpecificati
     @Query(value = "select * from dict d where d.title like %:key% or d.type like %:key% order by d.sort_order", nativeQuery = true)
     List<Dict> findByTitleOrTypeLike(String key);
 
-    /*@Query(value = "select * from dict d order by d.sort_order", nativeQuery = true)*/
+    @Query(value = "select * from dict d order by d.sort_order", nativeQuery = true)
     List<Dict> findAllBySortOrder();
 }
