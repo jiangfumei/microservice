@@ -111,6 +111,7 @@
         <module>common</module>
         <module>sysadmin</module>
         <module>authorization</module>
+        <module>auth</module>
     </modules>
 
 </project>

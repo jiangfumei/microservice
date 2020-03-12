@@ -1,15 +1,14 @@
 package com.cloud.authorization.admin.security;
 
-import com.cloud.authorization.admin.security.permission.MyFilterSecurityInterceptor;
-import com.cloud.authorization.admin.security.propertie.IgnoredUrlsProperties;
-import com.cloud.authorization.admin.security.propertie.SysAdminProperties;
 import com.cloud.authorization.admin.jwt.AuthenticationFailHandler;
 import com.cloud.authorization.admin.jwt.JWTAuthenticationFilter;
 import com.cloud.authorization.admin.jwt.RestAccessDeniedHandler;
+import com.cloud.authorization.admin.security.permission.MyFilterSecurityInterceptor;
+import com.cloud.authorization.admin.security.propertie.IgnoredUrlsProperties;
+import com.cloud.authorization.admin.security.propertie.SysAdminProperties;
 import com.cloud.authorization.admin.security.validate.ImageValidateFilter;
 import com.cloud.authorization.service.UserDetailService;
 import com.cloud.sysadmin.util.SecurityUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
