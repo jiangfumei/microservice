@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/auth/authorization-resource/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/Oauth2AuthorizationApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/authorization-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/Oauth2AuthorizationApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/admin/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/OAuth2AuthorizationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/OAuth2AuthorizationServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/OAuth2ResourceServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/cloud/authorization/oauth/OAuth2ResourceServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/config/OAuth2ResourceServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/config/WebSecuriyConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/service/UserDetailsServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/OAuth2AuthorizationServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/enhancer/CustomTokenEnhancer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/granter/MobileAuthenticationProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/granter/MobileAuthenticationToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/granter/MobileTokenGranter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/service/CustomerUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/service/MobileUserDetailsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,11 +100,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cloud.authorization.config" />
       <recent name="com.cloud.authorization" />
       <recent name="authorization" />
       <recent name="com.cloud.authorization.admin.security.permission" />
       <recent name="com.cloud.authorization.admin.security" />
-      <recent name="com.cloud.authorization.Service" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="config" />
@@ -122,7 +124,7 @@
       <recent name="E:\git\microservice\sysadmin\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.AuthorizationApplication ">
+  <component name="RunManager" selected="Spring Boot.Oauth2AuthorizationAoolication">
     <configuration name="AuthorizationApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="authorization" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.authorization.AuthorizationApplication" />
@@ -143,6 +145,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Oauth2AuthorizationAoolication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="authorization-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.authorization.Oauth2AuthorizationApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SysadminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="sysadmin" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.sysadmin.SysadminApplication" />
@@ -154,6 +166,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Spring Boot.Oauth2AuthorizationAoolication" />
       <item itemvalue="Spring Boot.SysadminApplication" />
       <item itemvalue="Spring Boot.CommonApplication" />
       <item itemvalue="Spring Boot.AuthorizationApplication " />
@@ -202,7 +215,7 @@
       <workItem from="1583808475253" duration="23510000" />
       <workItem from="1583895280678" duration="26820000" />
       <workItem from="1583981638922" duration="1907000" />
-      <workItem from="1583984612833" duration="9696000" />
+      <workItem from="1583984612833" duration="17324000" />
     </task>
     <servers />
   </component>
@@ -225,22 +238,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="177" key="#Project_Structure/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584002492860" />
-    <state x="414" y="174" width="1174" height="692" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583222866922">
+    <state x="414" y="174" width="1174" height="692" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584004833712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="174" width="1174" height="692" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583222866922" />
+    <state x="414" y="174" width="1174" height="692" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584004833712" />
     <state x="757" y="395" width="687" height="312" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog" timestamp="1579593899805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="757" y="395" width="687" height="312" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579593899805" />
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1583921947826">
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1584012315427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583921947826" />
-    <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579509808569">
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584012315427" />
+    <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584004689588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579509808569" />
+    <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584004689588" />
     <state x="473" y="70" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog" timestamp="1579594382717">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -261,10 +274,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="705" y="398" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583139427974" />
-    <state x="484" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583913068696">
+    <state x="484" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584010918011">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="484" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583913068696" />
+    <state x="484" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584010918011" />
     <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583921730173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -333,6 +346,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583981943856" />
+    <state x="708" y="237" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584009637919">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="708" y="237" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584009637919" />
     <state x="434" y="389" key="new project wizard" timestamp="1584002673751">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
