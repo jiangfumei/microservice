@@ -9,14 +9,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="authorization-resource" />
         <module name="common" />
-        <module name="sysadmin" />
+        <module name="auth" />
         <module name="core" />
+        <module name="auth-resource" />
         <module name="authorization" />
         <module name="authorization-server" />
-        <module name="auth-resource" />
+        <module name="sysadmin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="auth-resource" target="1.8" />
       <module name="core" target="1.8" />
       <module name="util" target="1.8" />
     </bytecodeTargetLevel>
