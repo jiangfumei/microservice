@@ -1,8 +1,7 @@
 package com.cloud.authorization.config;
 
 
-import com.cloud.authorization.granter.MobileAuthenticationProvider;
-import com.cloud.authorization.service.MobileUserDetailsService;
+import com.cloud.authorization.service.CustomUserDetailsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +10,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.annotation.Resource;
@@ -22,7 +20,7 @@ import javax.annotation.Resource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
-    UserDetailsService userDetailsService;
+    CustomUserDetailsService userDetailsService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -45,8 +43,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         authenticationManagerBuilder
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
-        // 设置手机验证码登陆的AuthenticationProvider
-        authenticationManagerBuilder.authenticationProvider(mobileAuthenticationProvider());
+       /* // 设置手机验证码登陆的AuthenticationProvidermobileAuthenticationProvider
+        authenticationManagerBuilder.authenticationProvider(mobileAuthenticationProvider());*/
     }
 
     /**
@@ -59,17 +57,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-    /**
+   /* *//**
      * 创建手机验证码登陆的AuthenticationProvider
      *
      * @return mobileAuthenticationProvider
-     */
+     *//*
     @Bean
     public MobileAuthenticationProvider mobileAuthenticationProvider() {
         MobileAuthenticationProvider mobileAuthenticationProvider = new MobileAuthenticationProvider(this.userDetailsService);
         mobileAuthenticationProvider.setPasswordEncoder(passwordEncoder());
         return mobileAuthenticationProvider;
-    }
+    }*/
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

@@ -112,6 +112,7 @@
         <module>sysadmin</module>
         <module>authorization</module>
         <module>auth</module>
+        <module>api</module>
     </modules>
 
 </project>
