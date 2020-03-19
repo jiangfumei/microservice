@@ -1,55 +1,42 @@
 package com.cloud.authorization.service;
 
+import com.cloud.authorization.config.SecurityUserDetails;
+import com.cloud.common.exception.LoginFailLimitException;
+import com.cloud.sysadmin.entity.User;
+import com.cloud.sysadmin.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
-import java.util.stream.Collectors;
+import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
-@Service("customerUserDetailsService")
+@Service("customDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {
-    @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        return null;
-    }
 
-   /* @Autowired
-    private IUserService userService;
-    @Autowired
-    private IRoleService roleService;
+    @Resource
+    RedisTemplate redisTemplate;
+
+    @Resource
+    UserService userService;
+
 
     @Override
-    public UserDetails loadUserByUsername(String uniqueId) {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        User user = userService.getByUniqueId(uniqueId);
-        log.info("load user by username :{}", user.toString());
-
-        return new org.springframework.security.core.userdetails.User(
-                user.getUsername(),
-                user.getPassword(),
-                user.getEnabled(),
-                user.getAccountNonExpired(),
-                user.getCredentialsNonExpired(),
-                user.getAccountNonLocked(),
-                this.obtainGrantedAuthorities(user));
+        String flagKey = "loginFailFlag:"+username;
+        String value = (String) redisTemplate.opsForValue().get(flagKey);
+        Long timeRest = redisTemplate.getExpire(flagKey, TimeUnit.MINUTES);
+        if(StringUtils.isNotBlank(value)){
+            //超过限制次数
+            throw new LoginFailLimitException("登录错误次数超过限制，请"+timeRest+"分钟后再试");
+        }
+        User user = userService.findByUsername(username);
+        return new SecurityUserDetails(user);
     }
-
-    *//**
-     * 获得登录者所有角色的权限集合.
-     *
-     * @param user
-     * @return
-     *//*
-    protected Set<GrantedAuthority> obtainGrantedAuthorities(User user) {
-        Set<Role> roles = roleService.queryUserRolesByUserId(user.getId());
-        log.info("user:{},roles:{}", user.getUsername(), roles);
-        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getCode())).collect(Collectors.toSet());
-    }*/
 }

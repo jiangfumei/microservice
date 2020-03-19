@@ -2,7 +2,6 @@ package com.cloud.authorization.config;
 
 
 import com.cloud.authorization.granter.MobileAuthenticationProvider;
-import com.cloud.authorization.service.CustomUserDetailsService;
 import com.cloud.authorization.service.MobileUserDetailsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +11,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.annotation.Resource;
@@ -22,12 +22,7 @@ import javax.annotation.Resource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
-    CustomUserDetailsService customerUserDetailsService;
-
-    @Resource
-    MobileUserDetailsService mobileUserDetailsService;
-
-
+    UserDetailsService userDetailsService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -45,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      * @param authenticationManagerBuilder
      * @throws Exception
      */
-   /* @Override
+    @Override
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
                 .userDetailsService(userDetailsService)
@@ -53,10 +48,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // 设置手机验证码登陆的AuthenticationProvider
         authenticationManagerBuilder.authenticationProvider(mobileAuthenticationProvider());
     }
-*/
+
     /**
      * 将 AuthenticationManager 注册为 bean , 方便配置 oauth server 的时候使用
-     * 不定义没有password grant_type
      */
     @Bean
     @Override
@@ -72,7 +66,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Bean
     public MobileAuthenticationProvider mobileAuthenticationProvider() {
-        MobileAuthenticationProvider mobileAuthenticationProvider = new MobileAuthenticationProvider(this.mobileUserDetailsService);
+        MobileAuthenticationProvider mobileAuthenticationProvider = new MobileAuthenticationProvider(this.userDetailsService);
         mobileAuthenticationProvider.setPasswordEncoder(passwordEncoder());
         return mobileAuthenticationProvider;
     }
@@ -82,10 +76,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(customerUserDetailsService)
-                .passwordEncoder(passwordEncoder());
-    }
 }

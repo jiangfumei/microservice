@@ -25,4 +25,7 @@ public interface UserService {
      * @return
      */
     Page<User> findByCondition(User user, SearchVo searchVo, Pageable pageable);
+
+    User findByPhone(String phone);
+
 }

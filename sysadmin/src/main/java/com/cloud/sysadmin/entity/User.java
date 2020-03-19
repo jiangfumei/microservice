@@ -86,4 +86,7 @@ public class User implements Serializable {
     @ApiModelProperty(value = "性别")
     private String sex;
 
+    @ApiModelProperty(value = "手机")
+    private String phone;
+
 }

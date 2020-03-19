@@ -1,7 +1,6 @@
 package com.cloud.common.util;
 
 import com.cloud.common.base.vo.Result;
-import com.cloud.common.exception.ErrorType;
 
 public class ResultUtil<T> {
 

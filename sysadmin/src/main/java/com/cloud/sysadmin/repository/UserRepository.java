@@ -13,4 +13,6 @@ public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificat
     List<User> findByDepartmentId(long depId);
 
     User findByUsername(String username);
+
+    User findByPhone(String phone);
 }

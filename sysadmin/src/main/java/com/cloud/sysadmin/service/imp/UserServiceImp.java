@@ -120,4 +120,9 @@ public class UserServiceImp implements UserService {
             }
         }, pageable);
     }
+
+    @Override
+    public User findByPhone(String phone) {
+        return userRepository.findByPhone(phone);
+    }
 }
