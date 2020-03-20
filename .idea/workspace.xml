@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/config/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/config/application-online.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/entity/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/provider/UserProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/provider/UserProviderFallBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/authorization-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/OAuth2AuthorizationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/OAuth2AuthorizationServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/SecurityUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/SecurityUserDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/service/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/service/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/resources/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/resources/config/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/service/MobileUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/service/MobileUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/config/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +84,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/auth/authorization-server/src/main/resources/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/provider" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -100,11 +102,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git\microservice\auth\authorization-server\src\main\java\com\cloud\authorization\provider" />
+      <recent name="E:\git\microservice\auth\authorization-server\src\main\java\com\cloud\authorization\entity" />
       <recent name="E:\git\microservice\auth\authorization-server\src\main\resources\config" />
       <recent name="E:\git\microservice\auth\authorization-server\src\main\resources" />
       <recent name="E:\git\microservice\authorization\src\main\resources\config" />
-      <recent name="E:\git\microservice\common\src\main\resources\config" />
-      <recent name="E:\git\microservice\sysadmin\src\main\resources\config" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -218,7 +220,8 @@
       <workItem from="1583984612833" duration="18649000" />
       <workItem from="1584068086261" duration="15788000" />
       <workItem from="1584422479241" duration="10648000" />
-      <workItem from="1584601520337" duration="10495000" />
+      <workItem from="1584601520337" duration="13978000" />
+      <workItem from="1584673309835" duration="2369000" />
     </task>
     <servers />
   </component>
@@ -249,10 +252,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="757" y="395" width="687" height="312" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579593899805" />
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1584607512971">
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1584618936618">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584607512971" />
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584618936618" />
     <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584004689588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -277,10 +280,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="705" y="398" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583139427974" />
-    <state x="484" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584010918011">
+    <state x="484" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584618469906">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="484" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584010918011" />
+    <state x="484" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584618469906" />
     <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584613482222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -293,46 +296,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="260" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579165203110" />
-    <state width="1876" height="201" key="GridCell.Tab.0.bottom" timestamp="1584613718853">
+    <state width="1876" height="291" key="GridCell.Tab.0.bottom" timestamp="1584675783328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="201" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584613718853" />
-    <state width="1876" height="201" key="GridCell.Tab.0.center" timestamp="1584613718852">
+    <state width="1876" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
+    <state width="1876" height="291" key="GridCell.Tab.0.center" timestamp="1584675783328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="201" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584613718852" />
-    <state width="1876" height="201" key="GridCell.Tab.0.left" timestamp="1584613718852">
+    <state width="1876" height="291" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
+    <state width="1876" height="291" key="GridCell.Tab.0.left" timestamp="1584675783327">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456761" />
-    <state width="1876" height="201" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584613718852" />
-    <state width="1876" height="201" key="GridCell.Tab.0.right" timestamp="1584613718852">
+    <state width="1876" height="291" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783327" />
+    <state width="1876" height="291" key="GridCell.Tab.0.right" timestamp="1584675783328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="201" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584613718852" />
-    <state width="1876" height="201" key="GridCell.Tab.1.bottom" timestamp="1584613718853">
+    <state width="1876" height="291" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
+    <state width="1876" height="291" key="GridCell.Tab.1.bottom" timestamp="1584675783328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="201" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584613718853" />
-    <state width="1876" height="201" key="GridCell.Tab.1.center" timestamp="1584613718853">
+    <state width="1876" height="291" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
+    <state width="1876" height="291" key="GridCell.Tab.1.center" timestamp="1584675783328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="201" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584613718853" />
-    <state width="1876" height="201" key="GridCell.Tab.1.left" timestamp="1584613718853">
+    <state width="1876" height="291" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
+    <state width="1876" height="291" key="GridCell.Tab.1.left" timestamp="1584675783328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="201" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584613718853" />
-    <state width="1876" height="201" key="GridCell.Tab.1.right" timestamp="1584613718853">
+    <state width="1876" height="291" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
+    <state width="1876" height="291" key="GridCell.Tab.1.right" timestamp="1584675783328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="201" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584613718853" />
+    <state width="1876" height="291" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
     <state x="540" y="262" key="IDE.errors.dialog" timestamp="1584608977856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -349,10 +352,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="759" y="296" key="chooseDestDirectoryDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1583916387571" />
-    <state x="640" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1584069115458">
+    <state x="640" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1584673310795">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584069115458" />
+    <state x="640" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584673310795" />
     <state x="708" y="237" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584009637919">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

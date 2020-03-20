@@ -13,6 +13,7 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <!--admin 依赖-->
         <dependency>
             <groupId>com.cloud</groupId>
             <artifactId>sysadmin</artifactId>
@@ -42,10 +43,11 @@
         </dependency>
 
 
-       <!-- <dependency>
+      <!--  <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>-->
+
     </dependencies>
 
 

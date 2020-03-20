@@ -1,10 +1,9 @@
 package com.cloud.authorization.service;
 
 import com.cloud.authorization.config.SecurityUserDetails;
+import com.cloud.authorization.entity.User;
+import com.cloud.authorization.provider.UserProvider;
 import com.cloud.common.exception.LoginFailLimitException;
-
-import com.cloud.sysadmin.entity.User;
-import com.cloud.sysadmin.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -24,7 +23,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     RedisTemplate redisTemplate;
 
     @Resource
-    UserRepository userRepository;
+    UserProvider userProvider;
 
 
     @Override
@@ -37,7 +36,7 @@ public class CustomUserDetailsService implements UserDetailsService {
             //超过限制次数
             throw new LoginFailLimitException("登录错误次数超过限制，请"+timeRest+"分钟后再试");
         }
-        User user = userRepository.findByUsername(username);
+        User user = userProvider.getByUsername(username);
         return new SecurityUserDetails(user);
     }
 }

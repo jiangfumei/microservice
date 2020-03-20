@@ -1,9 +1,10 @@
 package com.cloud.authorization.config;
 
+import com.cloud.authorization.entity.Permission;
+import com.cloud.authorization.entity.Role;
+import com.cloud.authorization.entity.User;
 import com.cloud.common.base.admin.AdminConstant;
-import com.cloud.sysadmin.entity.Permission;
-import com.cloud.sysadmin.entity.Role;
-import com.cloud.sysadmin.entity.User;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.security.core.GrantedAuthority;
