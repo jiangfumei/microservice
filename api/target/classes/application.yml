@@ -1,0 +1,23 @@
+
+#跟目录
+server:
+  servlet:
+    context-path: /go-one
+
+### goone config ###
+spring:
+  application:
+    name: go-one
+  profiles:
+    active: dev
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${REGISTER_HOST:localhost}:${REGISTER_PORT:8848}
+      config:
+        server-addr: ${REGISTER_HOST:localhost}:${REGISTER_PORT:8848}
+        file-extension: yml
+
+
+

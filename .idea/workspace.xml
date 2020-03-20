@@ -2,18 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/entity/Permission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/entity/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/provider/UserProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/provider/UserProviderFallBack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/controller/PlayerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/controller/TeamController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/PlayerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/PlayerVideoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/TeamRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/UserPlayerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/VideoOrderTaskRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/VideoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/PlayerVideo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/Team.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/UserPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/Video.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/VideoOrderTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/model/PlayerModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/PlayerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/PlayerVideoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/TeamService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/UserPlayerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/VideoOrderTaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/VideoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/config/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/authorization-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/OAuth2AuthorizationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/OAuth2AuthorizationServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/SecurityUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/SecurityUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/service/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/service/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/service/MobileUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/service/MobileUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/config/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +99,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/provider" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -101,12 +116,15 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\git\microservice\auth\authorization-server\src\main\java\com\cloud\authorization\provider" />
-      <recent name="E:\git\microservice\auth\authorization-server\src\main\java\com\cloud\authorization\entity" />
-      <recent name="E:\git\microservice\auth\authorization-server\src\main\resources\config" />
-      <recent name="E:\git\microservice\auth\authorization-server\src\main\resources" />
-      <recent name="E:\git\microservice\authorization\src\main\resources\config" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xy.goone.modules.model" />
+      <recent name="com.xy.goone.modules.controller" />
+      <recent name="com.cloud.authorization.entity" />
+      <recent name="com.cloud.authorization.config" />
+      <recent name="com.cloud.authorization" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="config" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -115,15 +133,12 @@
       <recent name="com.cloud.sysadmin.entity" />
       <recent name="" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.cloud.authorization.entity" />
-      <recent name="com.cloud.authorization.config" />
-      <recent name="com.cloud.authorization" />
-      <recent name="authorization" />
-      <recent name="com.cloud.authorization.admin.security.permission" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="config" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git\microservice\api\src\main\java\com\xy\goone\modules\domain" />
+      <recent name="E:\git\microservice\api\src\main\resources\config" />
+      <recent name="E:\git\microservice\api\src\main\resources" />
+      <recent name="E:\git\microservice\api\src\main\java\com\xy\goone" />
+      <recent name="E:\git\microservice\auth\authorization-server\src\main\java\com\cloud\authorization\provider" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Oauth2AuthorizationAoolication">
@@ -221,7 +236,7 @@
       <workItem from="1584068086261" duration="15788000" />
       <workItem from="1584422479241" duration="10648000" />
       <workItem from="1584601520337" duration="13978000" />
-      <workItem from="1584673309835" duration="2369000" />
+      <workItem from="1584673309835" duration="11050000" />
     </task>
     <servers />
   </component>
@@ -284,10 +299,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="484" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584618469906" />
-    <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584613482222">
+    <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584681316574">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584613482222" />
+    <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681316574" />
     <state x="714" y="370" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1579156234833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -296,46 +311,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="260" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579165203110" />
-    <state width="1876" height="291" key="GridCell.Tab.0.bottom" timestamp="1584675783328">
+    <state width="1876" height="135" key="GridCell.Tab.0.bottom" timestamp="1584681810236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
-    <state width="1876" height="291" key="GridCell.Tab.0.center" timestamp="1584675783328">
+    <state width="1876" height="135" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
+    <state width="1876" height="135" key="GridCell.Tab.0.center" timestamp="1584681810236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="291" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
-    <state width="1876" height="291" key="GridCell.Tab.0.left" timestamp="1584675783327">
+    <state width="1876" height="135" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
+    <state width="1876" height="135" key="GridCell.Tab.0.left" timestamp="1584681810236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456761" />
-    <state width="1876" height="291" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783327" />
-    <state width="1876" height="291" key="GridCell.Tab.0.right" timestamp="1584675783328">
+    <state width="1876" height="135" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
+    <state width="1876" height="135" key="GridCell.Tab.0.right" timestamp="1584681810236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="291" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
-    <state width="1876" height="291" key="GridCell.Tab.1.bottom" timestamp="1584675783328">
+    <state width="1876" height="135" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
+    <state width="1876" height="135" key="GridCell.Tab.1.bottom" timestamp="1584681810236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="291" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
-    <state width="1876" height="291" key="GridCell.Tab.1.center" timestamp="1584675783328">
+    <state width="1876" height="135" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
+    <state width="1876" height="135" key="GridCell.Tab.1.center" timestamp="1584681810236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="291" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
-    <state width="1876" height="291" key="GridCell.Tab.1.left" timestamp="1584675783328">
+    <state width="1876" height="135" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
+    <state width="1876" height="135" key="GridCell.Tab.1.left" timestamp="1584681810236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="291" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
-    <state width="1876" height="291" key="GridCell.Tab.1.right" timestamp="1584675783328">
+    <state width="1876" height="135" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
+    <state width="1876" height="135" key="GridCell.Tab.1.right" timestamp="1584681810236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="291" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584675783328" />
+    <state width="1876" height="135" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
     <state x="540" y="262" key="IDE.errors.dialog" timestamp="1584608977856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -368,9 +383,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="702" y="146" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584425742748" />
-    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1584604460782">
+    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1584687053002">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584604460782" />
+    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584687053002" />
   </component>
 </project>
