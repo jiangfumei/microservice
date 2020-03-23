@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/controller/PlayerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/UserPlayerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/UserPlayerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/PlayerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/UserPlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/UserPlayerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/VideoOrderTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/VideoOrderTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/OAuth2AuthorizationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/OAuth2AuthorizationServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +212,7 @@
       <workItem from="1584601520337" duration="13978000" />
       <workItem from="1584673309835" duration="14768000" />
       <workItem from="1584932525239" duration="624000" />
-      <workItem from="1584933320756" duration="4182000" />
+      <workItem from="1584933320756" duration="5429000" />
     </task>
     <servers />
   </component>
