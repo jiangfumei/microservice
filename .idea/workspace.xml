@@ -2,33 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/controller/PlayerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/controller/TeamController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/PlayerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/PlayerVideoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/TeamRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/UserPlayerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/VideoOrderTaskRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/VideoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/PlayerVideo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/Team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/UserPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/Video.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/domain/VideoOrderTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/model/PlayerModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/PlayerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/PlayerVideoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/TeamService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/UserPlayerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/VideoOrderTaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/VideoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/resources/config/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/controller/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/UserPlayerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/dao/UserPlayerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/PlayerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/UserPlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/UserPlayerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/VideoOrderTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/xy/goone/modules/service/VideoOrderTaskService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +215,9 @@
       <workItem from="1584068086261" duration="15788000" />
       <workItem from="1584422479241" duration="10648000" />
       <workItem from="1584601520337" duration="13978000" />
-      <workItem from="1584673309835" duration="11050000" />
+      <workItem from="1584673309835" duration="14768000" />
+      <workItem from="1584932525239" duration="624000" />
+      <workItem from="1584933320756" duration="4182000" />
     </task>
     <servers />
   </component>
@@ -311,46 +292,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="260" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579165203110" />
-    <state width="1876" height="135" key="GridCell.Tab.0.bottom" timestamp="1584681810236">
+    <state width="1876" height="144" key="GridCell.Tab.0.bottom" timestamp="1584705392297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="135" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
-    <state width="1876" height="135" key="GridCell.Tab.0.center" timestamp="1584681810236">
+    <state width="1876" height="144" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584705392297" />
+    <state width="1876" height="144" key="GridCell.Tab.0.center" timestamp="1584705392296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="135" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
-    <state width="1876" height="135" key="GridCell.Tab.0.left" timestamp="1584681810236">
+    <state width="1876" height="144" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584705392296" />
+    <state width="1876" height="144" key="GridCell.Tab.0.left" timestamp="1584705392295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456761" />
-    <state width="1876" height="135" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
-    <state width="1876" height="135" key="GridCell.Tab.0.right" timestamp="1584681810236">
+    <state width="1876" height="144" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584705392295" />
+    <state width="1876" height="144" key="GridCell.Tab.0.right" timestamp="1584705392296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="135" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
-    <state width="1876" height="135" key="GridCell.Tab.1.bottom" timestamp="1584681810236">
+    <state width="1876" height="144" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584705392296" />
+    <state width="1876" height="144" key="GridCell.Tab.1.bottom" timestamp="1584705392298">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="135" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
-    <state width="1876" height="135" key="GridCell.Tab.1.center" timestamp="1584681810236">
+    <state width="1876" height="144" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584705392298" />
+    <state width="1876" height="144" key="GridCell.Tab.1.center" timestamp="1584705392297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="135" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
-    <state width="1876" height="135" key="GridCell.Tab.1.left" timestamp="1584681810236">
+    <state width="1876" height="144" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584705392297" />
+    <state width="1876" height="144" key="GridCell.Tab.1.left" timestamp="1584705392297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="135" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
-    <state width="1876" height="135" key="GridCell.Tab.1.right" timestamp="1584681810236">
+    <state width="1876" height="144" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584705392297" />
+    <state width="1876" height="144" key="GridCell.Tab.1.right" timestamp="1584705392298">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="135" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584681810236" />
+    <state width="1876" height="144" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584705392298" />
     <state x="540" y="262" key="IDE.errors.dialog" timestamp="1584608977856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -383,9 +364,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="702" y="146" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584425742748" />
-    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1584687053002">
+    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1584939955827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584687053002" />
+    <state x="576" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584939955827" />
   </component>
 </project>

@@ -21,16 +21,6 @@ public class VideoOrderTaskService {
     @Resource
     VideoOrderTaskRepository videoOrderTaskRepository;
 
-  /*  Page<VideoOrderTask> findByUserIdAndStatus(int userId, int page, int size);
-
-    VideoOrderTask findVideoTaskIsOrNotExist(int userId, int videoId);
-
-    void updateVideoOrderTask(VideoOrderTask videoOrderTask);
-
-    List<VideoOrderTask> findByDateAndStatus(Date start, Date end, int status);
-
-    List<VideoOrderTask> findByUserAndStatus(int userId, int status);*/
-
     public List<VideoOrderTask> findByUserId(int userId,int status){
         return videoOrderTaskRepository.findByUserIdAndStatus(userId, status);
     }

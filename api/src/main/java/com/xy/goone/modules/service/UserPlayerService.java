@@ -21,25 +21,6 @@ public class UserPlayerService {
     @Resource
     EntityManager entityManager;
 
-   /* public List<UserPlayer> findByUserId(int userId,int status){
-        return userPlayerRepository.findByUserId(userId,status);
-    }
-
-    public UserPlayer findByUserAndPlayer(int userId,int playerId){
-        return userPlayerRepository.findByUserIdAndPlayer(userId,playerId);
-    }
-
-    public UserPlayer findByUserIdAndPlayerId(int userId,int playerId,int status){
-        return userPlayerRepository.findByUserIdAndPlayerId(userId,playerId,status);
-    }
-    public void updateUserPlayer(UserPlayer userPlayer){
-        entityManager.merge(userPlayer);
-    }
-
-    public List<UserPlayer> findByUserAndStatus(int userId,int status){
-        return userPlayerRepository.findByUserIdAndStatus(userId,status);
-    }*/
-
     public Page<UserPlayer> findByUserId(int userId,int status,int page,int size){
         return userPlayerRepository.findByUserIdAndStatus(userId, status,PageRequest.of(page, size));
     }

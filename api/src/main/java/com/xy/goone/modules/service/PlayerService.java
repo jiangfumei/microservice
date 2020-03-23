@@ -26,9 +26,4 @@ public class PlayerService {
         return playerRepository.findAllByStatus(status, PageRequest.of(page, size));
     }
 
-   /* public Page<Player> getFocus(int userId){
-        return playerRepository.
-    }
-*/
-
 }
