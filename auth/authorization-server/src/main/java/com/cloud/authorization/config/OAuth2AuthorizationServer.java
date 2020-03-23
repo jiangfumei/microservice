@@ -48,6 +48,7 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     RedisConnectionFactory redisConnectionFactory;
 
 
+
     /**
      * jwt 对称加密密钥
      */
@@ -81,11 +82,10 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
         endpoints.tokenStore(tokenStore())
                 .exceptionTranslator(customExceptionTranslator())
                 .tokenEnhancer(tokenEnhancerChain())
-                .authenticationManager(authenticationManager)
-                .userDetailsService(userDetailsService)
-                .tokenGranter(tokenGranter(endpoints));
+                .authenticationManager(authenticationManager);
 
     }
+
 
     /**
      * 自定义OAuth2异常处理
@@ -129,24 +129,9 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         converter.setSigningKey(signingKey);
+        //converter.setAccessTokenConverter(new CustomerAccessTokenConverter());
         return converter;
     }
 
-    /**
-     * 配置自定义的granter,手机号验证码登陆
-     *
-     * @param endpoints
-     * @return
-     * @auth joe_chen
-     */
-    public TokenGranter tokenGranter(final AuthorizationServerEndpointsConfigurer endpoints) {
-        List<TokenGranter> granters = Lists.newArrayList(endpoints.getTokenGranter());
-        granters.add(new MobileTokenGranter(
-                authenticationManager,
-                endpoints.getTokenServices(),
-                endpoints.getClientDetailsService(),
-                endpoints.getOAuth2RequestFactory()));
-        return new CompositeTokenGranter(granters);
-    }
 
 }

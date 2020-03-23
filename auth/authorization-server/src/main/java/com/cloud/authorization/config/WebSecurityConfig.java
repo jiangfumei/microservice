@@ -43,8 +43,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         authenticationManagerBuilder
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
-       /* // 设置手机验证码登陆的AuthenticationProvidermobileAuthenticationProvider
-        authenticationManagerBuilder.authenticationProvider(mobileAuthenticationProvider());*/
     }
 
     /**
@@ -65,6 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
 
 
 }
