@@ -1,11 +1,14 @@
+
 spring:
+  application:
+    name: authorization-resource
+
   profiles:
     active: dev
-
-  application:
-    name: authorization-server
 
   security:
     oauth2:
       jwt:
         signingKey: oauth
+
+

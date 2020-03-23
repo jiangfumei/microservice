@@ -1,7 +1,4 @@
 
-server:
-  port: 6667
-
 spring:
   profiles:
     active: dev

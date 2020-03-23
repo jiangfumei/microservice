@@ -5,6 +5,7 @@ import com.cloud.authorization.exception.CustomWebResponseExceptionTranslator;
 import com.cloud.authorization.granter.MobileTokenGranter;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -47,6 +48,7 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     @Autowired
     RedisConnectionFactory redisConnectionFactory;
 
+
     /**
      * jwt 对称加密密钥
      */
@@ -66,7 +68,7 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
                 .withClient("clientapp").secret("112233") // Client 账号、密码。
-                .authorizedGrantTypes("password", "refresh_token") // 密码模式 // <1>
+                .authorizedGrantTypes("password", "authorization_code", "refresh_token") //设置支持 密码模式 、授权码模式
                 .scopes("read_userinfo", "read_contacts") // 可授权的 Scope
                 .accessTokenValiditySeconds(20000)
                 .refreshTokenValiditySeconds(20000);

@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/resources/config/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/resources/config/application-online.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/config/OAuth2ResourceServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/config/OAuth2ResourceServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/OAuth2AuthorizationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/OAuth2AuthorizationServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/config/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/config/application-online.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/config/application-online.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/config/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/config/application-online.yml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/config/application-online.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/resources/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/resources/config/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysadmin/src/main/resources/config/application-online.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sysadmin/src/main/resources/config/application-online.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +104,23 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="com.cloud.sysadmin.entity" />
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\git\microservice\auth\authorization-resource\src\main\resources\config" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git\microservice\api\src\main\java\com\xy\goone\modules\domain" />
+      <recent name="E:\git\microservice\api\src\main\resources\config" />
+      <recent name="E:\git\microservice\api\src\main\resources" />
+      <recent name="E:\git\microservice\api\src\main\java\com\xy\goone" />
+      <recent name="E:\git\microservice\auth\authorization-server\src\main\java\com\cloud\authorization\provider" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.xy.goone.modules.model" />
       <recent name="com.xy.goone.modules.controller" />
@@ -100,20 +130,6 @@
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="config" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="com.cloud.sysadmin.entity" />
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\git\microservice\api\src\main\java\com\xy\goone\modules\domain" />
-      <recent name="E:\git\microservice\api\src\main\resources\config" />
-      <recent name="E:\git\microservice\api\src\main\resources" />
-      <recent name="E:\git\microservice\api\src\main\java\com\xy\goone" />
-      <recent name="E:\git\microservice\auth\authorization-server\src\main\java\com\cloud\authorization\provider" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Oauth2AuthorizationAoolication">
@@ -213,7 +229,7 @@
       <workItem from="1584601520337" duration="13978000" />
       <workItem from="1584673309835" duration="14768000" />
       <workItem from="1584932525239" duration="624000" />
-      <workItem from="1584933320756" duration="7363000" />
+      <workItem from="1584933320756" duration="8789000" />
     </task>
     <servers />
   </component>
