@@ -57,17 +57,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-   /* *//**
-     * 创建手机验证码登陆的AuthenticationProvider
-     *
-     * @return mobileAuthenticationProvider
-     *//*
-    @Bean
-    public MobileAuthenticationProvider mobileAuthenticationProvider() {
-        MobileAuthenticationProvider mobileAuthenticationProvider = new MobileAuthenticationProvider(this.userDetailsService);
-        mobileAuthenticationProvider.setPasswordEncoder(passwordEncoder());
-        return mobileAuthenticationProvider;
-    }*/
+    /**
+     * 指定密码的加密方式
+     * @return
+     */
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
