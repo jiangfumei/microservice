@@ -25,30 +25,6 @@ public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
     @Value("${spring.security.oauth2.signingKey}")
     private String signingKey;
 
-    /*@Override
-    public void configure(ResourceServerSecurityConfigurer config) {
-        config.tokenServices(tokenServices());
-    }
-
-    @Bean
-    public TokenStore tokenStore() {
-        return new JwtTokenStore(accessTokenConverter());
-    }
-
-    @Bean
-    public JwtAccessTokenConverter accessTokenConverter() {
-        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setSigningKey("secret");
-        return converter;
-    }
-
-    @Bean
-    @Primary
-    public DefaultTokenServices tokenServices() {
-        DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
-        defaultTokenServices.setTokenStore(tokenStore());
-        return defaultTokenServices;
-    }*/
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resourceServerSecurityConfigurer) {
@@ -57,6 +33,11 @@ public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
                 .resourceId("WEBS");
     }
 
+    /**
+     * 和WebConfig的配置相同
+     * @param http
+     * @throws Exception
+     */
     @Override
     public void configure(HttpSecurity http) throws Exception {
         log.debug("HttpSecurity configure method");

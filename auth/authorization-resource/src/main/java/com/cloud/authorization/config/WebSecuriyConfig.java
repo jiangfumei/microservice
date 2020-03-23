@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -21,6 +20,33 @@ public class WebSecuriyConfig extends WebSecurityConfigurerAdapter {
     @Resource
     UserDetailsServiceImp userDetailsServiceImp;
 
+/*
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+                .withUser("root")
+                .password("{noop}123456") // passwordEncoder.encode("123456")
+                .roles("ADMIN");
+    }
+
+    */
+/**
+     * spring security不做拦截处理的请求，忽略静态文件
+     *//*
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        // @formatter:off
+        web.ignoring().antMatchers(
+                "/favicon.ico", // 浏览器tab页图标
+                "/static/**",
+                "/images/**",
+                "/resources/**",
+                "/oauth/uncache_approvals",
+                "/oauth/cache_approvals"
+        );
+        // @formatter:on
 
 
     @Override
@@ -32,21 +58,8 @@ public class WebSecuriyConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().permitAll();
     }
+*/
 
-    /**
-     * 注入自定义的userDetailsService实现，获取用户信息，设置密码加密方式
-     *
-     * @param authenticationManagerBuilder
-     * @throws Exception
-     */
-   /* @Override
-    protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-        authenticationManagerBuilder
-                .userDetailsService(userDetailsService)
-                .passwordEncoder(passwordEncoder());
-        // 设置手机验证码登陆的AuthenticationProvider
-        authenticationManagerBuilder.authenticationProvider(mobileAuthenticationProvider());
-    }*/
     /**
      * 将 AuthenticationManager 注册为 bean , 方便配置 oauth server 的时候使用
      * 不定义没有password grant_type
@@ -58,17 +71,6 @@ public class WebSecuriyConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-    /**
-     * 创建手机验证码登陆的AuthenticationProvider
-     *
-     * @return mobileAuthenticationProvider
-     */
-   /* @Bean
-    public MobileAuthenticationProvider mobileAuthenticationProvider() {
-        MobileAuthenticationProvider mobileAuthenticationProvider = new MobileAuthenticationProvider(this.mobileUserDetailsService);
-        mobileAuthenticationProvider.setPasswordEncoder(passwordEncoder());
-        return mobileAuthenticationProvider;
-    }*/
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
