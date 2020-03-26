@@ -1,7 +1,6 @@
 package com.cloud.authorization.config;
 
 
-import com.cloud.authorization.service.CustomUserDetailsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -13,15 +12,13 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import javax.annotation.Resource;
-
 @Slf4j
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Resource
-    CustomUserDetailsService userDetailsService;
+  /*  @Resource
+    CustomUserDetailsService userDetailsService;*/
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -39,12 +36,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      * @param authenticationManagerBuilder
      * @throws Exception
      */
-    @Override
+   /* @Override
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
-    }
+    }*/
 
     /**
      * 将 AuthenticationManager 注册为 bean , 方便配置 oauth server 的时候使用
@@ -56,6 +53,31 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
+
+
+   /* *//**
+     * 为了方便，使用内存模式，在内存中创建一个用户 user 密码 123456。
+     * @param auth
+     * @throws Exception
+     *//*
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .inMemoryAuthentication()
+                .withUser("user").password(passwordEncoder().encode("123456")).roles("USER");
+    }*/
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        //@formatter:off
+        auth.inMemoryAuthentication()
+                .withUser("user").password(passwordEncoder().encode("123456")).roles("USER");
+
+        //@formatter:on
+    }
+
+
+
     /**
      * 指定密码的加密方式
      * @return
@@ -65,18 +87,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-
-    /**
-     * 为了方便，使用内存模式，在内存中创建一个用户 user 密码 123456。
-     * @param auth
-     * @throws Exception
-     */
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .inMemoryAuthentication()
-                .withUser("user").password("123456").roles("USER");
-    }
 
 
 

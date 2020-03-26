@@ -8,9 +8,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-public class Oauth2AuthorizationApplication {
+public class Oauth2ResourceAuthorizationApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Oauth2AuthorizationApplication.class, args);
+        SpringApplication.run(Oauth2ResourceAuthorizationApplication.class, args);
     }
 }

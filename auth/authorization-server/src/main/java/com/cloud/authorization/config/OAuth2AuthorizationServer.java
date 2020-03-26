@@ -36,6 +36,9 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     @Resource
     AuthenticationManager authenticationManager; //用来做验证,支持password模式
 
+    @Resource
+    BCryptPasswordEncoder passwordEncoder;
+
 
     /**
      * jwt 对称加密密钥
@@ -56,7 +59,7 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("sampleClientId")
+                /*.withClient("sampleClientId")
                 .authorizedGrantTypes("implicit")
                 .scopes("read", "write", "foo", "bar")
                 .autoApprove(false)
@@ -64,7 +67,7 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
                 .redirectUris("http://localhost:8083/","http://localhost:8086/")
                 .and()
                 .withClient("fooClientIdPassword")
-                .secret(passwordEncoder().encode("secret"))
+                .secret(passwordEncoder.encode("secret"))
                 .authorizedGrantTypes("password", "authorization_code", "refresh_token", "client_credentials")
                 .scopes("foo", "read", "write")
                 .accessTokenValiditySeconds(3600)       // 1 hour
@@ -78,8 +81,8 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
                 .autoApprove(true)
                 .redirectUris("http://www.example.com")
                 .and()
-
-                .withClient("clientapp").secret(passwordEncoder().encode("112233"))// Client 账号、密码。
+*/
+                .withClient("clientapp").secret(passwordEncoder.encode("112233"))// Client 账号、密码。
                 .authorizedGrantTypes("password", "authorization_code", "refresh_token") //设置支持 密码模式 、授权码模式,token刷新
                 .scopes("bar", "read","write") // 可授权的 Scope
                 .accessTokenValiditySeconds(20000)
@@ -158,12 +161,6 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
         defaultTokenServices.setTokenStore(tokenStore());
         defaultTokenServices.setSupportRefreshToken(true);
         return defaultTokenServices;
-    }
-
-
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
     }
 
 }

@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b967b03-f1f6-4fb7-95bb-7db95723f0b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/converter/CustomAccessTokenConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/authorization-server/src/test/java/AuthenticationClaimsIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/authorization-resource/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-resource/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/Oauth2AuthorizationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/Oauth2ResourceAuthorizationApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/config/OAuth2ResourceServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/config/OAuth2ResourceServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/config/WebSecuriyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/config/WebSecuriyConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-resource/src/main/java/com/cloud/authorization/config/WebSecuriyConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-resource/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-resource/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/OAuth2AuthorizationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/OAuth2AuthorizationServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/enhancer/CustomTokenEnhancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/java/com/cloud/authorization/enhancer/CustomTokenEnhancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/authorization-server/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,17 +125,7 @@
       <recent name="config" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.CommonApplication">
-    <configuration name="AuthorizationApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="authorization" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.authorization.AuthorizationApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.Oauth2AuthorizationAoolication">
     <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="common" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.common.CommonApplication" />
@@ -149,6 +139,16 @@
     <configuration name="Oauth2AuthorizationAoolication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="authorization-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.authorization.Oauth2AuthorizationApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResourceAuthorizationApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="authorization-resource" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.authorization.Oauth2ResourceAuthorizationApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -170,7 +170,7 @@
       <item itemvalue="Spring Boot.Oauth2AuthorizationAoolication" />
       <item itemvalue="Spring Boot.SysadminApplication" />
       <item itemvalue="Spring Boot.CommonApplication" />
-      <item itemvalue="Spring Boot.AuthorizationApplication " />
+      <item itemvalue="Spring Boot.ResourceAuthorizationApplication " />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -225,7 +225,7 @@
       <workItem from="1584933320756" duration="17315000" />
       <workItem from="1585026995497" duration="2523000" />
       <workItem from="1585137421726" duration="329000" />
-      <workItem from="1585191524626" duration="6951000" />
+      <workItem from="1585191524626" duration="11020000" />
     </task>
     <servers />
   </component>
@@ -248,10 +248,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="177" key="#Project_Structure/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584002492860" />
-    <state x="414" y="174" width="1174" height="692" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584004833712">
+    <state x="414" y="174" width="1174" height="692" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585205771076">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="174" width="1174" height="692" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584004833712" />
+    <state x="414" y="174" width="1174" height="692" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1585205771076" />
     <state x="757" y="395" width="687" height="312" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog" timestamp="1579593899805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -260,10 +260,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584618936618" />
-    <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584004689588">
+    <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585205751702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584004689588" />
+    <state x="730" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1585205751702" />
     <state x="473" y="70" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog" timestamp="1579594382717">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -300,46 +300,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="260" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1579165203110" />
-    <state width="1876" height="153" key="GridCell.Tab.0.bottom" timestamp="1584964439268">
+    <state width="1876" height="604" key="GridCell.Tab.0.bottom" timestamp="1585209277438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584964439268" />
-    <state width="1876" height="153" key="GridCell.Tab.0.center" timestamp="1584964439268">
+    <state width="1876" height="604" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1585209277438" />
+    <state width="1876" height="604" key="GridCell.Tab.0.center" timestamp="1585209277438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="153" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584964439268" />
-    <state width="1876" height="153" key="GridCell.Tab.0.left" timestamp="1584964439268">
+    <state width="1876" height="604" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1585209277438" />
+    <state width="1876" height="604" key="GridCell.Tab.0.left" timestamp="1585209277438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456761" />
-    <state width="1876" height="153" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584964439267" />
-    <state width="1876" height="153" key="GridCell.Tab.0.right" timestamp="1584964439268">
+    <state width="1876" height="604" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1585209277438" />
+    <state width="1876" height="604" key="GridCell.Tab.0.right" timestamp="1585209277438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.0.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="153" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584964439268" />
-    <state width="1876" height="153" key="GridCell.Tab.1.bottom" timestamp="1584964439268">
+    <state width="1876" height="604" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1585209277438" />
+    <state width="1876" height="604" key="GridCell.Tab.1.bottom" timestamp="1585209277439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.bottom/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="153" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584964439268" />
-    <state width="1876" height="153" key="GridCell.Tab.1.center" timestamp="1584964439268">
+    <state width="1876" height="604" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1585209277439" />
+    <state width="1876" height="604" key="GridCell.Tab.1.center" timestamp="1585209277438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.center/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="153" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584964439268" />
-    <state width="1876" height="153" key="GridCell.Tab.1.left" timestamp="1584964439268">
+    <state width="1876" height="604" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1585209277438" />
+    <state width="1876" height="604" key="GridCell.Tab.1.left" timestamp="1585209277438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.left/0.0.1364.728@0.0.1364.728" timestamp="1581346456762" />
-    <state width="1876" height="153" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584964439268" />
-    <state width="1876" height="153" key="GridCell.Tab.1.right" timestamp="1584964439268">
+    <state width="1876" height="604" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1585209277438" />
+    <state width="1876" height="604" key="GridCell.Tab.1.right" timestamp="1585209277438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1320" height="145" key="GridCell.Tab.1.right/0.0.1364.728@0.0.1364.728" timestamp="1581346456763" />
-    <state width="1876" height="153" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1584964439268" />
+    <state width="1876" height="604" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-148.1920.1080@0.0.1920.1040" timestamp="1585209277438" />
     <state x="540" y="262" key="IDE.errors.dialog" timestamp="1584608977856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
