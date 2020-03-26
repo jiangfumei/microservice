@@ -3,6 +3,7 @@ package com.cloud.authorization.config;
 
 import com.cloud.authorization.service.CustomUserDetailsService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -63,6 +64,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+
+    /**
+     * 为了方便，使用内存模式，在内存中创建一个用户 user 密码 123456。
+     * @param auth
+     * @throws Exception
+     */
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .inMemoryAuthentication()
+                .withUser("user").password("123456").roles("USER");
+    }
+
 
 
 

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -20,22 +21,11 @@ public class WebSecuriyConfig extends WebSecurityConfigurerAdapter {
     @Resource
     UserDetailsServiceImp userDetailsServiceImp;
 
-/*
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("root")
-                .password("{noop}123456") // passwordEncoder.encode("123456")
-                .roles("ADMIN");
-    }
-
-    */
 /**
      * spring security不做拦截处理的请求，忽略静态文件
-     *//*
+     */
 
-    @Override
+/*    @Override
     public void configure(WebSecurity web) throws Exception {
         // @formatter:off
         web.ignoring().antMatchers(
@@ -57,8 +47,17 @@ public class WebSecuriyConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll();
+    }*/
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+        http.authorizeRequests()
+                .antMatchers("/api/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin().permitAll();
     }
-*/
 
     /**
      * 将 AuthenticationManager 注册为 bean , 方便配置 oauth server 的时候使用

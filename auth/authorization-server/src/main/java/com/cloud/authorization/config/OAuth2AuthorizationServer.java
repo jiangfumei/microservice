@@ -2,24 +2,21 @@ package com.cloud.authorization.config;
 
 import com.cloud.authorization.enhancer.CustomTokenEnhancer;
 import com.cloud.authorization.exception.CustomWebResponseExceptionTranslator;
-import com.cloud.authorization.granter.MobileTokenGranter;
-import com.google.common.collect.Lists;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.context.annotation.Primary;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.CompositeTokenGranter;
-import org.springframework.security.oauth2.provider.TokenGranter;
 import org.springframework.security.oauth2.provider.error.WebResponseExceptionTranslator;
+import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
+import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
@@ -27,7 +24,6 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * 平台认证服务器配置
@@ -40,20 +36,13 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     @Resource
     AuthenticationManager authenticationManager; //用来做验证,支持password模式
 
-    @Resource
-    UserDetailsService userDetailsService;//该对象用来为刷新tken作为支持
-
-    // 该对象用来将令牌信息存储到Redis中
-    @Autowired
-    RedisConnectionFactory redisConnectionFactory;
-
-
 
     /**
      * jwt 对称加密密钥
      */
     @Value("${spring.security.oauth2.jwt.signingKey}")
     private String signingKey;
+
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) {
@@ -67,11 +56,36 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("clientapp").secret("112233") // Client 账号、密码。
-                .authorizedGrantTypes("password", "authorization_code", "refresh_token") //设置支持 密码模式 、授权码模式
-                .scopes("read_userinfo", "read_contacts") // 可授权的 Scope
+                .withClient("sampleClientId")
+                .authorizedGrantTypes("implicit")
+                .scopes("read", "write", "foo", "bar")
+                .autoApprove(false)
+                .accessTokenValiditySeconds(3600)
+                .redirectUris("http://localhost:8083/","http://localhost:8086/")
+                .and()
+                .withClient("fooClientIdPassword")
+                .secret(passwordEncoder().encode("secret"))
+                .authorizedGrantTypes("password", "authorization_code", "refresh_token", "client_credentials")
+                .scopes("foo", "read", "write")
+                .accessTokenValiditySeconds(3600)       // 1 hour
+                .refreshTokenValiditySeconds(2592000)  // 30 days
+                .redirectUris("http://www.example.com","http://localhost:8089/","http://localhost:8080/login/oauth2/code/custom","http://localhost:8080/ui-thymeleaf/login/oauth2/code/custom", "http://localhost:8080/authorize/oauth2/code/bael", "http://localhost:8080/login/oauth2/code/bael")
+                .and()
+                .and()
+                .withClient("testImplicitClientId")
+                .authorizedGrantTypes("implicit")
+                .scopes("read", "write", "foo", "bar")
+                .autoApprove(true)
+                .redirectUris("http://www.example.com")
+                .and()
+
+                .withClient("clientapp").secret(passwordEncoder().encode("112233"))// Client 账号、密码。
+                .authorizedGrantTypes("password", "authorization_code", "refresh_token") //设置支持 密码模式 、授权码模式,token刷新
+                .scopes("bar", "read","write") // 可授权的 Scope
                 .accessTokenValiditySeconds(20000)
                 .refreshTokenValiditySeconds(20000);
+
+
 
         ;
     }
@@ -80,7 +94,7 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         // 配置token的数据源、自定义的tokenServices等信息,配置身份认证器，配置认证方式，TokenStore，TokenGranter，OAuth2RequestFactory
         endpoints.tokenStore(tokenStore())
-                .exceptionTranslator(customExceptionTranslator())
+                .exceptionTranslator(customExceptionTranslator())//自定义异常
                 .tokenEnhancer(tokenEnhancerChain())
                 .authenticationManager(authenticationManager);
 
@@ -116,8 +130,13 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     @Bean
     public TokenEnhancerChain tokenEnhancerChain() {
         TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
-        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(new CustomTokenEnhancer(), accessTokenConverter()));
+        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(tokenEnhancer(), accessTokenConverter()));
         return tokenEnhancerChain;
+    }
+
+    @Bean
+    public TokenEnhancer tokenEnhancer() {
+        return new CustomTokenEnhancer();
     }
 
     /**
@@ -129,9 +148,22 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         converter.setSigningKey(signingKey);
-        //converter.setAccessTokenConverter(new CustomerAccessTokenConverter());
         return converter;
     }
 
+    @Bean
+    @Primary
+    public DefaultTokenServices tokenServices() {
+        DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
+        defaultTokenServices.setTokenStore(tokenStore());
+        defaultTokenServices.setSupportRefreshToken(true);
+        return defaultTokenServices;
+    }
+
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
 }
