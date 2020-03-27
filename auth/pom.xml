@@ -4,26 +4,19 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.cloud</groupId>
-        <artifactId>microservice</artifactId>
+        <artifactId>micro-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../</relativePath>
+        <relativePath />
     </parent>
     <groupId>com.cloud</groupId>
     <artifactId>auth</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>auth-resource</name>
+    <name>auth</name>
     <packaging>pom</packaging>
     <description>Demo project for Spring Boot</description>
 
 
     <dependencies>
-       <!-- &lt;!&ndash;lombok&ndash;&gt;
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
--->
         <!--common公共服务中心-->
         <dependency>
             <groupId>com.cloud</groupId>
@@ -61,11 +54,6 @@
         </dependency>
 
     </dependencies>
-
-    <modules>
-        <module>authorization-server</module>
-        <module>authorization-resource</module>
-    </modules>
 
 
 </project>
