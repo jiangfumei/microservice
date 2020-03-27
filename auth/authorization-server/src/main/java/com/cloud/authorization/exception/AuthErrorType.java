@@ -1,12 +1,13 @@
 package com.cloud.authorization.exception;
 
 
+
 import com.cloud.common.exception.ErrorType;
 import lombok.Getter;
 
 
 @Getter
-public enum  AuthErrorType implements ErrorType{
+public enum  AuthErrorType implements ErrorType {
     INVALID_REQUEST(40001, "无效请求"),
     INVALID_CLIENT(40002, "无效client_id"),
     INVALID_GRANT(40003, "无效授权"),

@@ -1,3 +1,4 @@
+/*
 package com.cloud.authorization.granter;
 
 import org.springframework.security.authentication.*;
@@ -10,10 +11,12 @@ import org.springframework.security.oauth2.provider.token.AuthorizationServerTok
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+*/
 /**
  * 短信验证码登陆与用户名密码登陆相似,密码为动态
  * 故继承ResourceOwnerPasswordTokenGranter
- */
+ *//*
+
 public class MobileTokenGranter extends ResourceOwnerPasswordTokenGranter {
 
     private static final String GRANT_TYPE = "mobile";
@@ -55,3 +58,4 @@ public class MobileTokenGranter extends ResourceOwnerPasswordTokenGranter {
         return new OAuth2Authentication(storedOAuth2Request, mobileAuthenticationToken);
     }
 }
+*/

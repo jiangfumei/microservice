@@ -6,14 +6,17 @@
         <artifactId>microservice</artifactId>
         <groupId>com.cloud</groupId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <groupId>com.cloud.microservice</groupId>
     <artifactId>api</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <dependencies>
         <!--common-->
         <dependency>
-            <groupId>com.cloud.microserver</groupId>
+            <groupId>com.cloud</groupId>
             <artifactId>common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

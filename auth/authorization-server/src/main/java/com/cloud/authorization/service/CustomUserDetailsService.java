@@ -25,10 +25,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Resource
     UserProvider userProvider;
 
-
-    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
         String flagKey = "loginFailFlag:"+username;
         String value = (String) redisTemplate.opsForValue().get(flagKey);
         Long timeRest = redisTemplate.getExpire(flagKey, TimeUnit.MINUTES);
@@ -39,4 +36,5 @@ public class CustomUserDetailsService implements UserDetailsService {
         User user = userProvider.getByUsername(username);
         return new SecurityUserDetails(user);
     }
+
 }

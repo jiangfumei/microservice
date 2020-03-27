@@ -4,7 +4,6 @@ import com.cloud.authorization.entity.Permission;
 import com.cloud.authorization.entity.Role;
 import com.cloud.authorization.entity.User;
 import com.cloud.common.base.admin.AdminConstant;
-
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.security.core.GrantedAuthority;
@@ -29,9 +28,8 @@ public class SecurityUserDetails extends User implements UserDetails {
         }
     }
 
-    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<GrantedAuthority> authorityList = new ArrayList<>();
+        List<GrantedAuthority> authorityList = new ArrayList<GrantedAuthority>();
         List<Permission> permissions = this.getPermissions();
         // 添加请求权限
         if(permissions!=null&&permissions.size()>0){
@@ -47,33 +45,30 @@ public class SecurityUserDetails extends User implements UserDetails {
         // 添加角色
         List<Role> roles = this.getRoles();
         if(roles!=null&&roles.size()>0){
-            // lambda表达式
-            roles.forEach(item -> {
-                if(StringUtils.isNotBlank(item.getName())){
-                    authorityList.add(new SimpleGrantedAuthority(item.getName()));
+            for (Role role : roles){
+                if (StringUtils.isNotBlank(role.getName())){
+                    authorityList.add(new SimpleGrantedAuthority(role.getName()));
                 }
-            });
+            }
         }
         return authorityList;
     }
 
-    @Override
-    public boolean isAccountNonExpired() {//账户是否过期
+    public boolean isAccountNonExpired() {
         return true;
     }
 
-    @Override
-    public boolean isAccountNonLocked() {//账户是否禁用
+    public boolean isAccountNonLocked() {
         return AdminConstant.USER_STATUS_LOCK.equals(this.getStatus()) ? false : true;
     }
 
-    @Override
-    public boolean isCredentialsNonExpired() {//密码是否过期
-        return false;
+    public boolean isCredentialsNonExpired() {
+        return true;
     }
 
-    @Override
-    public boolean isEnabled() {//是否启用
+    public boolean isEnabled() {
         return AdminConstant.STATUS_NORMAL.equals(this.getStatus()) ? true : false;
     }
+
+
 }

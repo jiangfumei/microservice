@@ -4,7 +4,6 @@
     <file url="file://$PROJECT_DIR$/api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/auth/authorization-resource/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/auth/authorization-server/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/authorization/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sysadmin/src/main/java" charset="UTF-8" />
   </component>
