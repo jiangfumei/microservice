@@ -14,6 +14,7 @@ com\xy\goone\modules\service\UserService.class
 com\xy\goone\modules\domain\Video.class
 com\xy\goone\modules\model\PlayerModel.class
 com\xy\goone\modules\service\VideoOrderTaskService.class
+com\xy\goone\modules\GoOneApplication.class
 com\xy\goone\modules\service\TeamService.class
 com\xy\goone\modules\model\PlayerModel$PlayerFocus.class
 com\xy\goone\modules\model\PlayerModel$PlayerQuantity.class

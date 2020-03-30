@@ -35,25 +35,6 @@
         </dependency>
 
     </dependencies>
-    <!--多模块打包：只需在启动类所在模块的POM文件：指定打包插件 -->
-    <build>
-        <plugins>
-            <plugin>
-                <!--该插件主要用途：构建可执行的JAR -->
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>7</source>
-                    <target>7</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
 
 
 
