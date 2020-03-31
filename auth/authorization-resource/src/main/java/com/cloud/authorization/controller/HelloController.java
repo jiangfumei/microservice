@@ -1,4 +1,4 @@
-package controller;
+package com.cloud.authorization.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
