@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
 import java.io.IOException;
 
+/*
 public class CustomOauthExceptionSerializer extends StdSerializer<CustomOauthException> {
     public CustomOauthExceptionSerializer() {
         super(CustomOauthException.class);
@@ -15,4 +16,4 @@ public class CustomOauthExceptionSerializer extends StdSerializer<CustomOauthExc
     public void serialize(CustomOauthException value, JsonGenerator gen, SerializerProvider provider) throws IOException {
         gen.writeObject(value.getResult());
     }
-}
+}*/

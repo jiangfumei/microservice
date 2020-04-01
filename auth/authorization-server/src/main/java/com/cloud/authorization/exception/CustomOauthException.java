@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 
+/*
 @EqualsAndHashCode(callSuper = true)
 @Data
 @JsonSerialize(using = CustomOauthExceptionSerializer.class)
@@ -16,7 +17,9 @@ class CustomOauthException extends OAuth2Exception {
 
     CustomOauthException(OAuth2Exception oAuth2Exception) {
         super(oAuth2Exception.getSummary(), oAuth2Exception);
-        /*this.result = ResultUtil.error(AuthErrorType.valueOf(oAuth2Exception.getOAuth2ErrorCode().toUpperCase()), oAuth2Exception.getMessage());*/
+        */
+/*this.result = ResultUtil.error(AuthErrorType.valueOf(oAuth2Exception.getOAuth2ErrorCode().toUpperCase()), oAuth2Exception.getMessage());*//*
+
         this.result = ResultUtil.error(Integer.valueOf(oAuth2Exception.getOAuth2ErrorCode()), oAuth2Exception.getMessage());
     }
-}
+}*/

@@ -6,7 +6,7 @@
         <artifactId>microservice</artifactId>
         <groupId>com.cloud</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../</relativePath>
+        <!--<relativePath>../</relativePath>-->
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cloud.microservice</groupId>

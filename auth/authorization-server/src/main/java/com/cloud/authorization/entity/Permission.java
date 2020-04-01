@@ -5,7 +5,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import javax.persistence.Column;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -41,7 +40,6 @@ public class Permission implements Serializable {
     @ApiModelProperty(value = "前端组件")
     private String component;
 
-    @Column(name = "icon")
     @ApiModelProperty(value = "图标")
     private String icon;
 
@@ -55,7 +53,6 @@ public class Permission implements Serializable {
     private String description;
 
     @ApiModelProperty(value = "排序值")
-    @Column(precision = 10, scale = 2)
     private BigDecimal sortOrder;
 
     @ApiModelProperty(value = "网页链接")

@@ -12,7 +12,7 @@
         <groupId>com.cloud</groupId>
         <artifactId>microservice</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../</relativePath>
+       <!-- <relativePath>../</relativePath>-->
     </parent>
     <groupId>com.cloud</groupId>
     <artifactId>auth</artifactId>

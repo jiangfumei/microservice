@@ -2,11 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
+   <!-- <parent>
         <groupId>com.cloud</groupId>
         <artifactId>micro-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath />
+    </parent>
+-->
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+        <relativePath/>
     </parent>
 
     <packaging>pom</packaging>
@@ -81,11 +89,32 @@
     </dependencies>
 
     <modules>
-        <module>auth/authorization-server</module>
-        <module>auth/authorization-resource</module>
         <module>common</module>
         <module>sysadmin</module>
         <module>auth</module>
         <module>api</module>
     </modules>
+
+<!--
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <finalName>education</finalName>
+    </build>-->
+
 </project>

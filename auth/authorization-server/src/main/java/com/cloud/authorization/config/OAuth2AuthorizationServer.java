@@ -1,7 +1,9 @@
 package com.cloud.authorization.config;
 
 import com.cloud.authorization.enhancer.CustomTokenEnhancer;
+/*
 import com.cloud.authorization.exception.CustomWebResponseExceptionTranslator;
+*/
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -107,10 +109,10 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
      *
      * @return CustomWebResponseExceptionTranslator
      */
-    @Bean
+/*    @Bean
     public CustomWebResponseExceptionTranslator customExceptionTranslator() {
         return new CustomWebResponseExceptionTranslator();
-    }
+    }*/
 
 
     /**

@@ -1,9 +1,6 @@
 package com.cloud.authorization.entity;
 
 import com.cloud.common.base.admin.AdminConstant;
-import com.cloud.sysadmin.entity.Department;
-import com.cloud.sysadmin.entity.RoleDepartment;
-import com.cloud.sysadmin.entity.RolePermission;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -13,13 +10,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
-
 @Data
 @ApiModel(value = "角色表")
 public class Role implements Serializable {
-
     private long id;
-
 
     private Date createTime = new Date();
 
@@ -38,8 +32,8 @@ public class Role implements Serializable {
     @ApiModelProperty(value = "角色说明")
     private String description;
 
-    private Integer status = AdminConstant.STATUS_NORMAL;
 
+    private Integer status = AdminConstant.STATUS_NORMAL;
 
     @ApiModelProperty(value = "创建者")
     private Long createBy;
@@ -47,17 +41,18 @@ public class Role implements Serializable {
     @ApiModelProperty(value = "更新者")
     private Long updateBy;
 
+    private User user;
+
 
     private List<Permission> permissions;
 
-
     private Set<User> users;
 
-
+    @ApiModelProperty(value = "拥有权限")
     private List<RolePermission> rolePermissions;
 
+    @ApiModelProperty(value = "拥有数据权限")
     private List<RoleDepartment> departments;
-
 
     private List<Department> departmentSet;
 

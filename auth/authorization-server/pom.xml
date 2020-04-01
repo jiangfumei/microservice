@@ -6,7 +6,7 @@
         <groupId>com.cloud</groupId>
         <artifactId>auth</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../</relativePath>
+       <!-- <relativePath>../</relativePath>-->
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cloud</groupId>
@@ -15,12 +15,6 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <!--admin 依赖-->
-        <dependency>
-            <groupId>com.cloud</groupId>
-            <artifactId>sysadmin</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -35,6 +29,15 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 
 

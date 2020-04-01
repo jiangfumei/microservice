@@ -6,7 +6,7 @@
         <groupId>com.cloud</groupId>
         <artifactId>microservice</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../</relativePath>
+        <!--<relativePath>../</relativePath>-->
     </parent>
     <groupId>com.cloud</groupId>
     <artifactId>sysadmin</artifactId>
@@ -69,5 +69,14 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

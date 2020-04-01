@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 import org.springframework.security.oauth2.provider.error.WebResponseExceptionTranslator;
 
+/*
 public class CustomWebResponseExceptionTranslator implements WebResponseExceptionTranslator<CustomOauthException> {
 
 
@@ -11,4 +12,4 @@ public class CustomWebResponseExceptionTranslator implements WebResponseExceptio
         OAuth2Exception oAuth2Exception = (OAuth2Exception) e;
         return ResponseEntity.status(oAuth2Exception.getHttpErrorCode()).body(new CustomOauthException(oAuth2Exception));
     }
-}
+}*/
