@@ -1,3 +1,4 @@
+/*
 package com.cloud.authorization.config;
 
 import com.cloud.authorization.entity.Permission;
@@ -72,3 +73,4 @@ public class SecurityUserDetails extends User implements UserDetails {
 
 
 }
+*/

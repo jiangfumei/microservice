@@ -1,3 +1,4 @@
+/*
 package com.cloud.authorization.service;
 
 import com.cloud.authorization.config.SecurityUserDetails;
@@ -38,3 +39,4 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
 }
+*/
