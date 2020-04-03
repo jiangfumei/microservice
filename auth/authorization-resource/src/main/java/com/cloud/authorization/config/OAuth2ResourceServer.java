@@ -17,7 +17,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 /**
  * 资源服务器
- *
+ *多个授权服务可以共用一台资源服务
  * 与授权服务器完全分离且可独立部署，这就是我们为何要在新配置中再次声明一些相同的 bean 的原因
  */
 

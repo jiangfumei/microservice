@@ -1,13 +1,11 @@
 package com.cloud.authorization.config;
 
 import com.cloud.authorization.enhancer.CustomTokenEnhancer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -25,7 +23,7 @@ import javax.annotation.Resource;
 import java.util.Arrays;
 
 /**
- * 平台认证服务器配置
+ * 平台认证服务器配置,用来授权
  */
 @Configuration
 @EnableAuthorizationServer
