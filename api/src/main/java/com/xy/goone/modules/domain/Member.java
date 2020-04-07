@@ -1,6 +1,6 @@
 package com.xy.goone.modules.domain;
 
-import io.swagger.annotations.ApiModel;
+import com.cloud.common.base.api.ApiConstant;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -12,9 +12,9 @@ import java.util.Date;
  */
 @Data
 @Entity
-@ApiModel(value = "选手视频关联表")
-@Table(name = "go_player_video")
-public class PlayerVideo {
+@Table(name = "member")
+public class Member {
+
     @Id
     @Column(columnDefinition = "INT")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,13 +25,22 @@ public class PlayerVideo {
     private Date createTime = new Date();
 
     @Basic
-    @Column(name = "player_id")
-    private int playerId;
+    @Column(name = "nick_name")
+    private String nickName;
 
     @Basic
-    @Column(name = "video_id")
-    private int videoId;
+    @Column(name = "password")
+    private String password;
+
+    @Basic
+    @Column(name = "email")
+    private String email;
 
 
+    @Basic
+    @Column(name = "status")
+    private int status = ApiConstant.STATUS_NORMAL;
+
+    private String phone;
 
 }
