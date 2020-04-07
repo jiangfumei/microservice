@@ -20,7 +20,7 @@ public class OauthDao {
 
     public UserEntity getUserDetails(String username) {
         Collection<GrantedAuthority> grantedAuthoritiesList = new ArrayList<>();
-        String userSQLQuery = "SELECT * FROM USERS WHERE USERNAME=?";
+        String userSQLQuery = "SELECT * FROM USER WHERE USERNAME=?";
         List<UserEntity> list = jdbcTemplate.query(userSQLQuery, new String[] { username },
                 (ResultSet rs, int rowNum) -> {
 

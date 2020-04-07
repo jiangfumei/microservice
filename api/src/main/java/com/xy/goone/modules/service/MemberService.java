@@ -25,13 +25,5 @@ public class MemberService {
 
     }
 
-    public Member findByEmailAndPassword(String email, String password) {
-        return memberRepository.findByEmailAndPassword(email, password);
-    }
-
-
-    public Member findByEmailAndStatus(String email, int status) {
-        return memberRepository.findByEmailAndStatus(email, status);
-    }
 
 }
