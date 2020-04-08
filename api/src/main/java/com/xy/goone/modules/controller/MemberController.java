@@ -8,7 +8,6 @@ import com.xy.goone.modules.domain.Member;
 import com.xy.goone.modules.service.MemberService;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -69,8 +68,7 @@ public class MemberController {
     @RequestMapping(method = RequestMethod.POST,value = "/modifySetings")
     @ApiOperation(value = "编辑用户信息")
     public Result<Object> modify(Member member){
-        //Member user =
-        //member.setPhone();
+
         return ResultUtil.success("successfully");
     }
 

@@ -29,13 +29,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //http.requestMatchers()指定了哪些请求会被匹配上,requestMatchers()是指定将Spring安全配置应用于哪些请求。
+        //.authorizeRequests()该方法用于配置权限
+        //对配置的url不进行验证
         http.csrf().disable();
         http
-                .requestMatchers().antMatchers("/", "/rpc/**", "/index.html", "/login**",
-                "/v2/**", "/swagger-resources/**", "/swagger-ui.html", "/configuration/**")//
+                .requestMatchers().antMatchers( "/index.html", "/api/**","/login**",
+                "/actuator/**", "/resource/**","/swagger-resources/**", "/swagger-ui.html", "/configuration/**")//
                 .and()
                 .authorizeRequests()
-                .antMatchers("/admin/**").permitAll()
+                .antMatchers("/registe","/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll();
@@ -51,14 +54,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-
-
-   /*
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("user").password(passwordEncoder().encode("123456")).roles("USER");
-    }*/
 
 
     /**
@@ -84,7 +79,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-
+    /**
+     * 跨域请求
+     * @return
+     */
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
