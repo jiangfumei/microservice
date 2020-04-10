@@ -62,7 +62,7 @@
                 <artifactId>gson</artifactId>
                 <version>${googlecodejson}</version>
             </dependency>
-
+            <!--gateway-->
             <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-gateway -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
