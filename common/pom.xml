@@ -16,9 +16,9 @@
     <name>common</name>
     <description>Demo project for Spring Boot</description>
 
-    <properties>
+   <!-- <properties>
         <swagger.version>2.9.2</swagger.version>
-    </properties>
+    </properties>-->
 
     <dependencies>
         <!--nacos服务中心-->
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <version>2.2.0.RELEASE</version>
+            <!--<version>2.2.0.RELEASE</version>-->
         </dependency>
         <!--web-->
         <dependency>
@@ -37,7 +37,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
-            <version>2.2.3.RELEASE</version>
+            <!--<version>2.2.3.RELEASE</version>-->
         </dependency>
         <!--rabbitmq-->
         <dependency>
@@ -53,12 +53,12 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger.version}</version>
+            <!--<version>${swagger.version}</version>-->
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>${swagger.version}</version>
+            <!--<version>${swagger.version}</version>-->
         </dependency>
 
     </dependencies>

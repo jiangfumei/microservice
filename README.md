@@ -10,6 +10,7 @@
 * 网关 SpringCloud Gateway
 * 认证授权 Spring Cloud Oauth2
 * 服务调用 Feign
+* Maven bom机制管理所有组件的版本。
 * docker、docker-compose
 ### 项目目录结构
 * common: 公共服务中心。包括对redis rabbitmq 公共配置及访问类和工具包、异常类等
