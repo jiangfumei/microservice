@@ -43,26 +43,43 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     @Value("${spring.security.oauth2.jwt.signingKey}")
     private String signingKey;
 
+    private static final String DEMO_RESOURCE_ID = "order";
+
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) {
-        // 支持将client参数放在header或body中
+        // 支持将client参数放在header或body中,允许表单验证
         oauthServer.allowFormAuthenticationForClients();
         oauthServer.tokenKeyAccess("isAuthenticated()")
                 .checkTokenAccess("permitAll()");
     }
 
 
-    //授权模式 密码模式
+    //授权模式: 密码模式
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("clientapp").secret(passwordEncoder.encode("112233"))// Client 账号、密码。
-                .authorizedGrantTypes("password", "authorization_code", "refresh_token") //设置支持 密码模式 、授权码模式,token刷新
+                .withClient("client").secret(passwordEncoder.encode("123456"))// Client 账号、密码。
+                .authorizedGrantTypes("password", "client_credentials","authorization_code", "refresh_token") //设置支持 密码模式 、授权码模式,token刷新
                 .scopes("bar", "read","write") // 可授权的 Scope
                 .accessTokenValiditySeconds(20000)
                 .refreshTokenValiditySeconds(20000);
+
+      /*  //配置两个客户端,一个用于password认证一个用于client认证
+        clients.inMemory().withClient("client_1")
+                .resourceIds(DEMO_RESOURCE_ID)
+                .authorizedGrantTypes("client_credentials", "refresh_token")
+                .scopes("select")
+                .authorities("client")
+                .secret("123456")
+                .and().withClient("client_2")
+                .resourceIds(DEMO_RESOURCE_ID)
+                .authorizedGrantTypes("password", "refresh_token")
+                .scopes("select")
+                .authorities("client")
+                .secret("123456");*/
     }
+
 
 
     @Override
@@ -73,7 +90,6 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
                 .authenticationManager(authenticationManager);
 
     }
-
 
     /**
      * token的持久化

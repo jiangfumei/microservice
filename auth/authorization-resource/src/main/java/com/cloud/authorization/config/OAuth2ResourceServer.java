@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
@@ -32,6 +33,15 @@ public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
     @Autowired
     CustomAccessTokenConverter customAccessTokenConverter;
 
+    private static final String DEMO_RESOURCE_ID = "order";
+
+
+    @Override
+    public void configure(ResourceServerSecurityConfigurer resources) {
+        resources.resourceId(DEMO_RESOURCE_ID).stateless(true);
+    }
+
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http
@@ -40,6 +50,25 @@ public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
                 .requestMatchers().antMatchers("/api/**");
     }
 
+
+/* @Override
+    public void configure(HttpSecurity http) throws Exception {
+        http
+                .authorizeRequests()
+                .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
+                .antMatchers(
+                        "/v2/api-docs/**",
+                        "/swagger-resources/**",
+                        "/swagger-ui.html",
+                        "/webjars/**"
+                ).permitAll()
+                .anyRequest().authenticated()
+                .and()
+                //统一自定义异常
+                .exceptionHandling()
+                .and()
+                .csrf().disable();
+    }*/
 
     @Bean
     public TokenStore tokenStore() {

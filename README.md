@@ -1,7 +1,16 @@
 # microservice
 
 ## springcloud微服务
-注册服务中心使用nacos
+
+用到的组件有：
+
+* 注册中心、配置中心 Nacos
+* 限流 Sentinel
+* 分布式事务 Seata
+* 网关 SpringCloud Gateway
+* 认证授权 Spring Cloud Oauth2
+* 服务调用 Feign
+* docker、docker-compose
 ### 项目目录结构
 * common: 公共服务中心。包括对redis rabbitmq 公共配置及访问类和工具包、异常类等
 * sysadmin: admin后台管理项目。主要提供web端接口的访问
@@ -15,4 +24,7 @@
 
 实现方式
 AccessToken转换器-定义token的生成方式，这里使用JWT生成token，对称加密只需要加入key等其他信息（自定义）。
+
+
+
 

@@ -13,7 +13,10 @@ import com.cloud.sysadmin.entity.UserRole;
 import com.cloud.sysadmin.repository.DepartMentRepository;
 import com.cloud.sysadmin.repository.UserRepository;
 import com.cloud.sysadmin.repository.UserRoleRepository;
-import com.cloud.sysadmin.service.*;
+import com.cloud.sysadmin.service.DepartmentHeaderService;
+import com.cloud.sysadmin.service.RoleService;
+import com.cloud.sysadmin.service.UserRoleService;
+import com.cloud.sysadmin.service.UserService;
 import com.cloud.sysadmin.util.SecurityUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -23,8 +26,8 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -60,9 +63,6 @@ public class UserController {
 
     @Resource
     RedisTemplate redisTemplate;
-
-    @Resource
-    DepartmentService departmentService;
 
     @Resource
     DepartMentRepository departMentRepository;
@@ -102,6 +102,28 @@ public class UserController {
         }
         return ResultUtil.data(u);
     }
+
+    @GetMapping("/getCurrentUser")
+    public Object getCurrentUser(Authentication authentication) {
+        return authentication.getPrincipal();
+    }
+
+  /*  *//**
+     * 获取当前认证用户的信息
+     *//*
+    @GetMapping("/getPrinciple")
+    public OAuth2Authentication getPrinciple(OAuth2Authentication oAuth2Authentication,
+                                             Principal principal,
+                                             Authentication authentication){
+        log.info(oAuth2Authentication.getUserAuthentication().getAuthorities().toString());
+        log.info(oAuth2Authentication.toString());
+        log.info("principal.toString()" + principal.toString());
+        log.info("principal.getName()" + principal.getName());
+        log.info("authentication:" + authentication.getAuthorities().toString());
+
+        return oAuth2Authentication;
+    }*/
+
 
     @RequestMapping(value = "/info",method = RequestMethod.GET)
     @ApiOperation(value = "获取当前登录用户接口")

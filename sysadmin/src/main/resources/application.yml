@@ -1,7 +1,8 @@
 spring:
   profiles:
     active: dev
-
+  application:
+    name: sysadmin
 
 # 忽略url
 ignored:
@@ -12,7 +13,7 @@ ignored:
     - /admin/**
     - /dictData/getByType/**
     - /user/regist
-    - /xboot/common/**
+    - /microservice/common/**
     - /druid/**
     - /swagger-ui.html
     - /swagger-resources/**
@@ -22,7 +23,7 @@ ignored:
     - /**/*.css
     - /**/*.png
     - /**/*.ico
-    - /xboot/test/**
+    - /microservice/test/**
   # 限流及黑名单不拦截的路径
   limitUrls:
     - /**/*.js

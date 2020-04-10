@@ -11,3 +11,14 @@ spring:
       config:
         server-addr: ${REGISTER_HOST:localhost}:${REGISTER_PORT:8848}
         file-extension: yml
+
+
+swagger:
+  title: Microservice API在线接口文档
+  description: Microservice API在线接口文档
+  version: 1.0.0
+  termsOfServiceUrl: https://ifumei.cc
+  contact:
+    name: jiangfumei
+    url: https://ifumei.cc
+    email: fumeijiang666@gmail.com

@@ -1,5 +1,5 @@
 server:
-  port: 6635
+  port: 8002
 
 spring:
   datasource:
@@ -8,3 +8,5 @@ spring:
     password: ${DATASOURCE_PASSWORD:root}
     #url: jdbc:mysql://localhost:3306/microservice?useUnicode=true&characterEncoding=utf-8&useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
+
+

@@ -1,7 +1,5 @@
 
 spring:
-  application:
-    name: sysadmin
   cloud:
     nacos:
       discovery:
