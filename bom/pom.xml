@@ -21,7 +21,7 @@
         <swagger.version>2.9.2</swagger.version>
         <openfeign.version>2.2.0.RELEASE</openfeign.version>
         <fasterxml.jackson.version>2.9.10.1</fasterxml.jackson.version>
-        <gateway.version>2.2.2.RELEASE</gateway.version>
+       <!-- <gateway.version>2.2.1.RELEASE</gateway.version>-->
         <security.jwt.version>1.1.0.RELEASE</security.jwt.version>
     </properties>
 
@@ -60,19 +60,17 @@
             </dependency>
             <!--gateway-->
             <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-gateway -->
-            <dependency>
+           <!-- <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-gateway</artifactId>
                 <version>${gateway.version}</version>
-            </dependency>
-
+            </dependency>-->
             <!--redis-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-redis</artifactId>
                 <version>${redis.version}</version>
             </dependency>
-
             <!--Swagger2 - RESTful API文档-->
             <dependency>
                 <groupId>io.springfox</groupId>
@@ -97,22 +95,22 @@
                 <version>${fasterxml.jackson.version}</version>
                 <scope>compile</scope>
             </dependency>
-
+            <!--alibaba nacos config-->
             <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba-nacos-config -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
                 <version>${cloud-alibaba.version}</version>
             </dependency>
-
+            <!--security jwt-->
             <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-jwt -->
             <dependency>
                 <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-jwt</artifactId>
                 <version>${security.jwt.version}</version>
             </dependency>
-        </dependencies>
 
+        </dependencies>
 
     </dependencyManagement>
 

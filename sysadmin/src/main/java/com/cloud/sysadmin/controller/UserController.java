@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.security.Principal;
 import java.util.List;
 import java.util.Set;
 
@@ -108,22 +109,16 @@ public class UserController {
         return authentication.getPrincipal();
     }
 
-  /*  *//**
-     * 获取当前认证用户的信息
-     *//*
-    @GetMapping("/getPrinciple")
-    public OAuth2Authentication getPrinciple(OAuth2Authentication oAuth2Authentication,
-                                             Principal principal,
-                                             Authentication authentication){
-        log.info(oAuth2Authentication.getUserAuthentication().getAuthorities().toString());
-        log.info(oAuth2Authentication.toString());
-        log.info("principal.toString()" + principal.toString());
-        log.info("principal.getName()" + principal.getName());
-        log.info("authentication:" + authentication.getAuthorities().toString());
 
-        return oAuth2Authentication;
-    }*/
-
+    /**
+     * 获取授权的用户信息
+     * @param principal 当前用户
+     * @return 授权信息
+     */
+    @GetMapping("current/get")
+    public Principal user(Principal principal){
+        return principal;
+    }
 
     @RequestMapping(value = "/info",method = RequestMethod.GET)
     @ApiOperation(value = "获取当前登录用户接口")

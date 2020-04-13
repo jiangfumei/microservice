@@ -1,7 +1,7 @@
 package com.cloud.authorization.config;
 
-
 import com.cloud.authorization.service.CustomDetailsService;
+import com.cloud.authorization.service.UserDeatilsServiceImp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -27,6 +28,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     CustomDetailsService customDetailsService;
 
 
+    /**
+     * http安全配置
+     * @param http http安全对象
+     * @throws Exception http安全异常信息
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //http.requestMatchers()指定了哪些请求会被匹配上,requestMatchers()是指定将Spring安全配置应用于哪些请求。
@@ -34,15 +40,27 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         //对配置的url不进行验证
         http.csrf().disable();
         http
-                .requestMatchers().antMatchers( "/index.html", "/api/**","/login**",
+                .requestMatchers().antMatchers( "/index.html", "/api/**","/user/login",
                 "/actuator/**", "/resource/**","/swagger-resources/**", "/swagger-ui.html", "/configuration/**")//
                 .and()
                 .authorizeRequests()
-                .antMatchers("/registe","/login").permitAll()
+                .antMatchers("/registe","/login","/user/getByUsername").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll();
     }
+
+    /*@Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers(
+                "/error",
+                "/static/**",
+                "/v2/api-docs/**",
+                "/swagger-resources/**",
+                "/webjars/**",
+                "/favicon.ico"
+        );
+    }*/
 
 
     /**
@@ -65,7 +83,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     @Autowired
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(customDetailsService).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
         //auth.userDetailsService(clientDetailsService).passwordEncoder(passwordEncoder());
     }
 
@@ -77,6 +95,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Override
+    @Bean
+    public UserDetailsService userDetailsService(){
+        return new UserDeatilsServiceImp();
     }
 
 

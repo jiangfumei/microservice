@@ -12,6 +12,10 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.ClientDetails;
+import org.springframework.security.oauth2.provider.ClientDetailsService;
+import org.springframework.security.oauth2.provider.ClientRegistrationException;
+import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
@@ -20,6 +24,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 import javax.annotation.Resource;
+import javax.sql.DataSource;
 import java.util.Arrays;
 
 /**
@@ -35,6 +40,9 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
 
     @Resource
     BCryptPasswordEncoder passwordEncoder;
+
+    @Resource
+    DataSource dataSource;
 
 
     /**
@@ -53,9 +61,26 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
         oauthServer.tokenKeyAccess("isAuthenticated()")
                 .checkTokenAccess("permitAll()");
     }
+/*
+    *//**
+     * 从数据库读取clientDetails相关配置
+     * 有InMemoryClientDetailsService 和 JdbcClientDetailsService 两种方式选择
+     *//*
+    @Bean
+    public ClientDetailsService clientDetails() {
+        return new JdbcClientDetailsService(dataSource);
+    }
+
+    *//**
+     * client存储方式，此处使用jdbc存储
+     *//*
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        clients.withClientDetails(clientDetails());
+    }*/
 
 
-    //授权模式: 密码模式
+     //授权模式: 密码模式
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
@@ -79,7 +104,6 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
                 .authorities("client")
                 .secret("123456");*/
     }
-
 
 
     @Override

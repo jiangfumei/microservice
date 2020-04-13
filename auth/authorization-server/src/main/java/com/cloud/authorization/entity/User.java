@@ -1,10 +1,12 @@
 package com.cloud.authorization.entity;
 
 import com.cloud.common.base.admin.AdminConstant;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.beans.Transient;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -46,6 +48,7 @@ public class User implements Serializable {
     @ApiModelProperty(value = "更新者")
     private Long updateBy;
 
+    @JsonIgnore
     private java.util.List<Role> roles;
 
     @ApiModelProperty(value = "所属部门id")
@@ -65,5 +68,6 @@ public class User implements Serializable {
 
     @ApiModelProperty(value = "手机")
     private String phone;
+
 
 }

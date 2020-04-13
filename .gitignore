@@ -29,4 +29,5 @@ hs_err_pid*
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
- .idea/ workspace.xml 
+.idea/ workspace.xml
+./target/

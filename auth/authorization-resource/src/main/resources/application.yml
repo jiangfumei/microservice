@@ -11,6 +11,10 @@ spring:
       jwt:
         signingKey: oauth
 
+      resource:
+        user-info-uri: http://localhost:8002/user/current/get
+        id: sysadmin
+
   cloud:
     nacos:
       discovery:

@@ -1,3 +1,4 @@
+/*
 package com.cloud.sysadmin.security;
 
 import com.cloud.common.base.admin.AdminConstant;
@@ -30,9 +31,11 @@ public class MySecurityMetadataSource implements FilterInvocationSecurityMetadat
 
     private Map<String, Collection<ConfigAttribute>> map = null;
 
-    /**
+    */
+/**
      * 加载权限表中所有操作请求权限
-     */
+     *//*
+
     public void loadResourceDefine(){
 
         map = new HashMap<>(16);
@@ -52,14 +55,16 @@ public class MySecurityMetadataSource implements FilterInvocationSecurityMetadat
         }
     }
 
-    /**
+    */
+/**
      * 判定用户请求的url是否在权限表中
      * 如果在权限表中，则返回给decide方法，用来判定用户是否有此权限
      * 如果不在权限表中则放行
      * @param o
      * @return
      * @throws IllegalArgumentException
-     */
+     *//*
+
 
     @Override
     public Collection<ConfigAttribute> getAttributes(Object o) throws IllegalArgumentException {
@@ -89,3 +94,4 @@ public class MySecurityMetadataSource implements FilterInvocationSecurityMetadat
         return true;
     }
 }
+*/

@@ -7,7 +7,7 @@ import com.cloud.sysadmin.entity.Permission;
 import com.cloud.sysadmin.entity.RolePermission;
 import com.cloud.sysadmin.entity.User;
 import com.cloud.sysadmin.repository.PermissionRepository;
-import com.cloud.sysadmin.security.MySecurityMetadataSource;
+/*import com.cloud.sysadmin.security.MySecurityMetadataSource;*/
 import com.cloud.sysadmin.service.PermissionService;
 import com.cloud.sysadmin.service.RolePermissionService;
 import com.cloud.sysadmin.util.SecurityUtil;
@@ -52,9 +52,9 @@ public class PermissionController {
     @Resource
     PermissionRepository permissionRepository;
 
-    @Resource
+   /* @Resource
     MySecurityMetadataSource mySecurityMetadataSource;
-
+*/
     @Resource
     RolePermissionService rolePermissionService;
 
@@ -178,7 +178,7 @@ public class PermissionController {
         }
         Permission u = permissionRepository.save(permission);
         //重新加载权限
-        mySecurityMetadataSource.loadResourceDefine();
+        //mySecurityMetadataSource.loadResourceDefine();
         //手动删除缓存
         redisTemplate.delete("permission::allList");
         return new ResultUtil<Permission>().setData(u);
@@ -201,7 +201,7 @@ public class PermissionController {
         }
         Permission u = permissionService.update(permission);
         //重新加载权限
-        mySecurityMetadataSource.loadResourceDefine();
+       // mySecurityMetadataSource.loadResourceDefine();
         //手动批量删除缓存
         Set<String> keys = redisTemplate.keys("userPermission:" + "*");
         redisTemplate.delete(keys);
@@ -228,7 +228,7 @@ public class PermissionController {
             permissionRepository.deleteById(id);
         }
         //重新加载权限
-        mySecurityMetadataSource.loadResourceDefine();
+       // mySecurityMetadataSource.loadResourceDefine();
         //手动删除缓存
         redisTemplate.delete("permission::allList");
         return ResultUtil.success("批量通过id删除数据成功");
