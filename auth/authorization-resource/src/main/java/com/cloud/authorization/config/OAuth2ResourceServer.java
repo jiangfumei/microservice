@@ -51,7 +51,7 @@ public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
     }*/
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.requestMatchers().and().authorizeRequests().antMatchers("/user/login", "/user/registe","/user/getByUsername").permitAll()
+        http.requestMatchers().and().authorizeRequests().antMatchers("/user/login", "/user/registe").permitAll()
                 .antMatchers("/springjwt/**").authenticated();
     }
 
