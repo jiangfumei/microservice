@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class UserFeignFallBack implements UserFeign {
 
     @Override
-    public User getByUsername(String name) {
+    public User getByUsername(String username) {
         return new User();
     }
 

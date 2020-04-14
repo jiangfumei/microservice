@@ -12,10 +12,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.ClientDetails;
-import org.springframework.security.oauth2.provider.ClientDetailsService;
-import org.springframework.security.oauth2.provider.ClientRegistrationException;
-import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
@@ -85,7 +81,7 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
                 .withClient("client").secret(passwordEncoder.encode("123456"))// Client 账号、密码。
-                .authorizedGrantTypes("password", "client_credentials","authorization_code", "refresh_token") //设置支持 密码模式 、授权码模式,token刷新
+                .authorizedGrantTypes("password", /*"client_credentials","authorization_code",*/ "refresh_token") //设置支持 密码模式 、授权码模式,token刷新
                 .scopes("bar", "read","write") // 可授权的 Scope
                 .accessTokenValiditySeconds(20000)
                 .refreshTokenValiditySeconds(20000);

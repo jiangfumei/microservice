@@ -1,6 +1,7 @@
 package com.cloud.sysadmin.entity;
 
 import com.cloud.common.base.admin.AdminConstant;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -64,12 +65,14 @@ public class User implements Serializable {
     /**
      * 用户<->角色 多对多关系，设置级联删除，懒加载，中间表user_role，[user_id<->role_id]
      */
+    @JsonIgnore
     @ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY)
     @JoinTable(name = "user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
             @JoinColumn(name = "role_id") })
     private java.util.List<Role> roles;
 
     @ApiModelProperty(value = "所属部门id")
+    @Column(name = "department_id")
     private long departmentId;
 
     @Transient

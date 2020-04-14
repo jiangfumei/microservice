@@ -340,9 +340,9 @@ public class UserController {
         return ResultUtil.success("批量通过id删除数据成功");
     }
 
-    @RequestMapping(value = "/getByUsername",method = RequestMethod.POST)
-    public User getByUsername(@PathVariable String name){
-        return userRepository.findByUsername(name);
+    @RequestMapping(value = "/getByUsername/{name}",method = RequestMethod.POST)
+    public User getByUsername(@PathVariable(value = "name") String name){
+        return userRepository.findUserByUsername(name);
     }
 
 

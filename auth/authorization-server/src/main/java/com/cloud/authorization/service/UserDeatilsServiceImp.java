@@ -24,7 +24,7 @@ public class UserDeatilsServiceImp implements UserDetailsService {
             return new org.springframework.security.core.userdetails.User(
                     user.getUsername(),
                     user.getPassword(),
-                    AuthorityUtils.createAuthorityList("admin")
+                    AuthorityUtils.createAuthorityList("ROLE_SYSTEMADMIN")
             ) ;
         }else{
             throw  new UsernameNotFoundException("用户["+userName+"]不存在");

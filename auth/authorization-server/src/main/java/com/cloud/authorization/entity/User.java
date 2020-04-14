@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import java.beans.Transient;
+import javax.persistence.Column;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -14,6 +14,7 @@ import java.util.List;
 @Data
 @ApiModel(value = "用户表")
 public class User implements Serializable {
+
     private long id;
 
     private Date createTime = new Date();
@@ -52,6 +53,7 @@ public class User implements Serializable {
     private java.util.List<Role> roles;
 
     @ApiModelProperty(value = "所属部门id")
+    @Column(name = "department_id")
     private long departmentId;
 
     @ApiModelProperty(value = "所属部门名称")
