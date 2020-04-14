@@ -5,10 +5,23 @@ spring:
   application:
     name: authorization-server
 
-  security:
-    oauth2:
-      jwt:
-        signingKey: oauth
+    security:
+      oauth2:
+        resource:
+          user-info-uri: http://localhost:6002/user/current/get
+          id: account-service
+
+# 集成了资源服务
+# 直接放行URL
+ignore:
+  urls:
+    - /index.html
+    - /static/**
+    - /authentication/form
+    - /authentication/require
+    - /oauth/**
+    - /actuator/**
+    - /druid/*
 
   cloud:
     nacos:

@@ -39,11 +39,19 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>5.1.47</version>
     </dependency>
-   <!-- &lt;!&ndash; security &ndash;&gt;
+
+   <!-- &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-oauth2 &ndash;&gt;
     <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-security</artifactId>
-    </dependency>-->
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-oauth2</artifactId>
+        <version>2.2.1.RELEASE</version>
+    </dependency>
+
+     &lt;!&ndash; security &ndash;&gt;
+     <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-security</artifactId>
+     </dependency>-->
 
     <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-core -->
     <dependency>
@@ -73,6 +81,10 @@
     <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-actuator-autoconfigure</artifactId>
     </dependency>
 
 </dependencies>

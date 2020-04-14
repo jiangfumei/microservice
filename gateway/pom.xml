@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>gateway</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
 
@@ -33,6 +34,29 @@
             <artifactId>spring-cloud-starter-gateway</artifactId>
             <version>2.2.1.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-resource-server</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-oauth2 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+            <version>2.2.1.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+            <version>2.4.0.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+
 
     </dependencies>
 

@@ -346,5 +346,11 @@ public class UserController {
     }
 
 
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    public String getString(){
+        return "hello";
+    }
+
+
 
 }

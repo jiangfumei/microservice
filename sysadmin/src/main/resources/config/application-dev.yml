@@ -10,3 +10,10 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 
 
+  security:
+    oauth2:
+      resource:
+        user-info-uri: http://localhost:6667/user/current/get
+        id: sysadmin
+
+

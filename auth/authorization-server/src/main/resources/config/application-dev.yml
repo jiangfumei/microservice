@@ -7,6 +7,19 @@ spring:
     username: ${DATASOURCE_USERNAME:root}
     password: ${DATASOURCE_PASSWORD:root}
     driver-class-name: com.mysql.jdbc.Driver
+  security:
+    oauth2:
+      client:
+        clientId: user-client
+        clientSecret: user-secret-8888
+        accessTokenValiditySeconds: 20000
+        refreshTokenValiditySeconds: 20000
+        user-authorization-uri: http://localhost:6667/oauth/authorize
+        access-token-uri: http://localhost:6667/oauth/token
+      resource:
+        jwt:
+          key-uri: http://localhost:6667/oauth/token_key
+          key-value: oauth
 
 
 
