@@ -18,6 +18,7 @@ public class CustomTokenEnhancer implements TokenEnhancer {
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken oAuth2AccessToken, OAuth2Authentication oAuth2Authentication) {
         final Map<String, Object> additionalInfo = Maps.newHashMap();
+        /*User user = (User) oAuth2Authentication.getPrincipal();*/
         //User user = (User) oAuth2Authentication.getUserAuthentication().getPrincipal();
         //自定义token内容，加入组织机构信息
         additionalInfo.put("jwt-extra", oAuth2Authentication.getName()+randomAlphabetic(4));

@@ -16,4 +16,9 @@ spring:
         user-info-uri: http://localhost:6667/user/current/get
         id: sysadmin
 
+        #client:
+        #clientId: user-client
+        #clientSecret: user-secret-8888
+        #access-token-uri: http://localhost:6667/oauth/token
+
 

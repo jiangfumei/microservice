@@ -21,8 +21,9 @@
         <swagger.version>2.9.2</swagger.version>
         <openfeign.version>2.2.0.RELEASE</openfeign.version>
         <fasterxml.jackson.version>2.9.10.1</fasterxml.jackson.version>
-       <!-- <gateway.version>2.2.1.RELEASE</gateway.version>-->
+        <!--<gateway.version>2.2.2.RELEASE</gateway.version>-->
         <security.jwt.version>1.1.0.RELEASE</security.jwt.version>
+        <starter-oauth2.version>2.2.1.RELEASE</starter-oauth2.version>
     </properties>
 
     <dependencyManagement>
@@ -58,9 +59,9 @@
                 <artifactId>gson</artifactId>
                 <version>${googlecodejson}</version>
             </dependency>
-            <!--gateway-->
-            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-gateway -->
-           <!-- <dependency>
+          <!--  &lt;!&ndash;gateway&ndash;&gt;
+            &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-gateway &ndash;&gt;
+            <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-gateway</artifactId>
                 <version>${gateway.version}</version>
@@ -109,6 +110,13 @@
                 <artifactId>spring-security-jwt</artifactId>
                 <version>${security.jwt.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-oauth2 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-oauth2</artifactId>
+                <version>${starter-oauth2.version}</version>
+            </dependency>
+
 
         </dependencies>
 

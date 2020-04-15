@@ -104,22 +104,6 @@ public class UserController {
         return ResultUtil.data(u);
     }
 
-    @GetMapping("/getCurrentUser")
-    public Object getCurrentUser(Authentication authentication) {
-        return authentication.getPrincipal();
-    }
-
-
-    /**
-     * 获取授权的用户信息
-     * @param principal 当前用户
-     * @return 授权信息
-     */
-    @GetMapping("current/get")
-    public Principal user(Principal principal){
-        return principal;
-    }
-
     @RequestMapping(value = "/info",method = RequestMethod.GET)
     @ApiOperation(value = "获取当前登录用户接口")
     public Result<User> getUserInfo(){
