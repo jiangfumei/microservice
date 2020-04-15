@@ -9,20 +9,18 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 
 import java.util.Map;
 
-import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
-
 /**
  * 自定义jwt
  */
 public class CustomTokenEnhancer implements TokenEnhancer {
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken oAuth2AccessToken, OAuth2Authentication oAuth2Authentication) {
+        //Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
+        User user = (User) oAuth2Authentication.getPrincipal();
+        //User oo = (User) oAuth2Authentication.getUserAuthentication().getPrincipal();
+        String userName = user.getUsername();
         final Map<String, Object> additionalInfo = Maps.newHashMap();
-        /*User user = (User) oAuth2Authentication.getPrincipal();*/
-        //User user = (User) oAuth2Authentication.getUserAuthentication().getPrincipal();
-        //自定义token内容，加入组织机构信息
-        additionalInfo.put("jwt-extra", oAuth2Authentication.getName()+randomAlphabetic(4));
-        //additionalInfo.put("username",user.getUsername());
+        additionalInfo.put("username",userName);
         ((DefaultOAuth2AccessToken) oAuth2AccessToken).setAdditionalInformation(additionalInfo);
         return oAuth2AccessToken;
     }

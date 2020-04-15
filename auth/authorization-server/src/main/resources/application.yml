@@ -5,12 +5,6 @@ spring:
   application:
     name: authorization-server
 
-    security:
-      oauth2:
-        resource:
-          user-info-uri: http://localhost:6002/user/current/get
-          id: account-service
-
 # 集成了资源服务
 # 直接放行URL
 ignore:

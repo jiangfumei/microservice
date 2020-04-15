@@ -1,6 +1,6 @@
 package com.cloud.authorization.controller;
 
-import com.cloud.authorization.entity.User;
+import com.cloud.authorization.entity.UserEntity;
 import com.cloud.authorization.feign.UserFeign;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +16,7 @@ public class UserFeignController {
     UserFeign userFeign;
 
     @RequestMapping(value = "/getUser" , method = RequestMethod.POST)
-    public User search(@PathVariable(value = "username") String username){
+    public UserEntity search(@PathVariable(value = "username") String username){
         return userFeign.getByUsername(username);
     }
 
@@ -25,7 +25,7 @@ public class UserFeignController {
      * @param principal 当前用户
      * @return 授权信息
      */
-    @GetMapping("/user/current/get")
+    @GetMapping("/user")
     public Principal user(Principal principal){
         return principal;
     }

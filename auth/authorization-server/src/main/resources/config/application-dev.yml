@@ -15,8 +15,12 @@ spring:
         accessTokenValiditySeconds: 20000
         refreshTokenValiditySeconds: 20000
         user-authorization-uri: http://localhost:6667/oauth/authorize
+        grant_type: password
+        scope: all
         access-token-uri: http://localhost:6667/oauth/token
       resource:
+        token-info-uri: http://localhost:6667/oauth/check_token
+        user-info-uri: http://localhost:6667/user
         jwt:
           key-uri: http://localhost:6667/oauth/token_key
           key-value: oauth

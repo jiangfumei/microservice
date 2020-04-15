@@ -13,8 +13,15 @@ spring:
   security:
     oauth2:
       resource:
-        user-info-uri: http://localhost:6667/user/current/get
+        user-info-uri: http://localhost:6667/user
         id: sysadmin
+
+      client:
+        clientId: user-client
+        clientSecret: user-secret-8888
+        access-token-uri: http://localhost:6667/oauth/token
+        grant-type: client_credentials,password
+        scope: all
 
         #client:
         #clientId: user-client
