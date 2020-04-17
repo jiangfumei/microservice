@@ -10,7 +10,6 @@ import com.cloud.sysadmin.repository.PermissionRepository;
 /*import com.cloud.sysadmin.security.MySecurityMetadataSource;*/
 import com.cloud.sysadmin.service.PermissionService;
 import com.cloud.sysadmin.service.RolePermissionService;
-import com.cloud.sysadmin.util.SecurityUtil;
 import com.cloud.sysadmin.util.VoUtil;
 import com.cloud.sysadmin.vo.MenuVo;
 import com.google.gson.Gson;
@@ -46,8 +45,8 @@ public class PermissionController {
     @Resource
     PermissionService permissionService;
 
-    @Resource
-    SecurityUtil securityUtil;
+//    @Resource
+//    SecurityUtil securityUtil;
 
     @Resource
     PermissionRepository permissionRepository;
@@ -58,9 +57,9 @@ public class PermissionController {
     @Resource
     RolePermissionService rolePermissionService;
 
-    @RequestMapping(value = "/getMenuList", method = RequestMethod.GET)
+    /*  @RequestMapping(value = "/getMenuList", method = RequestMethod.GET)
     @ApiOperation(value = "获取用户页面菜单数据")
-    public Result<List<MenuVo>> getAllMenuList(){
+     public Result<List<MenuVo>> getAllMenuList(){
 
         List<MenuVo> menuList = new ArrayList<>();
         // 读取缓存
@@ -138,7 +137,7 @@ public class PermissionController {
         redisTemplate.opsForValue().set(key, new Gson().toJson(menuList), 15L, TimeUnit.DAYS);
         return new ResultUtil<List<MenuVo>>().setData(menuList);
     }
-
+*/
     @RequestMapping(value = "/getAllList", method = RequestMethod.GET)
     @ApiOperation(value = "获取权限菜单树")
     @Cacheable(key = "'allList'")

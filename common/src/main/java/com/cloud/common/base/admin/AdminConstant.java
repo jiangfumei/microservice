@@ -8,11 +8,16 @@ public class AdminConstant {
     //用户是否锁定
     public static final Integer USER_STATUS_LOCK = 0;//锁定
 
+    //用户类型
+    public static final Integer USER_COMMON = 0;//普通用户
+    public static final Integer USER_MANAGER = 1;//管理员
+
     //数据权限： 0全部数据权限 1自定义数据权限 2部门及以下 3本部门
     public static final Integer DATA_TYPE_ALL = 0;
     public static final Integer DATA_TYPE_CUSTOM = 1;
     public static final Integer DATA_TYPE_UNDER = 2;
     public static final Integer DATA_TYPE_SAME = 3;
+
     /**
      * 顶部菜单类型权限
      */

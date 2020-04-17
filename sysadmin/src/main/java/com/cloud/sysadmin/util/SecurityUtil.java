@@ -1,3 +1,4 @@
+/*
 package com.cloud.sysadmin.util;
 
 import com.cloud.common.base.admin.AdminConstant;
@@ -44,18 +45,22 @@ public class SecurityUtil {
     @Autowired
     private DepartMentRepository departMentRepository;
 
-    /**
+    */
+/**
      * 获取当前登录用户
      * @return
-     */
+     *//*
+
     public User getCurrUser(){
 
         UserDetails user = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return userService.findUserByUsername(user.getUsername());
     }
-    /**
+    */
+/**
      * 获取当前用户数据权限 null代表具有所有权限 包含值为-1的数据代表无任何权限
-     */
+     *//*
+
     public List<String> getDeparmentIds(){
 
         List<String> deparmentIds = new ArrayList<>();
@@ -137,10 +142,12 @@ public class SecurityUtil {
         }
     }
 
-    /**
+    */
+/**
      * 通过用户名获取用户拥有权限
      * @param username
-     */
+     *//*
+
     public List<GrantedAuthority> getCurrUserPerms(String username){
 
         List<GrantedAuthority> authorities = new ArrayList<>();
@@ -150,3 +157,4 @@ public class SecurityUtil {
         return authorities;
     }
 }
+*/

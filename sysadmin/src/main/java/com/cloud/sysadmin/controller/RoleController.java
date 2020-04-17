@@ -4,13 +4,12 @@ import com.cloud.common.base.vo.Result;
 import com.cloud.common.util.PageUtil;
 import com.cloud.common.util.ResultUtil;
 import com.cloud.common.vo.PageVo;
-import com.cloud.sysadmin.entity.Role;
-import com.cloud.sysadmin.entity.RoleDepartment;
-import com.cloud.sysadmin.entity.RolePermission;
-import com.cloud.sysadmin.entity.UserRole;
+import com.cloud.common.vo.SearchVo;
+import com.cloud.sysadmin.entity.*;
 import com.cloud.sysadmin.repository.RoleDepartmentRepository;
 import com.cloud.sysadmin.repository.RolePermissionRepository;
 import com.cloud.sysadmin.repository.RoleRepository;
+import com.cloud.sysadmin.repository.UserRepository;
 import com.cloud.sysadmin.service.RoleDepartmentService;
 import com.cloud.sysadmin.service.RolePermissionService;
 import com.cloud.sysadmin.service.RoleService;
@@ -23,10 +22,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -64,6 +60,9 @@ public class RoleController {
     @Resource
     RoleDepartmentRepository roleDepartmentRepository;
 
+    @Resource
+    UserRepository userRepository;
+
 
     @RequestMapping(value = "/getAllList",method = RequestMethod.GET)
     @ApiOperation(value = "获取全部角色")
@@ -81,10 +80,10 @@ public class RoleController {
         for(Role role : list.getContent()){
             // 角色拥有权限
             List<RolePermission> permissions = rolePermissionService.findByRoleId(role.getId());
-            role.setRolePermissions(permissions);
+            //role.setRolePermissions(permissions);
             // 角色拥有数据权限
             List<RoleDepartment> departments = roleDepartmentService.findByRoleId(role.getId());
-            role.setDepartments(departments);
+            //role.setDepartments(departments);
         }
         return new ResultUtil<Page<Role>>().setData(list);
     }
@@ -98,7 +97,7 @@ public class RoleController {
         if(role==null){
             return ResultUtil.error("角色不存在");
         }
-        role.setDefaultRole(isDefault);
+        //role.setDefaultRole(isDefault);
         roleService.update(role);
         return ResultUtil.success("设置成功");
     }
@@ -136,7 +135,7 @@ public class RoleController {
                                       @RequestParam(required = false) long[] depIds){
 
         Role r = roleRepository.getOne(roleId);
-        r.setDataType(dataType);
+        //r.setDataType(dataType);
         roleService.update(r);
         // 删除其关联数据权限
         roleDepartmentService.deleteByRoleId(roleId);
@@ -195,6 +194,13 @@ public class RoleController {
             roleDepartmentService.deleteByRoleId(id);
         }
         return ResultUtil.success("批量通过id删除数据成功");
+    }
+
+    @PostMapping(value = "/getByUserId")
+    @ApiOperation(value = "通过用户id获取角色列表 ")
+    public List<Role> getByUserId(SearchVo search){
+        List<Role> roles = roleService.findByCondition(search);
+        return roleService.findByCondition(search);
     }
 
 

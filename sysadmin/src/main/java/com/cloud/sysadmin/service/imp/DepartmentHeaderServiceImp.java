@@ -3,6 +3,7 @@ package com.cloud.sysadmin.service.imp;
 import com.cloud.sysadmin.entity.DepartmentHeader;
 import com.cloud.sysadmin.repository.DepartmentHeaderRepository;
 import com.cloud.sysadmin.service.DepartmentHeaderService;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

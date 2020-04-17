@@ -1,6 +1,7 @@
 package com.cloud.authorization.entity;
 
 import com.cloud.common.base.admin.AdminConstant;
+import lombok.Data;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -8,15 +9,14 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 @Slf4j
-@Setter
+@Data
 public class UserEntity extends User implements UserDetails {
-    private static final long serialVersionUID = 1L;
+
     public UserEntity() {
     }
 
@@ -30,8 +30,6 @@ public class UserEntity extends User implements UserDetails {
             this.setPermissions(user.getPermissions());
         }
     }
-
-
 
     /**
      * 添加用户拥有的权限和角色
@@ -64,6 +62,16 @@ public class UserEntity extends User implements UserDetails {
             });
         }
         return authorityList;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.getPassword();
+    }
+
+    @Override
+    public String getUsername() {
+        return this.getUsername();
     }
 
     /**

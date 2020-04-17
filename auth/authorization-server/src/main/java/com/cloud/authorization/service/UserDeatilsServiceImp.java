@@ -3,12 +3,12 @@ package com.cloud.authorization.service;
 import com.cloud.authorization.entity.Role;
 import com.cloud.authorization.entity.User;
 import com.cloud.authorization.entity.UserEntity;
+import com.cloud.authorization.feign.RoleFeign;
 import com.cloud.authorization.feign.UserFeign;
-import lombok.SneakyThrows;
+import com.cloud.common.vo.SearchVo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -35,14 +35,18 @@ public class UserDeatilsServiceImp implements UserDetailsService {
         }
         //获取本地用户
         User user = userFeign.getByUsername(userName);
-        /*List<Role> roles = user.getRoles();
+        SearchVo searchVo = new SearchVo();
+        searchVo.setId(user.getId());
+        List<Role> roles = userFeign.getByUserId(searchVo);
         log.debug("role of the user" + roles);
 
         Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
-        for(Role role: roles){
+        for(Role role: roles) {
             authorities.add(new SimpleGrantedAuthority(role.getName()));
             log.debug("role" + role + " role.getRole()" + (role.getName()));
-*/
+        }
+        UserEntity u = new UserEntity(user);
+        u.setRoles(roles);
 
         /*if(user != null){
             //返回oauth2的用户

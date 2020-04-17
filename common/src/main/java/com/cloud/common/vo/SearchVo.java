@@ -10,4 +10,6 @@ public class SearchVo implements Serializable {
 
     private String endDate;
 
+    private long id;
+
 }

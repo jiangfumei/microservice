@@ -1,3 +1,4 @@
+/*
 package com.cloud.sysadmin.controller;
 
 import com.cloud.common.base.admin.AdminConstant;
@@ -217,3 +218,4 @@ public class DepartMentController {
         return list;
     }
 }
+*/

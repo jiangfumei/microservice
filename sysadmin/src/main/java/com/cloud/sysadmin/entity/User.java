@@ -10,6 +10,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -52,42 +53,24 @@ public class User implements Serializable {
     @ApiModelProperty(value = "状态")
     private Integer status = AdminConstant.STATUS_NORMAL;
 
-    @Basic
-    @Column(name = "create_by", nullable = true)
-    @ApiModelProperty(value = "创建者")
-    private Long createBy;
-
-    @Basic
-    @Column(name = "update_by", nullable = true)
-    @ApiModelProperty(value = "更新者")
-    private Long updateBy;
-
     /**
      * 用户<->角色 多对多关系，设置级联删除，懒加载，中间表user_role，[user_id<->role_id]
      */
-    @JsonIgnore
     @ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY)
     @JoinTable(name = "user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
             @JoinColumn(name = "role_id") })
-    private java.util.List<Role> roles;
+    private Set<Role> roles;
 
-    @ApiModelProperty(value = "所属部门id")
-    @Column(name = "department_id")
-    private long departmentId;
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "department_id", columnDefinition = "LONG", nullable = false)
+    private Department department;
 
-    @Transient
-    @ApiModelProperty(value = "所属部门名称")
-    private String departmentTitle;
-
-    @Transient
-    @ApiModelProperty(value = "用户拥有的权限")
-    private List<Permission> permissions;
 
     @ApiModelProperty(value = "用户类型 0普通用户 1管理员")
-    private Integer type = AdminConstant.STATUS_NORMAL;
+    private Integer type = AdminConstant.USER_COMMON;
 
-    @ApiModelProperty(value = "性别")
-    private String sex;
+    @ApiModelProperty(value = "性别:0男 1女")
+    private Integer sex;
 
     @ApiModelProperty(value = "手机")
     private String phone;

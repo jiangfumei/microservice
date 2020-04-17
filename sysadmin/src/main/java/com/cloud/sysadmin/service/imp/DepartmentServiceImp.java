@@ -3,7 +3,6 @@ package com.cloud.sysadmin.service.imp;
 import com.cloud.sysadmin.entity.Department;
 import com.cloud.sysadmin.repository.DepartMentRepository;
 import com.cloud.sysadmin.service.DepartmentService;
-import com.cloud.sysadmin.util.SecurityUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,13 +20,18 @@ public class DepartmentServiceImp implements DepartmentService {
     @Resource
     DepartMentRepository departMentRepository;
 
-    @Resource
+   /* @Resource
     SecurityUtil securityUtil;
-
+*/
     @Resource
     EntityManager manager;
 
     @Override
+    public void update(Department department) {
+
+    }
+
+    /*@Override
     public List<Department> findByParentIdOrderBySortOrder(long parentId, boolean openDataFilter) {
         // 数据权限
         List<String> depIds = securityUtil.getDeparmentIds();
@@ -36,9 +40,9 @@ public class DepartmentServiceImp implements DepartmentService {
             return departMentRepository.findByParentIdAndIdInOrderBySortOrder(parentId, lids);
         }
         return departMentRepository.findByParentIdOrderBySortOrder(parentId);
-    }
+    }*/
 
-    @Override
+    /*@Override
     public Department findByParentId(long parentId) {
         return departMentRepository.findByParentId(parentId);
     }
@@ -56,14 +60,14 @@ public class DepartmentServiceImp implements DepartmentService {
     @Override
     public Department merge(Department department) {
         return manager.merge(department);
-    }
+    }*/
 
-    @Override
+ /*   @Override
     public List<Department> findByTitleLikeOrderBySortOrder(String title, Boolean openDataFilter) {
         List<String> depIds = securityUtil.getDeparmentIds();
         if(depIds!=null&&depIds.size()>0&&openDataFilter){
             return departMentRepository.findByTitleLikeAndIdInOrderBySortOrder(title, depIds);
         }
         return departMentRepository.findByTitleLikeOrderBySortOrder(title);
-    }
+    }*/
 }

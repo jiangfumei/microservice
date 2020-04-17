@@ -17,7 +17,6 @@ import com.cloud.sysadmin.service.DepartmentHeaderService;
 import com.cloud.sysadmin.service.RoleService;
 import com.cloud.sysadmin.service.UserRoleService;
 import com.cloud.sysadmin.service.UserService;
-import com.cloud.sysadmin.util.SecurityUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -56,8 +55,8 @@ public class UserController {
     @Resource
     RoleService roleService;
 
-    @Resource
-    SecurityUtil securityUtil;
+    /*@Resource
+    SecurityUtil securityUtil;*/
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -78,7 +77,7 @@ public class UserController {
     DepartmentHeaderService departmentHeaderService;
 
 
-    @RequestMapping(value = "/registe",method = RequestMethod.POST)
+   /* @RequestMapping(value = "/registe",method = RequestMethod.POST)
     @ApiOperation(value = "注册用户")
     public Result<Object> register(User u){
         if (StringUtils.isBlank(u.getUsername())||StringUtils.isBlank(u.getPassword()))
@@ -102,8 +101,8 @@ public class UserController {
             });
         }
         return ResultUtil.data(u);
-    }
-
+    }*/
+/*
     @RequestMapping(value = "/info",method = RequestMethod.GET)
     @ApiOperation(value = "获取当前登录用户接口")
     public Result<User> getUserInfo(){
@@ -124,7 +123,7 @@ public class UserController {
             return ResultUtil.error("密码不正确");
         }
         return ResultUtil.data(null);
-    }
+    }*/
 
     @RequestMapping(value = "/resetPass", method = RequestMethod.POST)
     @ApiOperation(value = "重置密码")
@@ -139,7 +138,7 @@ public class UserController {
         return ResultUtil.success("操作成功");
     }
 
-    @RequestMapping(value = "/edit",method = RequestMethod.POST)
+   /* @RequestMapping(value = "/edit",method = RequestMethod.POST)
     @ApiOperation(value = "修改用户自己资料",notes = "用户名密码不会修改 需要username更新缓存")
     @CacheEvict(key = "#u.username")
     public Result<Object> editOwn(User u){
@@ -152,15 +151,10 @@ public class UserController {
             return ResultUtil.error("修改失败");
         }
         return ResultUtil.success("修改成功");
-    }
+    }*/
 
-    /**
-     * 线上demo不允许测试账号改密码
-     * @param password
-     * @param newPass
-     * @return
-     */
-    @RequestMapping(value = "/modifyPass",method = RequestMethod.POST)
+
+   /* @RequestMapping(value = "/modifyPass",method = RequestMethod.POST)
     @ApiOperation(value = "修改密码")
     public Result<Object> modifyPass(@ApiParam("旧密码") @RequestParam String password,
                                      @ApiParam("新密码") @RequestParam String newPass){
@@ -179,10 +173,10 @@ public class UserController {
         redisTemplate.delete("user::"+user.getUsername());
 
         return ResultUtil.success("修改密码成功");
-    }
+    }*/
 
 
-    @RequestMapping(value = "/getByCondition",method = RequestMethod.GET)
+    /*@RequestMapping(value = "/getByCondition",method = RequestMethod.GET)
     @ApiOperation(value = "多条件分页获取用户列表")
     public Result<Page<User>> getByCondition(User user,
                                              SearchVo searchVo,
@@ -207,7 +201,7 @@ public class UserController {
         return new ResultUtil<Page<User>>().setData(page);
     }
 
-
+*/
     @RequestMapping(value = "/getByDepartmentId/{departmentId}",method = RequestMethod.GET)
     @ApiOperation(value = "多条件分页获取用户列表")
     public Result<List<User>> getByCondition(@PathVariable long departmentId){
@@ -220,7 +214,7 @@ public class UserController {
         return new ResultUtil<List<User>>().setData(list);
     }
 
-    @RequestMapping(value = "/getAll",method = RequestMethod.GET)
+  /*  @RequestMapping(value = "/getAll",method = RequestMethod.GET)
     @ApiOperation(value = "获取全部用户数据")
     public Result<List<User>> getByCondition(){
 
@@ -239,7 +233,7 @@ public class UserController {
         }
         return new ResultUtil<List<User>>().setData(list);
     }
-
+*/
     @RequestMapping(value = "/admin/add",method = RequestMethod.POST)
     @ApiOperation(value = "添加用户")
     public Result<Object> regist(User u,

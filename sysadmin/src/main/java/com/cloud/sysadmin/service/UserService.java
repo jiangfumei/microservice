@@ -17,14 +17,8 @@ public interface UserService {
 
     User findByUsername(String username);
 
-    /**
-     * 多条件分页获取用户
-     * @param user
-     * @param searchVo
-     * @param pageable
-     * @return
-     */
-    Page<User> findByCondition(User user, SearchVo searchVo, Pageable pageable);
+
+    //Page<User> findByCondition(User user, SearchVo searchVo, Pageable pageable);
 
     User findByPhone(String phone);
 

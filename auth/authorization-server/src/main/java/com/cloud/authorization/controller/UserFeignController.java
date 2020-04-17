@@ -25,6 +25,7 @@ public class UserFeignController {
      * @param principal 当前用户
      * @return 授权信息
      */
+    //todo: =获取用户信息
     @GetMapping("/user")
     public Principal user(Principal principal){
         return principal;

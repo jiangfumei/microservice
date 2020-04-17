@@ -6,16 +6,16 @@ import java.util.List;
 
 public interface DepartmentService {
 
-    List<Department> findByParentIdOrderBySortOrder(long parentId,boolean openDataFilter);
+   /* List<Department> findByParentIdOrderBySortOrder(long parentId,boolean openDataFilter);
 
     Department findByParentId(long parentId);
 
-    List<Department> findByParentIdAndStatusOrderBySortOrder(long parentId,int status);
+    List<Department> findByParentIdAndStatusOrderBySortOrder(long parentId,int status);*/
 
     void update(Department department);
 
-    Department merge(Department department);
+   /* Department merge(Department department);
 
-    List<Department> findByTitleLikeOrderBySortOrder(String title,Boolean openDataFilter);
+    List<Department> findByTitleLikeOrderBySortOrder(String title,Boolean openDataFilter);*/
 
 }

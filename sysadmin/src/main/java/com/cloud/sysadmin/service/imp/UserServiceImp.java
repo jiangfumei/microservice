@@ -5,7 +5,6 @@ import com.cloud.common.vo.SearchVo;
 import com.cloud.sysadmin.entity.User;
 import com.cloud.sysadmin.repository.UserRepository;
 import com.cloud.sysadmin.service.UserService;
-import com.cloud.sysadmin.util.SecurityUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.data.domain.Page;
@@ -34,9 +33,9 @@ public class UserServiceImp implements UserService {
     @Resource
     EntityManager manager;
 
-    @Resource
+   /* @Resource
     SecurityUtil securityUtil;
-
+*/
     @Override
     public User findUserByUsername(String username) {
         return userRepository.findUserByUsername(username);
@@ -56,7 +55,7 @@ public class UserServiceImp implements UserService {
     public User findByUsername(String username) {
         return userRepository.findUserByUsername(username);
     }
-
+/*
     @Override
     public Page<User> findByCondition(User user, SearchVo searchVo, Pageable pageable) {
         return userRepository.findAll(new Specification<User>() {
@@ -119,7 +118,7 @@ public class UserServiceImp implements UserService {
                 return null;
             }
         }, pageable);
-    }
+    }*/
 
     @Override
     public User findByPhone(String phone) {
