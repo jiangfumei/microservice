@@ -5,8 +5,8 @@ spring:
   datasource:
     url: jdbc:${DATASOURCE_DBTYPE:mysql}://${DATASOURCE_HOST:localhost}:${DATASOURCE_PORT:3306}/microservice?characterEncoding=UTF-8&useUnicode=true&useSSL=false
     username: ${DATASOURCE_USERNAME:root}
-    password: ${DATASOURCE_PASSWORD:root}
-    driver-class-name: com.mysql.jdbc.Driver
+    password: ${DATASOURCE_PASSWORD:jfm}
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   security:
     oauth2:

@@ -12,7 +12,7 @@ spring:
     url: jdbc:${DATASOURCE_DBTYPE:mysql}://${DATASOURCE_HOST:localhost}:${DATASOURCE_PORT:3306}/microservice?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: xyGames
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
 
 
 
