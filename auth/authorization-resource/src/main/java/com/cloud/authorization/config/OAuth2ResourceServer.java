@@ -42,9 +42,6 @@ public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
     @Value("${spring.security.oauth2.client.clientSecret}")
     private String secret;
 
-    /*@Value("${spring.security.oauth2.authorization.check-token-access}")
-    private String checkTokenEndpointUrl;*/
-
 
     @Autowired
     CustomAccessTokenConverter customAccessTokenConverter;
@@ -57,38 +54,11 @@ public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
         resources.resourceId(DEMO_RESOURCE_ID).stateless(true);
     }
 
-
-  /*  @Override
-    public void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .anyRequest().authenticated().and()
-                .requestMatchers().antMatchers("/api/**");
-    }*/
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.requestMatchers().and().authorizeRequests().antMatchers("/user/login", "/user/registe").permitAll()
                 .antMatchers("/springjwt/**").authenticated();
     }
-
-/* @Override
-    public void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
-                .antMatchers(
-                        "/v2/api-docs/**",
-                        "/swagger-resources/**",
-                        "/swagger-ui.html",
-                        "/webjars/**"
-                ).permitAll()
-                .anyRequest().authenticated()
-                .and()
-                //统一自定义异常
-                .exceptionHandling()
-                .and()
-                .csrf().disable();
-    }*/
 
     @Bean
     public TokenStore tokenStore() {
@@ -120,17 +90,6 @@ public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
         defaultTokenServices.setRefreshTokenValiditySeconds(60 * 60 * 8);
         return defaultTokenServices;
     }
-
-    /*@Override
-    @CrossOrigin
-    public void configure(ResourceServerSecurityConfigurer resources) {
-        resources
-                .tokenStore(tokenStore())
-                //自定义Token异常信息,用于token校验失败返回信息
-                .authenticationEntryPoint(new MyAuthExceptionEntryPoint())
-                //授权异常处理
-                .accessDeniedHandler(new MyAccessDeniedHandler());
-    }*/
 
 
     /**

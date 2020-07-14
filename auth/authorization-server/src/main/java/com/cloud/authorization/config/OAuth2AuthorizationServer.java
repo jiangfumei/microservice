@@ -91,33 +91,6 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
         clients.withClientDetails(clientDetails());
     }
 
-/*
-     //授权模式: 密码模式
-    @Override
-    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory()
-                .withClient(clientId).secret(passwordEncoder.encode(clientSecret))// Client 账号、密码。
-                .authorizedGrantTypes("password", *//*"client_credentials","authorization_code",*//* "refresh_token") //设置支持 密码模式 、授权码模式,token刷新
-                .scopes("all","read","write") // 可授权的 Scope
-                .accessTokenValiditySeconds(accessTokenValiditySeconds)//设置token的有效期  单位为秒
-                .refreshTokenValiditySeconds(refreshTokenValiditySeconds);//设置刷新token的有效期 单位为秒*/
-
-      /*  //配置两个客户端,一个用于password认证一个用于client认证
-        clients.inMemory().withClient("client_1")
-                .resourceIds(DEMO_RESOURCE_ID)
-                .authorizedGrantTypes("client_credentials", "refresh_token")
-                .scopes("select")
-                .authorities("client")
-                .secret("123456")
-                .and().withClient("client_2")
-                .resourceIds(DEMO_RESOURCE_ID)
-                .authorizedGrantTypes("password", "refresh_token")
-                .scopes("select")
-                .authorities("client")
-                .secret("123456");*/
-    //}
-
-
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         // 配置token的数据源、自定义的tokenServices等信息,配置身份认证器，配置认证方式，TokenStore，TokenGranter，OAuth2RequestFactory

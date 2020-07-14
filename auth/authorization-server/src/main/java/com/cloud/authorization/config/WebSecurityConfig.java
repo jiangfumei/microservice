@@ -50,19 +50,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin().permitAll();
     }
 
-    /*@Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers(
-                "/error",
-                "/static/**",
-                "/v2/api-docs/**",
-                "/swagger-resources/**",
-                "/webjars/**",
-                "/favicon.ico"
-        );
-    }*/
-
-
     /**
      * 将 AuthenticationManager 注册为 bean , 方便配置 oauth server 的时候使用
      */
