@@ -24,13 +24,14 @@ spring:
         jwt:
           key-uri: http://localhost:6667/oauth/token_key
           key-value: oauth
-
+    # rabbitmq
     rabbitmq:
       host: ${RABBIT_MQ_USERNAME:guest}
       username: ${RABBITMQ_USERNAME:guest}
       password: ${RABBIT_MQ_PASSWORD:guest}
       port: ${RABBITMQ_MQ_PORT:5672}
 
+    # redis
     redis:
       host: ${REDIS_HOST:localhost}
       port: ${REDIS_PORT:6379}

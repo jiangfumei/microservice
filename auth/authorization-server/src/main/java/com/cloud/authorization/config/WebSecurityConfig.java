@@ -1,22 +1,34 @@
 package com.cloud.authorization.config;
 
-import com.cloud.authorization.service.CustomDetailsService;
-import com.cloud.authorization.service.UserDeatilsServiceImp;
+import com.cloud.authorization.service.AuthenticationService;
+import com.cloud.common.exception.AuthException;
+import com.cloud.common.exception.GlobalExceptionHandler;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.web.util.matcher.RequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.filter.GenericFilterBean;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.Optional;
 
 @Slf4j
 @Configuration
@@ -25,71 +37,70 @@ import org.springframework.web.filter.CorsFilter;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    CustomDetailsService customDetailsService;
+    AuthenticationService authenticationService;
+    @Autowired
+    GlobalExceptionHandler handler;
 
-
-    /**
-     * http安全配置
-     * @param http http安全对象
-     * @throws Exception http安全异常信息
-     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        //http.requestMatchers()指定了哪些请求会被匹配上,requestMatchers()是指定将Spring安全配置应用于哪些请求。
-        //.authorizeRequests()该方法用于配置权限
-        //对配置的url不进行验证
-        http.csrf().disable();
-        http
-                .requestMatchers().antMatchers( "/index.html", "/api/**","/user/login",
-                "/actuator/**", "/resource/**","/swagger-resources/**", "/swagger-ui.html", "/configuration/**")//
-                .and()
+        http.addFilterAt(new ApiAuthenticationFilter("/api/**", authenticationService), //
+                UsernamePasswordAuthenticationFilter.class);
+        http//
+                .requestMatchers().antMatchers("/**").and()//
                 .authorizeRequests()
-                .antMatchers("/oauth/**","/registe","/login").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin().permitAll();
+                .antMatchers("/api/**/i/**", "/api/**/me/**")
+                .hasAnyRole(AuthenticationService.AuthorityType.Register.name())
+                .antMatchers("/api/**/v/**")
+                .hasAnyRole(AuthenticationService.AuthorityType.Vistor.name())
+                .antMatchers("/admin/**")
+                .hasAnyRole(AuthenticationService.AuthorityType.Admin.name())
+                .anyRequest().permitAll()
+                .and().csrf().disable()//
+                .sessionManagement().disable()//禁用 session
+                .httpBasic().disable()
+                .rememberMe().disable()
+                .formLogin()
+                .loginProcessingUrl("/login.do").permitAll();
+
+        /*http.exceptionHandling().authenticationEntryPoint((r, s, e) -> {
+            handler.requestException(r, s, new AuthException.NoLogin("用户没有登录", e));
+        }).accessDeniedHandler((r, s, e) -> {
+            handler.requestException(r, s, new AuthException.NoRight("登录用户没有权限", e));
+        });*/
     }
 
-    /**
-     * 将 AuthenticationManager 注册为 bean , 方便配置 oauth server 的时候使用
-     */
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
+    public static class ApiAuthenticationFilter extends GenericFilterBean {
+        private RequestMatcher requiresAuthenticationRequestMatcher;
+        AuthenticationService redis;
+
+        protected ApiAuthenticationFilter(String defaultFilterProcessesUrl, AuthenticationService redis) {
+            this.requiresAuthenticationRequestMatcher = new AntPathRequestMatcher(defaultFilterProcessesUrl);
+            this.redis = redis;
+        }
+
+        @Override
+        public void doFilter(ServletRequest r, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+            HttpServletRequest request = (HttpServletRequest) r;
+            SecurityContextHolder.getContext().setAuthentication(null);
+            if (requiresAuthenticationRequestMatcher.matches(request)) {
+                String token = request.getHeader("token");
+                if (!StringUtils.isBlank(token)) {//
+                    Optional<AuthenticationService.ApiToken> auth = redis.get(token);
+                    if (auth.isPresent()) {
+                        if (auth.get().isAuthenticated()) {
+                            SecurityContextHolder.getContext().setAuthentication(auth.get());
+                        }
+                    }
+                }
+            }
+            chain.doFilter(request, response);
+        }
     }
 
-
-
-    /**
-     * 注入自定义的userDetailsService实现，获取用户信息，设置密码加密方式
-     *
-     * @param auth
-     * @throws Exception
-     */
-    @Override
-    @Autowired
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
-        //auth.userDetailsService(clientDetailsService).passwordEncoder(passwordEncoder());
-    }
-
-
-    /**
-     * 指定密码的加密方式
-     * @return
-     */
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-    @Override
-    @Bean
-    public UserDetailsService userDetailsService(){
-        return new UserDeatilsServiceImp();
-    }
-
 
     /**
      * 跨域请求

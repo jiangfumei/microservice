@@ -10,8 +10,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+
+import java.io.Serializable;
 
 @Configuration
 @EnableCaching
@@ -50,6 +54,21 @@ public class RedisConfig {
         template.afterPropertiesSet();
 
         return template;
+    }
+
+    /**
+     * 对String字符串的操作
+     * @param factory
+     * @return
+     */
+    @Bean
+    public ValueOperations<String, Serializable> valueOperations(RedisConnectionFactory factory){
+        RedisTemplate<String,Serializable> templete = new RedisTemplate<>();
+        templete.setConnectionFactory(factory);
+        JdkSerializationRedisSerializer serializer = new JdkSerializationRedisSerializer(this.getClass().getClassLoader());
+        templete.setValueSerializer(serializer);
+        templete.afterPropertiesSet();
+        return templete.opsForValue();
     }
 
 

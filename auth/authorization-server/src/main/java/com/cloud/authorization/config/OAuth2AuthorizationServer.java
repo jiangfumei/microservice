@@ -1,6 +1,5 @@
 package com.cloud.authorization.config;
 
-import com.cloud.authorization.enhancer.CustomTokenEnhancer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -95,7 +94,6 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         // 配置token的数据源、自定义的tokenServices等信息,配置身份认证器，配置认证方式，TokenStore，TokenGranter，OAuth2RequestFactory
         endpoints.tokenStore(tokenStore())
-                .tokenEnhancer(tokenEnhancerChain())
                 .authenticationManager(authenticationManager);
 
     }
@@ -115,17 +113,8 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
      *
      * @return tokenEnhancerChain
      */
-    @Bean
-    public TokenEnhancerChain tokenEnhancerChain() {
-        TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
-        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(tokenEnhancer(), accessTokenConverter()));
-        return tokenEnhancerChain;
-    }
 
-    @Bean
-    public TokenEnhancer tokenEnhancer() {
-        return new CustomTokenEnhancer();
-    }
+
 
     /**
      * jwt token的生成配置
