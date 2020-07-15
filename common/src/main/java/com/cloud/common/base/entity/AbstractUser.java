@@ -1,4 +1,4 @@
-package com.cloud.authorization.entity;
+package com.cloud.common.base.entity;
 
 import com.cloud.common.base.admin.AdminConstant;
 import io.swagger.annotations.ApiModel;
@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @ApiModel(value = "用户表")
 @MappedSuperclass
-public abstract class AbstractUser  {
+public abstract class AbstractUser {
 
     private long id;
 

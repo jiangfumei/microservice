@@ -41,12 +41,11 @@ public class Role implements Serializable {
     @ApiModelProperty(value = "更新者")
     private Long updateBy;
 
-    private AbstractUser user;
+
 
 
     private List<Permission> permissions;
 
-    private Set<AbstractUser> users;
 
     @ApiModelProperty(value = "拥有权限")
     private List<RolePermission> rolePermissions;

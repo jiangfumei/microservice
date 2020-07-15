@@ -3,7 +3,6 @@ package com.cloud.common.base;
 import com.cloud.common.exception.HttpRequestException;
 import com.cloud.common.util.PageDATA;
 import org.apache.catalina.User;
-import org.apache.catalina.users.AbstractUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.ValueOperations;
@@ -19,14 +18,16 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class BasicController {
+
    /* @Autowired
-    protected AbstractUserService usersService;
+    protected AbstractUserService usersService;*/
+
     @Resource
     ValueOperations<String, Serializable> redis;
 
     public static final ThreadLocal<User> local = new ThreadLocal<>();
 
-    @ModelAttribute
+    /*@ModelAttribute
     public void findUserByPrincipal(Principal principal) {
         if (principal != null) {
             User user = getCacheUser(principal.getName()).orElseGet(() -> {
@@ -45,15 +46,15 @@ public class BasicController {
             }
         }
         local.remove();
-    }
+    }*/
 
     public Optional<User> getCacheUser(String openid) {
         return Optional.ofNullable((User) redis.get("user:login:" + openid));
     }
 
-    public static void refreshCacheUser(ValueOperations redis, User user) {
+   /* public static void refreshCacheUser(ValueOperations redis, User user) {
         redis.set("user:login:" + user.getUuid(), user, 1, TimeUnit.HOURS);
-    }
+    }*/
 
     protected User getLoginUser() {
         User info = local.get();
@@ -62,7 +63,6 @@ public class BasicController {
         }
         return info;
     }
-*/
     public <T, U> PageDATA<U> convert(Page<T> page, Function<T, U> fun) {
         List<U> list = page.getContent().stream().map(fun).collect(Collectors.toList());
         return new PageDATA<>(list, page.getPageable(), page.getTotalElements());

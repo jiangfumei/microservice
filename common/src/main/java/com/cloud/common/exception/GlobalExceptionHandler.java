@@ -24,7 +24,7 @@ public class GlobalExceptionHandler {
     /*@ExceptionHandler(value = {I18nException.class})
     @ResponseBody
     public ExceptionModel requestException(HttpServletRequest req, HttpServletResponse resp, I18nException ex) {
-        AbstractUser user = BasicController.local.get();
+        AbstractUsers user = BasicController.local.get();
         String uri = req.getRequestURI();
         if (user != null) {
             Class<?> clazz = ex.getClass();
@@ -46,8 +46,8 @@ public class GlobalExceptionHandler {
             return model.setException(ex.getCause().getClass().getSimpleName());
         }
         return model.setException(ex.getClass().getSimpleName());
-    }*/
-
+    }
+*/
     public static class ExceptionModel {
         private long timestamp;
         private int status;

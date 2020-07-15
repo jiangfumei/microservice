@@ -17,10 +17,10 @@ public class AuthException {
             return super.i18n(messageSource, "no.login.error", this.getData());
         }
 
-        /*@Override
+        @Override
         public int httpStatus() {
             return BasicController.local.get() == null ? 401 : 403;
-        }*/
+        }
     }
 
     public static class NoRight extends ServiceException {

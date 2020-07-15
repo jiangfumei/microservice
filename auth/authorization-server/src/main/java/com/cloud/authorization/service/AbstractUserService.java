@@ -1,6 +1,7 @@
 package com.cloud.authorization.service;
 
-import com.cloud.authorization.entity.AbstractUser;
+import com.cloud.common.base.entity.AbstractUser;
+import com.cloud.common.repository.AbstractUserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,10 +13,13 @@ import java.util.Optional;
 @Transactional
 public abstract class AbstractUserService<T extends AbstractUser> {
 
-/*    @Resource
-    Abs
+    @Resource
+    AbstractUserService abstractUserService;
+
+    @Resource
+    AbstractUserRepository abstractUserRepository;
 
     public Optional<AbstractUser> getUserByPrincipal(Principal principal) {
-        return this.usersRepository.findByUuid(principal.getName());
-    }*/
+        return this.abstractUserRepository.findByUuid(principal.getName());
+    }
 }
