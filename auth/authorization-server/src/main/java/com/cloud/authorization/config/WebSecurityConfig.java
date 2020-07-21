@@ -38,6 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     AuthenticationService authenticationService;
+
     @Autowired
     GlobalExceptionHandler handler;
 
