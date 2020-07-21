@@ -62,11 +62,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginProcessingUrl("/login.do").permitAll();
 
-        /*http.exceptionHandling().authenticationEntryPoint((r, s, e) -> {
+        http.exceptionHandling().authenticationEntryPoint((r, s, e) -> {
             handler.requestException(r, s, new AuthException.NoLogin("用户没有登录", e));
         }).accessDeniedHandler((r, s, e) -> {
             handler.requestException(r, s, new AuthException.NoRight("登录用户没有权限", e));
-        });*/
+        });
     }
 
     public static class ApiAuthenticationFilter extends GenericFilterBean {

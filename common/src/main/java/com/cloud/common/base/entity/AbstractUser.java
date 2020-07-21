@@ -1,16 +1,12 @@
 package com.cloud.common.base.entity;
 
 import com.cloud.common.base.admin.AdminConstant;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import java.util.Date;
 import java.util.UUID;
 
-@ApiModel(value = "用户表")
 @MappedSuperclass
 public abstract class AbstractUser {
 
@@ -42,8 +38,6 @@ public abstract class AbstractUser {
 
 
     @ApiModelProperty(value = "uuid")
-    @Basic
-    @Column(length = 64, nullable = false)
     private String uuid = UUID.randomUUID().toString().replaceAll("-", "");
 
     public boolean isDisable() {

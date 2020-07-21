@@ -1,12 +1,12 @@
 package com.cloud.sysadmin.entity;
 
 import com.cloud.common.base.admin.AdminConstant;
+import com.cloud.common.base.entity.AbstractUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -14,7 +14,7 @@ import java.util.Set;
 @Entity
 @Table(name = "user")
 @ApiModel(value = "用户表")
-public class User implements Serializable {
+public class User extends AbstractUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

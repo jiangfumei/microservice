@@ -1,7 +1,7 @@
 package com.cloud.common.exception;
 
 import com.cloud.common.base.BasicController;
-import org.apache.catalina.users.AbstractUser;
+import com.cloud.common.base.entity.AbstractUser;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,10 +21,10 @@ public class GlobalExceptionHandler {
     @Resource
     private MessageSource messageSource;
 
-    /*@ExceptionHandler(value = {I18nException.class})
+    @ExceptionHandler(value = {I18nException.class})
     @ResponseBody
     public ExceptionModel requestException(HttpServletRequest req, HttpServletResponse resp, I18nException ex) {
-        AbstractUsers user = BasicController.local.get();
+        AbstractUser user = (AbstractUser) BasicController.local.get();
         String uri = req.getRequestURI();
         if (user != null) {
             Class<?> clazz = ex.getClass();
@@ -47,7 +47,6 @@ public class GlobalExceptionHandler {
         }
         return model.setException(ex.getClass().getSimpleName());
     }
-*/
     public static class ExceptionModel {
         private long timestamp;
         private int status;
