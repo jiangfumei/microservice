@@ -3,13 +3,16 @@ package com.cloud.common.base.entity;
 import com.cloud.common.base.admin.AdminConstant;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
 
 @MappedSuperclass
 public abstract class AbstractUser {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private long id;
 
     private Date createTime = new Date();
