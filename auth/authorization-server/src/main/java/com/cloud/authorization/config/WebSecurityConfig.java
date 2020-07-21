@@ -2,7 +2,6 @@ package com.cloud.authorization.config;
 
 import com.cloud.authorization.service.AuthenticationService;
 import com.cloud.common.exception.AuthException;
-import com.cloud.common.exception.GlobalExceptionHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
