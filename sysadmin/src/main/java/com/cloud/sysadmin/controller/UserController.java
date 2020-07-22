@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @CacheConfig(cacheNames = "user")
 @Transactional
 public class UserController {
-
     @RequestMapping(value = "/test",method = RequestMethod.GET)
     public String getString(){
         return "hello";
     }
-
 }

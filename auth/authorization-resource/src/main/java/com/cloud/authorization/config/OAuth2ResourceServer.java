@@ -33,21 +33,21 @@ public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
     @Value("${spring.security.oauth2.resource.jwt.key-value}")
     private String signingKey;
 
-    @Autowired
-    CustomAccessTokenConverter customAccessTokenConverter;
-
-    private static final String DEMO_RESOURCE_ID = "order";
-
-
     @Override
-    public void configure(ResourceServerSecurityConfigurer resources) {
-        resources.resourceId(DEMO_RESOURCE_ID).stateless(true);
+    public void configure(ResourceServerSecurityConfigurer resourceServerSecurityConfigurer) {
+        resourceServerSecurityConfigurer
+                .tokenStore(tokenStore())
+                .resourceId("WEBS");
     }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.requestMatchers().and().authorizeRequests().antMatchers("/user/login", "/user/registe").permitAll()
-                .antMatchers("/springjwt/**").authenticated();
+        log.debug("HttpSecurity configure method");
+        http.csrf().disable();
+        http.authorizeRequests()
+                .antMatchers("/actuator/**").permitAll()
+                .antMatchers("/v2/api-docs").permitAll()
+                .anyRequest().authenticated();
     }
 
     @Bean
@@ -57,41 +57,9 @@ public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
 
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
-        final JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         converter.setSigningKey(signingKey);
-        converter.setVerifierKey(signingKey);
         return converter;
     }
 
-
-    @Bean
-    @Primary
-    public DefaultTokenServices tokenServices() {
-        DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
-        defaultTokenServices.setTokenStore(tokenStore());
-        // 这里如果设置为false则不能更新refresh_token，如果需要刷新token的功能需要设置成true
-        defaultTokenServices.setSupportRefreshToken(true);
-        // 设置上次RefreshToken是否还可以使用 默认为true
-        defaultTokenServices.setReuseRefreshToken(false);
-        // token有效期自定义设置，默认12小时，此处设置为6小时
-        defaultTokenServices.setAccessTokenValiditySeconds(60 * 60 * 6);
-        // refresh_token默认30天,此处设置为8小时
-        defaultTokenServices.setRefreshTokenValiditySeconds(60 * 60 * 8);
-        return defaultTokenServices;
-    }
-
-
-    /**
-     * 定义OAuth2请求匹配器
-     */
-    private static class OAuth2RequestedMatcher implements RequestMatcher {
-        @Override
-        public boolean matches(HttpServletRequest request) {
-            String auth = request.getHeader("Authorization");
-            //判断来源请求是否包含oauth2授权信息,这里授权信息来源可能是头部的Authorization值以Bearer开头,或者是请求参数中包含access_token参数,满足其中一个则匹配成功
-            boolean haveOauth2Token = (auth != null) && auth.startsWith("Bearer");
-            boolean haveAccessToken = request.getParameter("access_token")!=null;
-            return haveOauth2Token || haveAccessToken;
-        }
-    }
 }
