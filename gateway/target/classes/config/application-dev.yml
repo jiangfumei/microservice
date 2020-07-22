@@ -19,3 +19,5 @@ spring:
         #user-info-uri: user-info
         #authorization:
           #check-token-access: http://localhost:6667/oauth/check_token
+
+
