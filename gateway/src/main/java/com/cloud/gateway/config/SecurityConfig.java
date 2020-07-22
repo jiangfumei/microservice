@@ -1,4 +1,3 @@
-/*
 package com.cloud.gateway.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,16 +27,9 @@ import javax.sql.DataSource;
 public class SecurityConfig {
 
     private static final String MAX_AGE = "18000L";
-    @Autowired
-    private DataSource dataSource;
-    @Autowired
-    private AccessManager accessManager;
 
+/**  * 跨域配置
     */
-/*
-    *  * 跨域配置
-    *//*
-
 
     public WebFilter corsFilter() {
         return (ServerWebExchange ctx, WebFilterChain chain) -> {
@@ -64,7 +56,7 @@ public class SecurityConfig {
         };
     }
 
-    @Bean
+    /*@Bean
     SecurityWebFilterChain webFluxSecurityFilterChain(ServerHttpSecurity http) throws Exception{
         //token管理器
         ReactiveAuthenticationManager tokenAuthenticationManager = new ReactiveJdbcAuthenticationManager(new JdbcTokenStore(dataSource));
@@ -84,6 +76,5 @@ public class SecurityConfig {
                 //oauth2认证过滤器
                 .addFilterAt(authenticationWebFilter, SecurityWebFiltersOrder.AUTHENTICATION);
         return http.build();
-    }
+    }*/
 }
-*/
