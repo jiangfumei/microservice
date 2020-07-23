@@ -26,9 +26,11 @@ spring:
           uri: lb://sysadmin
           predicates:
             - Path=/admin/**
-        - id: order-service
-          uri: lb://order-service
+        - id: auth
+          uri: lb://auth
           predicates:
-            - Path=/order/**
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
 
 

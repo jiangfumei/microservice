@@ -45,4 +45,9 @@ public class SecurityConfig {
         };
     }
 
+ /*   @Bean
+    public ServerCodecConfigurer serverCodecConfigurer(){
+        return ServerCodecConfigurer.create();
+    }*/
+
 }
