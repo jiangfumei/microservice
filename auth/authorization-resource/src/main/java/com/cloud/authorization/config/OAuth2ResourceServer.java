@@ -23,7 +23,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @Slf4j
 public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
 
-    @Value("${spring.security.oauth2.resource.jwt.key-value}")
+    /*@Value("${spring.security.oauth2.resource.jwt.key-value}")
     private String signingKey;
 
     @Override
@@ -54,5 +54,10 @@ public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
         converter.setSigningKey(signingKey);
         return converter;
     }
+*/
 
+    @Override
+    public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
+        super.configure(resources);
+    }
 }
