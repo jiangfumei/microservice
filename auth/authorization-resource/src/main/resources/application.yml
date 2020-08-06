@@ -14,11 +14,4 @@ spring:
         server-addr: ${REGISTER_HOST:localhost}:${REGISTER_PORT:8848}
         file-extension: yml
 
-# 直接放行URL
-ignore:
-  urls:
-    - /actuator/**
-    - /user/api/**
-    - /authority/api/**
-
 
