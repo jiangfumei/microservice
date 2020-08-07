@@ -1,6 +1,6 @@
 package com.cloud.authorization.entity;
 
-import com.cloud.common.base.admin.AdminConstant;
+import com.cloud.common.base.base.AdminConstant;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

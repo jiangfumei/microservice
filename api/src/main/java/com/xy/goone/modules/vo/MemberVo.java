@@ -12,6 +12,5 @@ public abstract class MemberVo {
 
         public long getId(){return super.domain.getId();}
         public String getPhone(){return super.domain.getPhone();}
-        public String getUsername(){return super.domain.getUsername();}
     }
 }

@@ -1,6 +1,6 @@
 package com.cloud.authorization.entity;
 
-import com.cloud.common.base.admin.AdminConstant;
+import com.cloud.common.base.base.AdminConstant;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -8,7 +8,6 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @ApiModel(value = "角色表")

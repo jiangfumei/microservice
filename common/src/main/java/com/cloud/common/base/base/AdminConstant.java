@@ -1,4 +1,4 @@
-package com.cloud.common.base.admin;
+package com.cloud.common.base.base;
 
 public class AdminConstant {
     //状态：1正常,启用 0删除,禁用
