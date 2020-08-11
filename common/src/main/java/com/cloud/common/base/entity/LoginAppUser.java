@@ -1,6 +1,6 @@
 package com.cloud.common.base.entity;
 
-import lombok.Getter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,39 +9,36 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Set;
 
-public class LoginAppUser implements UserDetails {
+public class LoginAppUser extends SysUser implements SocialUserDetails {
 
-    static final long serialVersionUID = -7588980448693010399L;
-    private String username;
+    private static final long serialVersionUID = -3685249101751401211L;
 
-    private String password;
+    private Set<String> permissions;
 
-    private boolean enabled = true;
-
-    private long userId;
-
-    private Collection<? extends GrantedAuthority> authorities;
 
 
     @Override
+    public String getUserId() {
+        if (String.valueOf(this.getId())!=null){
+            return this.getId()+"";
+        }
+        return "";
+    }
+
+    /**
+     * 权限重写
+     * @return
+     */
+    @JsonIgnore
+    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return authorities;
-        /*Collection<GrantedAuthority> collection = new HashSet<>();
+        Collection<GrantedAuthority> collection = new HashSet<>();
         if (!CollectionUtils.isEmpty(super.getRoles())) {
             super.getRoles().parallelStream().forEach(role -> collection.add(new SimpleGrantedAuthority(role.getCode())));
         }
-        return collection;*/
-    }
-
-    @Override
-    public String getPassword() {
-        return this.password;
-    }
-
-    @Override
-    public String getUsername() {
-        return this.username;
+        return collection;
     }
 
     @Override
@@ -61,6 +58,6 @@ public class LoginAppUser implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return getEnabled();
     }
 }

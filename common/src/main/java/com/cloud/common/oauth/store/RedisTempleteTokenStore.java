@@ -1,5 +1,6 @@
 package com.cloud.common.oauth.store;
 
+import com.cloud.common.base.entity.LoginAppUser;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.oauth2.common.ExpiringOAuth2RefreshToken;

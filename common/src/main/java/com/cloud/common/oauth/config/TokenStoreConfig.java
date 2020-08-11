@@ -1,11 +1,14 @@
 package com.cloud.common.oauth.config;
 
 import com.cloud.common.oauth.store.AuthDbTokenStore;
+import com.cloud.common.oauth.store.AuthJwtTokenStore;
+import com.cloud.common.oauth.store.AuthRedisTokenStore;
+import com.cloud.common.oauth.store.RedisJwtTokenStore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-public class TokenStore {
+public class TokenStoreConfig {
 
     //通过@ConditionalOnProperty控制配置类是否生效,可以将配置与代码进行分离,实现了更好的控制配置.
     //@ConditionalOnProperty实现是通过havingValue与配置文件中的值对比,返回为true则配置类生效,反之失效.
@@ -17,6 +20,25 @@ public class TokenStore {
     @Import(AuthDbTokenStore.class)
     public class JdbcTokenConfig{
 
+    }
+
+    @Configuration
+    @ConditionalOnProperty(prefix = "microservice.oauth2.token.store",name = "type",havingValue = "redis",matchIfMissing = true)
+    @Import(AuthRedisTokenStore.class)
+    public class RedisTokenConfig{
+
+    }
+
+    @Configuration
+    @ConditionalOnProperty(prefix = "mall.oauth2.token.store", name = "type", havingValue = "authJwt")
+    @Import(AuthJwtTokenStore.class)
+    public class AuthJwtTokenConfig {
+    }
+
+    @Configuration
+    @ConditionalOnProperty(prefix = "mall.oauth2.token.store", name = "type", havingValue = "resJwt")
+    @Import(RedisJwtTokenStore.class)
+    public class ResJwtTokenConfig {
     }
 
 

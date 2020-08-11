@@ -6,6 +6,13 @@ public class ResultUtil<T> {
 
     private Result<T> result;
 
+    //未认证
+    public static final int UNAUTHORIZED = 401;
+    //未授权
+    public static final int FORBIDDEN = 403;
+    //参数校验失败
+    public static final int VALIDATE_FAILED = 404;
+
     public ResultUtil(){
         result = new Result<>();
         result.setSuccess(true);
@@ -48,6 +55,41 @@ public class ResultUtil<T> {
         return this.result;
     }
 
+    /**
+     * 参数验证失败使用
+     *
+     * @param msg 错误信息
+     */
+    public Result<T> validateFailed(String msg) {
+        this.result.setSuccess(false);
+        this.result.setCode(VALIDATE_FAILED);
+        this.result.setMessage(msg);
+        return this.result;
+    }
+
+    /**
+     * 未登录时使用
+     *
+     * @param msg 错误信息
+     */
+    public Result<T> unauthorized(String msg) {
+        this.result.setSuccess(false);
+        this.result.setCode(UNAUTHORIZED);
+        this.result.setMessage("暂未登录或token已经过期");
+        return this.result;
+    }
+
+    /**
+     * 未授权时使用
+     *
+     * @param msg 错误信息
+     */
+    public Result<T> forbidden(String msg) {
+        this.result.setSuccess(false);
+        this.result.setCode(FORBIDDEN);
+        this.result.setMessage("没有相关权限");
+        return this.result;
+    }
 
     public static <T> Result<T> data(T t){
         return new ResultUtil<T>().setData(t);

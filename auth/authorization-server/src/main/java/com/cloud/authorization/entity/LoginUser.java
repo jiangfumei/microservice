@@ -1,162 +1,64 @@
 package com.cloud.authorization.entity;
 
-import com.cloud.common.base.base.AdminConstant;
+import com.cloud.common.base.entity.SysUser;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.social.security.SocialUserDetails;
+import org.springframework.util.CollectionUtils;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
-public class LoginUser implements UserDetails {
+@Getter
+@Setter
+public class LoginUser extends SysUser implements SocialUserDetails {
+    private static final long serialVersionUID = -3685249101751401211L;
 
-    private Long id;
-    private Integer status;
-    private String nickname;
-    private String password;
-    private String username;
-    private Long deptId;
-    private Long compId;
-    private List<GrantedAuthority> authorities;
-    private boolean accountNonExpired;
-    private boolean accountNonLocked;
-    private boolean credentialsNonExpired;
-    private boolean enabled;
+    private Set<String> permissions;
 
-    public LoginUser() {
-        super();
+    /***
+     * 权限重写
+     */
+    @JsonIgnore
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        Collection<GrantedAuthority> collection = new HashSet<>();
+        if (!CollectionUtils.isEmpty(super.getRoles())) {
+            super.getRoles().parallelStream().forEach(role -> collection.add(new SimpleGrantedAuthority(role.getCode())));
+        }
+        return collection;
     }
 
-    public LoginUser(String username, String password,String nickname,Integer status, List<GrantedAuthority> authorities) {
-        this.password = password;
-        this.username = username;
-        this.nickname = nickname;
-        this.authorities = authorities;
-        this.status = status;
-    }
-
-    public LoginUser(Long id, Integer status, String nickname, String password, String username, Long deptId, Long compId, List<GrantedAuthority> authorities, boolean accountNonExpired, boolean accountNonLocked, boolean credentialsNonExpired, boolean enabled) {
-        this.id = id;
-        this.status = status;
-        this.nickname = nickname;
-        this.password = password;
-        this.username = username;
-        this.deptId = deptId;
-        this.compId = compId;
-        this.authorities = authorities;
-        this.accountNonExpired = accountNonExpired;
-        this.accountNonLocked = accountNonLocked;
-        this.credentialsNonExpired = credentialsNonExpired;
-        this.enabled = enabled;
-    }
-
-    public LoginUser(Long id, Long deptId, String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked, List<GrantedAuthority> authorities) {
-        this.id = id;
-        this.deptId = deptId;
-        this.password = password;
-        this.username = username;
-        this.authorities = authorities;
-        this.accountNonExpired = accountNonExpired;
-        this.accountNonLocked = accountNonLocked;
-        this.credentialsNonExpired = credentialsNonExpired;
-        this.enabled = enabled;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Long getDeptId() {
-        return deptId;
-    }
-
-    public void setDeptId(Long deptId) {
-        this.deptId = deptId;
-    }
-
-    public Long getCompId() {
-        return compId;
-    }
-
-    public void setCompId(Long compId) {
-        this.compId = compId;
-    }
-
-    public List<GrantedAuthority> getAuthorities() {
-        return authorities;
-    }
-
-    public void setAuthorities(List<GrantedAuthority> authorities) {
-        this.authorities = authorities;
-    }
-
+    @Override
     public boolean isAccountNonExpired() {
-        //todo:: add Constant.lockstatus
-        //return !AdminConstant.USER_STATUS_EXPIRED.equals(this.status);
         return true;
     }
 
-    public void setAccountNonExpired(boolean accountNonExpired) {
-        this.accountNonExpired = accountNonExpired;
-    }
-
+    @Override
     public boolean isAccountNonLocked() {
-        return !AdminConstant.STATUS_DEL.equals(this.status);//锁
+        return true;
     }
 
-    public void setAccountNonLocked(boolean accountNonLocked) {
-        this.accountNonLocked = accountNonLocked;
-    }
-
+    @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
-    public void setCredentialsNonExpired(boolean credentialsNonExpired) {
-        this.credentialsNonExpired = credentialsNonExpired;
-    }
-
+    @Override
     public boolean isEnabled() {
-        return AdminConstant.STATUS_NORMAL.equals(this.status);
+        return getEnabled();
     }
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+
+    @Override
+    public String getUserId() {
+        if (String.valueOf(this.getId())!=null){
+            return this.getId()+"";
+        }
+        return "";
     }
 }
