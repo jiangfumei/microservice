@@ -2,8 +2,10 @@ package com.cloud.common.base.entity;
 
 import com.cloud.common.base.base.BaseEntity;
 
+import javax.persistence.Entity;
 import javax.persistence.Table;
 
+@Entity
 @Table(name = "sys_role")
 public class SysRole extends BaseEntity {
 
