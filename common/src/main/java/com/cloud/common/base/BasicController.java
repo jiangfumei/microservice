@@ -1,63 +1,44 @@
 package com.cloud.common.base;
 
-import com.cloud.common.exception.HttpRequestException;
+import com.cloud.common.base.entity.SysUser;
 import com.cloud.common.util.PageDATA;
 import org.apache.catalina.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.NoSuchMessageException;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.annotation.Resource;
 import java.io.Serializable;
-import java.security.Principal;
 import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.TimeUnit;
+import java.util.Locale;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class BasicController {
 
-   /* @Autowired
-    protected AbstractUserService usersService;*/
-
     @Resource
     ValueOperations<String, Serializable> redis;
 
+    @Resource
+    MessageSource messageSource;
+
     public static final ThreadLocal<User> local = new ThreadLocal<>();
 
-    /*@ModelAttribute
-    public void findUserByPrincipal(Principal principal) {
-        if (principal != null) {
-            User user = getCacheUser(principal.getName()).orElseGet(() -> {
-                Optional<User> opt = usersService.getUserByPrincipal(principal);
-                if (opt.isPresent()) {
-                    refreshCacheUser(redis, opt.get());
-                }
-                return opt.orElse(null);
-            });
-            if (user != null) {
-                if (!user.isDisable()) {
-                    local.set(user);
-                    return;
-                }
-                throw HttpRequestException.newI18N("user.is.disable", user);
-            }
-        }
-        local.remove();
-    }*/
 
-    public Optional<User> getCacheUser(String openid) {
-        return Optional.ofNullable((User) redis.get("user:login:" + openid));
+    protected MessageSource getMessageSource() {
+        return messageSource;
     }
 
-   /* public static void refreshCacheUser(ValueOperations redis, User user) {
-        redis.set("user:login:" + user.getUuid(), user, 1, TimeUnit.HOURS);
-    }*/
+    public String i18n(String code, Object... args) throws NoSuchMessageException {
+        Locale locale = LocaleContextHolder.getLocale();//如果是根据应用部署的服务器系统来决定国际化
+        return messageSource.getMessage(code, args, locale);
+    }
 
-    protected User getLoginUser() {
-        User info = local.get();
+
+    protected SysUser getLoginUser() {
+        SysUser info = (SysUser) local.get();
         if (info == null) {
             throw new RuntimeException("Not find Login user !");
         }

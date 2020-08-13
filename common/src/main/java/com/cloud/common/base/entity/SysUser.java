@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name="sys_user")
+@Table(name = "sys_user")
 @Entity
 public class SysUser extends BaseEntity {
 
@@ -27,6 +27,9 @@ public class SysUser extends BaseEntity {
 
     @OneToMany(targetEntity = SysRole.class, mappedBy = "sysUser", cascade = CascadeType.REFRESH)
     private List<SysRole> roles = new ArrayList<>();
+
+    @OneToMany(targetEntity = SysUserRole.class, mappedBy = "user", cascade = CascadeType.REFRESH)
+    private List<SysUserRole> userRoles;
 
     public String getUsername() {
         return username;

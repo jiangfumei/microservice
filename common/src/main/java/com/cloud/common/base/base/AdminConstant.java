@@ -1,6 +1,8 @@
 package com.cloud.common.base.base;
 
 public class AdminConstant {
+
+    public static final String DEFULT_USER_PASSWORD = "123456";
     //状态：1正常,启用 0删除,禁用
     public static final Integer STATUS_NORMAL = 1;
     public static final Integer STATUS_DEL = 0;
