@@ -25,6 +25,43 @@ public class SysDict extends BaseEntity {
     @Enumerated(EnumType.ORDINAL)
     private Status status = Status.show;
 
+    public String getKeyName() {
+        return keyName;
+    }
 
+    public void setKeyName(String keyName) {
+        this.keyName = keyName;
+    }
 
+    public String getValueName() {
+        return valueName;
+    }
+
+    public void setValueName(String valueName) {
+        this.valueName = valueName;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }

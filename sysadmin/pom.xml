@@ -33,12 +33,6 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-    <!-- mysql -->
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-    </dependency>
-
     <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-core -->
     <dependency>
         <groupId>cn.hutool</groupId>

@@ -17,7 +17,6 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <!--<version>2.2.0.RELEASE</version>-->
         </dependency>
 
         <dependency>
@@ -35,7 +34,6 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-           <!-- <version>2.2.0.RELEASE</version>-->
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-gateway -->
@@ -57,16 +55,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-oauth2</artifactId>
-            <!--<version>2.2.1.RELEASE</version>-->
         </dependency>
-
-       <!-- <dependency>
-            <groupId>org.springframework.security.oauth</groupId>
-            <artifactId>spring-security-oauth2</artifactId>
-            <version>2.4.0.RELEASE</version>
-            <scope>compile</scope>
-        </dependency>-->
-
 
     </dependencies>
 
