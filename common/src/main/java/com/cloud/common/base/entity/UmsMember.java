@@ -5,7 +5,7 @@ import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.social.security.SocialUserDetails;
 
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Collection;
@@ -23,6 +23,7 @@ import java.util.HashSet;
 @Data
 @Table(name = "ums_member")
 public class UmsMember extends BaseEntity implements Serializable, SocialUserDetails {
+
 
     private Long memberLevelId;
 

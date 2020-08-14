@@ -2,10 +2,7 @@ package com.cloud.common.base.entity;
 
 import com.cloud.common.base.base.BaseEntity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 public class SysRolePermission extends BaseEntity {
 
@@ -17,5 +14,19 @@ public class SysRolePermission extends BaseEntity {
     @JoinColumn(name = "role_id", columnDefinition = "LONG")
     private SysRole role;
 
+    public SysPermission getPermission() {
+        return permission;
+    }
 
+    public void setPermission(SysPermission permission) {
+        this.permission = permission;
+    }
+
+    public SysRole getRole() {
+        return role;
+    }
+
+    public void setRole(SysRole role) {
+        this.role = role;
+    }
 }

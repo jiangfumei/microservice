@@ -2,10 +2,7 @@ package com.cloud.common.base.entity;
 
 import com.cloud.common.base.base.BaseEntity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -22,8 +19,13 @@ public class SysRole extends BaseEntity {
 
     private int status = 1;
 
-    @OneToMany(targetEntity = SysUserRole.class, mappedBy = "role", cascade = CascadeType.REFRESH)
+    @OneToMany(targetEntity = SysUserRole.class, mappedBy = "sysRole", cascade = CascadeType.REFRESH)
     private List<SysUserRole> userRoles;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "sys_user_id", columnDefinition = "LONG")
+    private SysUser sysUser;
+
 
     public String getName() {
         return name;
@@ -63,5 +65,14 @@ public class SysRole extends BaseEntity {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+
+    public List<SysUserRole> getUserRoles() {
+        return userRoles;
+    }
+
+    public void setUserRoles(List<SysUserRole> userRoles) {
+        this.userRoles = userRoles;
     }
 }

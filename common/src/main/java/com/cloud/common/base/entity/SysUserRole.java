@@ -8,27 +8,28 @@ import javax.persistence.*;
 @Table(name = "sys_user_role")
 public class SysUserRole extends BaseEntity {
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
-    @JoinColumn(name = "user_id",columnDefinition = "LONG",nullable = false)
-    private SysUser user;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "sys_user_id", columnDefinition = "LONG", nullable = false)
+    private SysUser sysUser;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
-    @JoinColumn(name = "role_id",columnDefinition = "LONG",nullable = false)
-    private SysRole role;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "sys_role_id", columnDefinition = "LONG", nullable = false)
+    private SysRole sysRole;
 
-    public SysUser getUser() {
-        return user;
+    public SysUser getSysUser() {
+        return sysUser;
     }
 
-    public void setUser(SysUser user) {
-        this.user = user;
+    public void setSysUser(SysUser sysUser) {
+        this.sysUser = sysUser;
     }
 
-    public SysRole getRole() {
-        return role;
+    public SysRole getSysRole() {
+        return sysRole;
     }
 
-    public void setRole(SysRole role) {
-        this.role = role;
+    public void setSysRole(SysRole sysRole) {
+        this.sysRole = sysRole;
     }
+
 }

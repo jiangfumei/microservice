@@ -3,14 +3,14 @@ package com.cloud.common.base.entity;
 import com.cloud.common.base.base.BaseEntity;
 
 import javax.persistence.*;
-import java.security.Permission;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "sys_permission")
-public class SysPermission extends BaseEntity {
+public class SysPermission extends BaseEntity implements Serializable {
 
-    public enum Type{
-        directory,menu,button
+    public enum Type {
+        directory, menu, button
     }
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
@@ -87,4 +87,5 @@ public class SysPermission extends BaseEntity {
     public void setSprt(int sprt) {
         this.sprt = sprt;
     }
+
 }
