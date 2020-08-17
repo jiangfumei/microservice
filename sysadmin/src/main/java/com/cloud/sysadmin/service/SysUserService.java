@@ -11,9 +11,11 @@ import com.cloud.sysadmin.repository.SysUserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,13 +33,17 @@ import java.util.Optional;
 @Transactional
 public class SysUserService {
 
-    @Autowired(required = false)
-    private PasswordEncoder passwordEncoder;
     @Resource
     SysUserRepository userRepository;
 
     @Autowired
     EntityManager manager;
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
 
     public Page<SysUser> findByCondition(SysUser user, SearchVo searchVo, Pageable pageable) {
         return userRepository.findAll(new Specification<SysUser>() {
@@ -88,7 +94,7 @@ public class SysUserService {
         } else {
             if (checkUser(user.getUsername())) {
                 user.setPassword("123456");//初始密码为123456
-                String md5Password = passwordEncoder.encode(user.getPassword());
+                String md5Password = new BCryptPasswordEncoder().encode(user.getPassword());
                 user.setPassword(md5Password);
             }
             manager.persist(user);
@@ -106,7 +112,7 @@ public class SysUserService {
     public Result<Object> updatePassword(long id, String oldPassword, String newPassword) {
         SysUser sysUser = userRepository.findById(id).get();
         if (StringUtils.isNotBlank(oldPassword)) {
-            if (!passwordEncoder.matches(oldPassword, sysUser.getPassword())) {
+            if (!new BCryptPasswordEncoder().matches(oldPassword, sysUser.getPassword())) {
                 throw HttpRequestException.newI18N("oldpassword.error");
             }
         }
@@ -114,7 +120,7 @@ public class SysUserService {
         if (StringUtils.isBlank(newPassword)) {
             newPassword = AdminConstant.DEFULT_USER_PASSWORD;
         }
-        sysUser.setPassword(passwordEncoder.encode(newPassword));
+        sysUser.setPassword(new BCryptPasswordEncoder().encode(newPassword));
         manager.merge(sysUser);
         return ResultUtil.success("success");
     }
