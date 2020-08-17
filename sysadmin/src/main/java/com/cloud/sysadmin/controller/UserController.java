@@ -7,7 +7,7 @@ import com.cloud.common.util.PageUtil;
 import com.cloud.common.util.ResultUtil;
 import com.cloud.common.vo.PageVo;
 import com.cloud.common.vo.SearchVo;
-import com.cloud.sysadmin.service.SysUserRoleService;
+/*import com.cloud.sysadmin.service.SysUserRoleService;*/
 import com.cloud.sysadmin.service.SysUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -30,8 +30,8 @@ public class UserController extends BasicController {
     @Resource
     private SysUserService userService;
 
-    @Resource
-    private SysUserRoleService userRoleService;
+   /* @Resource
+    private SysUserRoleService userRoleService;*/
 
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -86,6 +86,12 @@ public class UserController extends BasicController {
     @PostMapping("/batchDelete")
     public Result<Object> batchDelete(@ApiParam(name = "ids", value = "用户ID数组", required = true) @RequestParam("ids[]") long[] ids) {
         return userService.batchDelete(ids);
+    }
+
+    @ApiOperation("根据用户名查询用户实体")
+    @GetMapping("/name/{username}")
+    public SysUser findByUsername(@PathVariable("username") String username){
+        return userService.findByUsername(username).get();
     }
 
 

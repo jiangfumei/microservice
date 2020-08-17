@@ -12,4 +12,5 @@ public interface SysUserRepository extends JpaRepository<SysUser,Long>, JpaSpeci
 
     Optional<SysUser> findById(long id);
 
+
 }

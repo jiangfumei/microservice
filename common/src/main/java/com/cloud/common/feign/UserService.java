@@ -23,16 +23,16 @@ public interface UserService {
      * @param username
      * @return
      */
-    @GetMapping(value = "/users/name/{username}")
-    SysUser selectByUsername(@PathVariable("username") String username);
-
+   /* @GetMapping(value = "/name/{username}")
+    SysUser findByUsername(@PathVariable("username") String username);
+*/
     /**
      * feign rpc访问远程/users-anon/login接口
      *
      * @param username
      * @return
      */
-    @GetMapping(value = "/users-anon/login", params = "username")
+    @GetMapping(value = "/name/{username}", params = "username")
     LoginAppUser findByUsername(@RequestParam("username") String username);
 
     /**
@@ -54,15 +54,6 @@ public interface UserService {
     @GetMapping(value = "/users-anon/id", params = "id")
     LoginAppUser findById(Long id);
 
-  /*  @PostMapping(value = "/sys/SysAdminLog/create")
-     Object saveSysAdminLog(@RequestBody SysAdminLog entity);
-
-    @GetMapping(value = "/notAuth/selectStoreList")
-    SysStore selectStoreById(@RequestParam("id") Long id);
-
-    @GetMapping(value = "/notAuth/selectStoreList")
-    Object selectStoreList(@RequestParam("sysStoreQueryWrapper") QueryWrapper<SysStore> sysStoreQueryWrapper);
-*/
     @GetMapping("/users/getRolesByUserId")
     List<SysRole> getRolesByUserId(@RequestParam("id") Long id);
 

@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * userService降级工场
@@ -23,18 +24,17 @@ public class UserServiceFallbackFactory implements FallbackFactory<UserService> 
     @Override
     public UserService create(Throwable throwable) {
         return new UserService() {
-            @Override
-            public SysUser selectByUsername(String username) {
+          /*  @Override
+            public SysUser findByUsername(String username) {
                 log.error("通过用户名查询用户异常:{}", username, throwable);
                 return new SysUser();
-            }
+            }*/
 
             @Override
             public LoginAppUser findByUsername(String username) {
                 log.error("通过用户名查询用户异常:{}", username, throwable);
                 return new LoginAppUser();
             }
-
             @Override
             public LoginAppUser findByMobile(String mobile) {
                 log.error("通过手机号查询用户异常:{}", mobile, throwable);
@@ -51,22 +51,6 @@ public class UserServiceFallbackFactory implements FallbackFactory<UserService> 
                 log.error("通过Id查询用户异常:{}", id, throwable);
                 return new LoginAppUser();
             }
-            /*@Override
-            public Object saveSysAdminLog(SysAdminLog entity){
-                log.error("保存日志异常:{}", entity, throwable);
-                return new CommonResult().failed();
-            }
-
-            @Override
-            public SysStore selectStoreById(Long id) {
-                return null;
-            }
-
-            @Override
-            public Object selectStoreList(QueryWrapper<SysStore> sysStoreQueryWrapper) {
-                return null;
-            }
-*/
             @Override
             public List<SysRole> getRolesByUserId(Long id) {
                 return null;

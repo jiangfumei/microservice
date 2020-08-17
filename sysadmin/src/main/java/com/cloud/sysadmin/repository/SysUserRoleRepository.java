@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface SysUserRoleRepository extends JpaRepository<SysUserRole,Long> , JpaSpecificationExecutor<SysUserRole> {
 
-    public List<SysRole> findByUser(SysUser user);
+    public List<SysRole> findBySysUser(SysUser user);
 }

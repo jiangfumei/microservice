@@ -75,4 +75,12 @@ public class SysRole extends BaseEntity {
     public void setUserRoles(List<SysUserRole> userRoles) {
         this.userRoles = userRoles;
     }
+
+    public SysUser getSysUser() {
+        return sysUser;
+    }
+
+    public void setSysUser(SysUser sysUser) {
+        this.sysUser = sysUser;
+    }
 }

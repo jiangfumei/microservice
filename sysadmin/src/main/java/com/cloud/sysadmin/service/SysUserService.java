@@ -31,7 +31,7 @@ import java.util.Optional;
 @Transactional
 public class SysUserService {
 
-    @Autowired
+    @Autowired(required = false)
     private PasswordEncoder passwordEncoder;
     @Resource
     SysUserRepository userRepository;
