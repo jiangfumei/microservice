@@ -4,13 +4,14 @@ import com.cloud.common.oauth.config.TokenStoreConfig;
 import com.cloud.common.oauth.properties.SecurityProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
-import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
+
+import javax.annotation.Resource;
 
 /**
  * 资源服务器
@@ -24,7 +25,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 @Slf4j
 public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
 
-    @Autowired
+    @Resource
     private SecurityProperties securityProperties;
 
     @Override

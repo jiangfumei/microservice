@@ -39,11 +39,6 @@ public class SysUserService {
     @Autowired
     EntityManager manager;
 
-    @Bean
-    public PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
-
 
     public Page<SysUser> findByCondition(SysUser user, SearchVo searchVo, Pageable pageable) {
         return userRepository.findAll(new Specification<SysUser>() {
