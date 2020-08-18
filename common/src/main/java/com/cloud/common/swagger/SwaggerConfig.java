@@ -1,3 +1,4 @@
+/*
 package com.cloud.common.swagger;
 
 import io.swagger.annotations.ApiOperation;
@@ -42,13 +43,15 @@ public class SwaggerConfig {
     private String email;
 
 
-    /*
+    */
+/*
     .apis方法用于指定生成注解的范围，有以下四种取值逻辑
 ①RequestHandlerSelectors.any()，为所有接口都生成API文档，这种方式不必在接口上加任何注解，但是生成的文档没有任何注释，可读性不高；
 ②RequestHandlerSelectors.basePackage(xx.xx)，为指定包下的controller生成接口文档
 ③RequestHandlerSelectors.withClassAnnotation(Api.class)，为有@api注解的接口生成api文档
 ④RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class)，为有@ApiOperation注解的方法生成API文档。
-    */
+    *//*
+
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -70,4 +73,4 @@ public class SwaggerConfig {
                 .build();
     }
 
-}
+}*/

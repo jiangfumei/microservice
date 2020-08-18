@@ -33,36 +33,11 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-    <!-- mysql -->
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-oauth2 -->
- <!--   <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-oauth2</artifactId>
-        &lt;!&ndash;<version>2.2.1.RELEASE</version>&ndash;&gt;
-    </dependency>-->
-
-     <!--<dependency>
-         <groupId>org.springframework.boot</groupId>
-         <artifactId>spring-boot-starter-security</artifactId>
-     </dependency>-->
-
     <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-core -->
     <dependency>
         <groupId>cn.hutool</groupId>
         <artifactId>hutool-core</artifactId>
         <!--<version>5.2.0</version>-->
-    </dependency>
-
-    <!--jpa-->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
-        <!--<version>2.2.2.RELEASE</version>-->
     </dependency>
     <!-- test -->
     <dependency>
@@ -83,6 +58,11 @@
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-actuator-autoconfigure</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-jpa</artifactId>
+        <version>2.3.0.RELEASE</version>
     </dependency>
 
 </dependencies>

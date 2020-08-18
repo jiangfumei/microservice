@@ -23,12 +23,6 @@
 
 
     <dependencies>
-        <!--common公共服务中心-->
-        <dependency>
-            <groupId>com.cloud</groupId>
-            <artifactId>common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <!--//只需要引用这一个
         //集成了spring-security-oauth2 spring-security-jwt spring-security-oauth2-autoconfigure-->
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-oauth2 -->

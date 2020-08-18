@@ -1,6 +1,6 @@
 package com.cloud.authorization.entity;
 
-import com.cloud.common.base.admin.AdminConstant;
+import com.cloud.common.base.base.AdminConstant;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

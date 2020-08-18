@@ -1,13 +1,17 @@
 package com.cloud.authorization.config;
 
+import com.cloud.common.oauth.config.TokenStoreConfig;
+import com.cloud.common.oauth.properties.SecurityProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
-import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.token.TokenStore;
+
+import javax.annotation.Resource;
 
 /**
  * 资源服务器
@@ -17,28 +21,23 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 
 @Configuration
 @EnableResourceServer
+@Import(TokenStoreConfig.class)
 @Slf4j
 public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
 
-    private static final String RESOURCE_ID = "messages-resource";
-
-    @Autowired
-    private TokenStore tokenStore;
-
-    @Autowired
-    public void configure(ResourceServerSecurityConfigurer securityConfigurer) throws Exception{
-        securityConfigurer.resourceId(RESOURCE_ID)
-                .tokenStore(this.tokenStore);
-    }
+    @Resource
+    private SecurityProperties securityProperties;
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        // @formatter:off
-        http
-                .antMatcher("/messages/**")
+        //允许使用iframe 嵌套，避免swagger-ui 不被加载的问题
+        http.headers().frameOptions().disable()
+                .and()
+                .requestMatcher(request -> false)
                 .authorizeRequests()
-                .antMatchers("/messages/**").access("#oauth2.hasScope('message.read')");
-        // @formatter:on
+                .antMatchers(securityProperties.getIgnore().getUrls()).permitAll()
+                .anyRequest()
+                .authenticated();
     }
 
 }
