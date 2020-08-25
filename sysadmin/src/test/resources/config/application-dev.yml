@@ -1,0 +1,26 @@
+####
+debug: false
+#
+spring:
+  datasource:
+    driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
+    url: jdbc:derby:target/derby.db;create=true
+    continue-on-error: false
+    generate-unique-name: false
+    hikari:
+      connection-test-query: values 1
+#
+#  redis:
+#    host: 192.168.2.18
+#    password: 123456
+  jpa:
+    generate-ddl: true
+    database: DERBY
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.DerbyTenSevenDialect
+
+

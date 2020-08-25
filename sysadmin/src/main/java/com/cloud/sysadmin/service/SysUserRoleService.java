@@ -18,7 +18,7 @@ public class SysUserRoleService {
     @Resource
     SysUserRoleRepository userRoleRepository;
 
-    public List<SysRole> findByUser(SysUser user) {
+    public List<SysRole> findBySysUser(SysUser user) {
         return userRoleRepository.findBySysUser(user);
     }
 }
