@@ -59,7 +59,7 @@ public class CommonDB {
             manager.merge(entity);
         } else {
             try {
-                Integer id = (Integer) MethodUtils.invokeMethod(entity, "getId", null);
+                Integer id = (Integer) MethodUtils.invokeMethod(entity, "geHtId", null);
                 if (id.intValue() > 0) {
                     manager.merge(entity);
                 } else {

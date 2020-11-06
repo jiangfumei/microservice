@@ -3,7 +3,6 @@ package com.cloud.sysadmin;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -23,6 +22,4 @@ public class SysadminApplicationTests {
         boolean flag = BCrypt.checkpw(pwd, encodePwd); // 验证加密是否正确
         System.out.println(flag);
     }
-
-
 }
