@@ -1,4 +1,4 @@
-package com.mallplus.gateway.config;
+package com.cloud.gateway.config;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -38,7 +38,7 @@ public class CorsConfigration {
      */
     @Bean
     public FilterRegistrationBean someFilterRegistration() {
-        FilterRegistrationBean<CorsFilter> registration = new FilterRegistrationBean<>();
+        FilterRegistrationBean<CorsFilter> registration = new FilterRegistrationBean<CorsFilter>();
         registration.setFilter(corsFilter());
         registration.addUrlPatterns("/*");
         registration.setName("corsFilter");

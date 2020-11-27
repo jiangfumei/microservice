@@ -9,10 +9,16 @@ import java.util.List;
 @Table(name = "sys_role")
 public class SysRole extends BaseEntity {
 
+    @Basic
+    @Column(length = 128)
     private String name;
 
+    @Basic
+    @Column(length = 128)
     private String code;
 
+    @Basic
+    @Column(length = 250)
     private String description;
 
     private int sort = 0;
@@ -23,8 +29,11 @@ public class SysRole extends BaseEntity {
     private List<SysUserRole> userRoles;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "sys_user_id", columnDefinition = "LONG")
+    @JoinColumn(name = "sys_user_id", nullable = false)
     private SysUser sysUser;
+
+    @OneToMany(targetEntity = SysRolePermission.class,mappedBy = "sysRole",cascade = CascadeType.REFRESH)
+    private List<SysRolePermission> sysRolePermissions;
 
 
     public String getName() {
@@ -82,5 +91,13 @@ public class SysRole extends BaseEntity {
 
     public void setSysUser(SysUser sysUser) {
         this.sysUser = sysUser;
+    }
+
+    public List<SysRolePermission> getSysRolePermissions() {
+        return sysRolePermissions;
+    }
+
+    public void setSysRolePermissions(List<SysRolePermission> sysRolePermissions) {
+        this.sysRolePermissions = sysRolePermissions;
     }
 }

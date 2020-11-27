@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Table(name = "sys_dict")
 public class SysDict extends BaseEntity {
 
-
     public enum Status {
         hidden, show
     }

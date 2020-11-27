@@ -1,0 +1,7 @@
+com\cloud\gateway\config\SecurityConfig.class
+com\cloud\gateway\config\SwaggerProvider.class
+com\cloud\gateway\config\SwaggerHandler.class
+com\cloud\gateway\config\ResourceServerConfiguration.class
+com\cloud\gateway\config\CorsConfigration.class
+com\cloud\gateway\config\AsycTaskExecutorConfig.class
+com\cloud\gateway\GatewayApplication.class

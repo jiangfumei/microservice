@@ -3,8 +3,6 @@ package com.cloud.authorization.config;
 import com.cloud.common.oauth.config.TokenStoreConfig;
 import com.cloud.common.oauth.properties.SecurityProperties;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

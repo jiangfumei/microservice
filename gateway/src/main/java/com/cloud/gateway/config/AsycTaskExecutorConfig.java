@@ -1,6 +1,6 @@
-package com.mallplus.gateway.config;
+package com.cloud.gateway.config;
 
-import com.mallplus.common.config.DefaultAsycTaskConfig;
+import com.cloud.common.config.DefaultAsycTaskConfig;
 import org.springframework.context.annotation.Configuration;
 
 /**

@@ -4,29 +4,32 @@ import com.cloud.common.base.base.BaseEntity;
 
 import javax.persistence.*;
 
+@Entity
+@Table(name = "sys_role_permission")
 public class SysRolePermission extends BaseEntity {
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "menu_id", columnDefinition = "LONG")
-    private SysPermission permission;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "role_id", columnDefinition = "LONG")
-    private SysRole role;
+    @JoinColumn(name = "sys_permission_id", nullable = false)
+    private SysPermission sysPermission;
 
-    public SysPermission getPermission() {
-        return permission;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "sys_role_id", nullable = false)
+    private SysRole sysRole;
+
+    public SysPermission getSysPermission() {
+        return sysPermission;
     }
 
-    public void setPermission(SysPermission permission) {
-        this.permission = permission;
+    public void setSysPermission(SysPermission sysPermission) {
+        this.sysPermission = sysPermission;
     }
 
-    public SysRole getRole() {
-        return role;
+    public SysRole getSysRole() {
+        return sysRole;
     }
 
-    public void setRole(SysRole role) {
-        this.role = role;
+    public void setSysRole(SysRole sysRole) {
+        this.sysRole = sysRole;
     }
 }

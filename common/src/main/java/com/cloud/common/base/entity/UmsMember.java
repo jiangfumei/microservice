@@ -22,7 +22,7 @@ import java.util.HashSet;
  */
 @Data
 @Table(name = "ums_member")
-public class UmsMember extends BaseEntity implements Serializable, SocialUserDetails {
+public class UmsMember extends BaseEntity implements SocialUserDetails {
 
 
     private Long memberLevelId;

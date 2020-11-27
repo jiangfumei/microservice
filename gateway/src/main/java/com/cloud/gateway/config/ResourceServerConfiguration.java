@@ -1,9 +1,9 @@
-package com.mallplus.gateway.config;
+package com.cloud.gateway.config;
 
-import com.mallplus.common.config.DefaultPasswordConfig;
-import com.mallplus.oauth2.common.config.DefaultResourceServerConf;
-import com.mallplus.oauth2.common.config.TokenStoreConfig;
-import com.mallplus.oauth2.common.properties.SecurityProperties;
+import com.cloud.common.oauth.config.DefaultPasswordConfig;
+import com.cloud.common.oauth.config.DefaultResourceServerConf;
+import com.cloud.common.oauth.config.TokenStoreConfig;
+import com.cloud.common.oauth.properties.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

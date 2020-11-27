@@ -1,6 +1,6 @@
-package com.mallplus.oauth2.common.config;
+package com.cloud.common.oauth.config;
 
-import com.mallplus.oauth2.common.properties.SecurityProperties;
+import com.cloud.common.oauth.properties.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;

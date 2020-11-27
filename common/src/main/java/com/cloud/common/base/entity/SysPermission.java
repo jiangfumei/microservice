@@ -3,18 +3,18 @@ package com.cloud.common.base.entity;
 import com.cloud.common.base.base.BaseEntity;
 
 import javax.persistence.*;
-import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "sys_permission")
-public class SysPermission extends BaseEntity implements Serializable {
+public class SysPermission extends BaseEntity {
 
     public enum Type {
         directory, menu, button
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "pid", columnDefinition = "LONG")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "pid", nullable = false)
     private SysPermission permission;
 
     private String name;
@@ -31,6 +31,9 @@ public class SysPermission extends BaseEntity implements Serializable {
     private String uri;
 
     private int sprt = 0;
+
+    @OneToMany(targetEntity = SysRolePermission.class,mappedBy = "sysPermission",cascade = CascadeType.REFRESH)
+    private List<SysRolePermission> sysRolePermissions;
 
     public SysPermission getPermission() {
         return permission;
@@ -88,4 +91,11 @@ public class SysPermission extends BaseEntity implements Serializable {
         this.sprt = sprt;
     }
 
+    public List<SysRolePermission> getSysRolePermissions() {
+        return sysRolePermissions;
+    }
+
+    public void setSysRolePermissions(List<SysRolePermission> sysRolePermissions) {
+        this.sysRolePermissions = sysRolePermissions;
+    }
 }

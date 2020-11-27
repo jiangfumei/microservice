@@ -1,8 +1,9 @@
-package com.mallplus.oauth2.common.config;
+package com.cloud.common.oauth.config;
 
-import com.mallplus.common.utils.ResponseUtil;
+import com.cloud.common.util.ReponseUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.util.http.ResponseUtil;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
@@ -34,7 +35,7 @@ public class DefaultSecurityHandlerConfig {
     public AuthenticationEntryPoint authenticationEntryPoint() {
         System.out.println("authenticationEntryPoint err");
         try {
-            return (request, response, authException) -> ResponseUtil.responseWriter(objectMapper, response, authException.getMessage(), HttpStatus.UNAUTHORIZED.value());
+            return (request, response, authException) -> ReponseUtil.responseWriter(objectMapper, response, authException.getMessage(), HttpStatus.UNAUTHORIZED.value());
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -59,7 +60,7 @@ public class DefaultSecurityHandlerConfig {
 
             @Override
             public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException authException) throws IOException, ServletException {
-                ResponseUtil.responseWriter(objectMapper, response, authException.getMessage(), HttpStatus.FORBIDDEN.value());
+                ReponseUtil.responseWriter(objectMapper, response, authException.getMessage(), HttpStatus.FORBIDDEN.value());
             }
         };
     }

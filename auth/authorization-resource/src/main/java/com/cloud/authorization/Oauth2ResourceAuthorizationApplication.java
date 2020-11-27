@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableResourceServer
-@ComponentScan({"com.cloud.common"})
+@ComponentScan({"com.cloud.common.*"})
 public class Oauth2ResourceAuthorizationApplication {
 
     public static void main(String[] args) {
