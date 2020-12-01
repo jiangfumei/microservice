@@ -32,7 +32,8 @@ ignored:
     - /**/*.png
     - /**/*.ico
     - /microservice/test/**
-    - /test
+    - /user/test
+    - /hello/test
   # 限流及黑名单不拦截的路径
   limitUrls:
     - /**/*.js
