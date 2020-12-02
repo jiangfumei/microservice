@@ -16,6 +16,8 @@ ignore:
     - /oauth/**
     - /actuator/**
     - /druid/*
+    - /user/test
+    - /hello/test
 
   cloud:
     nacos:

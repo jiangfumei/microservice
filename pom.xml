@@ -80,7 +80,7 @@
         <module>common</module>
         <module>sysadmin</module>
         <module>auth</module>
-        <module>api</module>
+        <module>member</module>
         <module>gateway</module>
         <module>bom</module>
     </modules>

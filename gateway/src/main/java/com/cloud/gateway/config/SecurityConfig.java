@@ -17,8 +17,10 @@ public class SecurityConfig {
 
     private static final String MAX_AGE = "18000L";
 
-/**  * 跨域配置
-    */
+
+    /**
+     * 跨域配置
+     */
 
     public WebFilter corsFilter() {
         return (ServerWebExchange ctx, WebFilterChain chain) -> {
@@ -44,10 +46,4 @@ public class SecurityConfig {
             return chain.filter(ctx);
         };
     }
-
- /*   @Bean
-    public ServerCodecConfigurer serverCodecConfigurer(){
-        return ServerCodecConfigurer.create();
-    }*/
-
 }
