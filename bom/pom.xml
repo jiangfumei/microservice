@@ -20,7 +20,7 @@
         <redis.version>2.2.3.RELEASE</redis.version>
         <swagger.version>2.9.2</swagger.version>
         <openfeign.version>2.2.0.RELEASE</openfeign.version>
-        <fasterxml.jackson.version>2.9.10.1</fasterxml.jackson.version>
+        <fasterxml.jackson.version>2.9.10.7</fasterxml.jackson.version>
         <!--<gateway.version>2.2.2.RELEASE</gateway.version>-->
         <security.jwt.version>1.1.0.RELEASE</security.jwt.version>
         <starter-oauth2.version>2.2.1.RELEASE</starter-oauth2.version>
