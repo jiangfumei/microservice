@@ -93,6 +93,5 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
                 .checkTokenAccess("permitAll()")
                 //让/oauth/token支持client_id以及client_secret作登录认证
                 .allowFormAuthenticationForClients();
-
     }
 }
