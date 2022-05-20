@@ -16,7 +16,7 @@
         <cloud-alibaba.version>2.2.0.RELEASE</cloud-alibaba.version>
         <alibaba.fastjson.version>1.2.62</alibaba.fastjson.version>
         <hutool-core.version>5.2.0</hutool-core.version>
-        <googlecodejson>2.8.6</googlecodejson>
+        <googlecodejson>2.8.9</googlecodejson>
         <redis.version>2.2.3.RELEASE</redis.version>
         <swagger.version>2.9.2</swagger.version>
         <openfeign.version>2.2.0.RELEASE</openfeign.version>
