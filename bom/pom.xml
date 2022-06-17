@@ -14,7 +14,7 @@
         <spring-boot-version>2.2.2.RELEASE</spring-boot-version>
         <mysql.version>5.1.47</mysql.version>
         <cloud-alibaba.version>2.2.0.RELEASE</cloud-alibaba.version>
-        <alibaba.fastjson.version>1.2.62</alibaba.fastjson.version>
+        <alibaba.fastjson.version>1.2.83</alibaba.fastjson.version>
         <hutool-core.version>5.2.0</hutool-core.version>
         <googlecodejson>2.8.6</googlecodejson>
         <redis.version>2.2.3.RELEASE</redis.version>
